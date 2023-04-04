@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&family=Montserrat:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+
+@layer base {
+  html {
+    // font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .navLink {
+    @apply cursor-pointer rounded-full p-4 text-center uppercase decoration-orange-500 decoration-2 underline-offset-8 transition-transform duration-200 ease-out hover:scale-110 hover:font-bold hover:underline active:underline;
+  }
+  .section-title {
+    @apply mb-8 text-2xl font-bold uppercase;
+  }
+  .background-pattern {
+    // background-color: #ffe06b;
+    //   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cg fill='%2312837c' fill-opacity='0.45'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+
+    background-color: #ffe06b;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'%3E%3Cg fill='%23ffffff' fill-opacity='0.9'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .navLink--active {
+    @apply text-lg font-bold underline decoration-orange-500 underline-offset-4;
+  }
+  .link--active {
+    @apply font-bold underline decoration-orange-500 underline-offset-4;
+  }
+  .container {
+    @apply mx-auto w-full px-5 sm:max-w-[540px] md:max-w-[720px] lg:max-w-[1024px] xl:max-w-[1200px] 2xl:max-w-[1400px];
+  }
+  .footer__contact {
+    @apply grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6;
+    div {
+      @apply space-y-2;
+      h2 {
+        @apply text-lg font-bold;
+      }
+    }
+  }
+  .custom-shape-divider-top-1677837874 {
+    @apply absolute top-24 left-0 w-full overflow-auto leading-none;
+  }
+  .custom-shape-divider-bottom-1677847582 {
+    @apply absolute left-0 -top-32 w-full rotate-180 overflow-hidden leading-none;
+    svg {
+      @apply relative block h-[132px] w-[calc(100%+1.3px)];
+    }
+    .shape-fill {
+      @apply fill-[#12837c];
+      // @apply fill-mainColor
+    }
+    // .scroller{
+    //     ::-webkit-scrollbar {
+    //         width: 12px;
+    //       }
+
+    //       ::-webkit-scrollbar-track {
+    //         background-color: transparent;
+    //       }
+
+    //       ::-webkit-scrollbar-thumb {
+    //         background-color: #c3c7c9;
+    //         // background-color: #d6dee1;
+    //         border-radius: 12px;
+    //         border: 3px solid transparent;
+    //         background-clip: content-box;
+    //       }
+
+    //       ::-webkit-scrollbar-thumb:hover {
+    //         // background-color: #a8bbbf;
+    //         background-color: #9ca9ac;
+    //       }
+
+    //       scroll-behavior: smooth;
+    //       scrollbar-width: thin;
+    //       scrollbar-color: #c3c7c9;
+    // }
+  }
+  .custom-shape-divider-top-1678015577 {
+    @apply absolute top-56 left-0 w-full overflow-hidden leading-none md:top-24;
+  }
+
+  .custom-shape-divider-top-1678015577 svg {
+    position: relative;
+    display: block;
+    width: calc(132% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+  }
+
+  .custom-shape-divider-top-1678015577 .shape-fill {
+    fill: #12837c;
+  }
+}
+
+// beautiful blue color - #3A98B9
+// good light brown/yellow color - #E8D5C4
+// pink beautiful color - #F7A4A4
+
+// from website https: //www.thepioneerwoman.com/#
+// main color - #12837c
+// yellow bg - #ffe06b
+// text hover - ##E8E8E
+// text color - #ffff
+// accent color - #b20039

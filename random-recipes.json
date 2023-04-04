@@ -1,0 +1,2770 @@
+{
+  "recipes": [
+    {
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "dairyFree": false,
+      "veryHealthy": false,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "lowFodmap": false,
+      "weightWatcherSmartPoints": 21,
+      "gaps": "no",
+      "preparationMinutes": -1,
+      "cookingMinutes": -1,
+      "aggregateLikes": 15,
+      "healthScore": 2,
+      "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+      "license": "CC BY 3.0",
+      "sourceName": "Foodista",
+      "pricePerServing": 59.75,
+      "extendedIngredients": [
+        {
+          "id": 1001,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "butter-sliced.jpg",
+          "consistency": "SOLID",
+          "name": "butter",
+          "nameClean": "butter",
+          "original": "110 grams Of Butter, soften",
+          "originalName": "Of Butter, soften",
+          "amount": 110.0,
+          "unit": "grams",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 3.88,
+              "unitShort": "oz",
+              "unitLong": "ounces"
+            },
+            "metric": {
+              "amount": 110.0,
+              "unitShort": "g",
+              "unitLong": "grams"
+            }
+          }
+        },
+        {
+          "id": 19335,
+          "aisle": "Baking",
+          "image": "sugar-in-bowl.png",
+          "consistency": "SOLID",
+          "name": "sugar",
+          "nameClean": "sugar",
+          "original": "100 grams (½ Cup) Sugar",
+          "originalName": "100 grams Sugar",
+          "amount": 0.5,
+          "unit": "Cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            }
+          }
+        },
+        {
+          "id": 20081,
+          "aisle": "Baking",
+          "image": "flour.png",
+          "consistency": "SOLID",
+          "name": "flour",
+          "nameClean": "wheat flour",
+          "original": "110 grams (1 cup) Flour",
+          "originalName": "110 grams Flour",
+          "amount": 1.0,
+          "unit": "cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "cup",
+              "unitLong": "cup"
+            },
+            "metric": {
+              "amount": 236.588,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 18369,
+          "aisle": "Baking",
+          "image": "white-powder.jpg",
+          "consistency": "SOLID",
+          "name": "baking powder",
+          "nameClean": "baking powder",
+          "original": "1/2 teaspoon Baking Powder",
+          "originalName": "Baking Powder",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 18372,
+          "aisle": "Baking",
+          "image": "white-powder.jpg",
+          "consistency": "SOLID",
+          "name": "baking soda",
+          "nameClean": "baking soda",
+          "original": "1/2 teaspoon Baking Soda",
+          "originalName": "Baking Soda",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 1123,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "egg.png",
+          "consistency": "SOLID",
+          "name": "egg",
+          "nameClean": "egg",
+          "original": "2 Egg",
+          "originalName": "Egg",
+          "amount": 2.0,
+          "unit": "",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 1095,
+          "aisle": "Baking",
+          "image": "evaporated-milk.png",
+          "consistency": "SOLID",
+          "name": "condensed milk",
+          "nameClean": "sweetened condensed milk",
+          "original": "2 tablespoons Condensed Milk",
+          "originalName": "Condensed Milk",
+          "amount": 2.0,
+          "unit": "tablespoons",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 9040,
+          "aisle": "Produce",
+          "image": "bananas.jpg",
+          "consistency": "SOLID",
+          "name": "banana",
+          "nameClean": "banana",
+          "original": "2 Medium Banana, mashed with fork",
+          "originalName": "Medium Banana, mashed with fork",
+          "amount": 2.0,
+          "unit": "",
+          "meta": ["with fork", "mashed"],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 10018166,
+          "aisle": "Sweet Snacks",
+          "image": "oreos.png",
+          "consistency": "SOLID",
+          "name": "oreo cookies",
+          "nameClean": "oreo cookies",
+          "original": "8 pieces of Oreo Cookies",
+          "originalName": "Oreo Cookies",
+          "amount": 8.0,
+          "unit": "pieces",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 8.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 8.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 1012050,
+          "aisle": "Baking",
+          "image": "vanilla-extract.jpg",
+          "consistency": "LIQUID",
+          "name": "vanilla essence",
+          "nameClean": "artificial vanilla",
+          "original": "1/2 teaspoon Vanilla Essence",
+          "originalName": "Vanilla Essence",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 9040,
+          "aisle": "Produce",
+          "image": "bananas.jpg",
+          "consistency": "SOLID",
+          "name": "banana essence",
+          "nameClean": "banana",
+          "original": "1/4 teaspoon Banana Essence, optional",
+          "originalName": "Banana Essence, optional",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.25,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.25,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        }
+      ],
+      "id": 6339715,
+      "title": "Banana & Oreo Muffin",
+      "readyInMinutes": 45,
+      "servings": 4,
+      "sourceUrl": "https://www.foodista.com/recipe/NQN8VNQT/banana-oreo-muffin",
+      "image": "https://spoonacular.com/recipeImages/633970-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "Banana & Oreo Muffin is a <b>lacto ovo vegetarian</b> recipe with 4 servings. One portion of this dish contains approximately <b>8g of protein</b>, <b>26g of fat</b>, and a total of <b>535 calories</b>. For <b>60 cents per serving</b>, this recipe <b>covers 11%</b> of your daily requirements of vitamins and minerals. It is brought to you by Foodista. If you have egg, vanillan essence, baking powder, and a few other ingredients on hand, you can make it. This recipe is liked by 15 foodies and cooks. It works best as a breakfast, and is done in about <b>45 minutes</b>. This recipe is typical of Southern cuisine. All things considered, we decided this recipe <b>deserves a spoonacular score of 33%</b>. This score is rather bad. Similar recipes are <a href=\"https://spoonacular.com/recipes/banana-muffin-763481\">Banana Muffin</a>, <a href=\"https://spoonacular.com/recipes/the-best-ever-banana-muffin-65697\">The Best Ever Banana Muffin</a>, and <a href=\"https://spoonacular.com/recipes/banana-nut-muffin-535217\">Banana Nut Muffin</a>.",
+      "cuisines": ["Southern"],
+      "dishTypes": ["morning meal", "brunch", "breakfast"],
+      "diets": ["lacto ovo vegetarian"],
+      "occasions": [],
+      "instructions": "Sift the flour, baking power and baking soda together and set aside.\nRemove the cream from the cookies, place the cookies in a ziplock bag, use a rolling pin, crush the cookie into fine crumbs.\nCream butter and sugar with electric beater till light and fluffy(about 3 minutes on medium speed).\nAdd in egg one at a time and beat till the mixture is well combine without any egg trace.\nAdd mashed banana, vanilla essence and condensed milk into the butter mixture and give it a quick whisk.\nLower the mixer speed, add flour mixture and blend the mixture till smooth.\nStir in the oreo cookies crumbs till combined, scoop the mixture into prepared muffin cups to 3/4 full.\nTop the muffin batter with some extra banana slices and oreo cookies, bake them in preheated 180 degree oven for about 20 - 25 minutes or till a toothpick inserted in the center and comes out clean.",
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Sift the flour, baking power and baking soda together and set aside.",
+              "ingredients": [
+                {
+                  "id": 18372,
+                  "name": "baking soda",
+                  "localizedName": "baking soda",
+                  "image": "white-powder.jpg"
+                },
+                {
+                  "id": 20081,
+                  "name": "all purpose flour",
+                  "localizedName": "all purpose flour",
+                  "image": "flour.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 2,
+              "step": "Remove the cream from the cookies, place the cookies in a ziplock bag, use a rolling pin, crush the cookie into fine crumbs.",
+              "ingredients": [
+                {
+                  "id": 10118192,
+                  "name": "cookies",
+                  "localizedName": "cookies",
+                  "image": "shortbread-cookies.jpg"
+                },
+                {
+                  "id": 1053,
+                  "name": "cream",
+                  "localizedName": "cream",
+                  "image": "fluid-cream.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404746,
+                  "name": "rolling pin",
+                  "localizedName": "rolling pin",
+                  "image": "rolling-pin.jpg"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "step": "Cream butter and sugar with electric beater till light and fluffy(about 3 minutes on medium speed).",
+              "ingredients": [
+                {
+                  "id": 1001,
+                  "name": "butter",
+                  "localizedName": "butter",
+                  "image": "butter-sliced.jpg"
+                },
+                {
+                  "id": 1053,
+                  "name": "cream",
+                  "localizedName": "cream",
+                  "image": "fluid-cream.jpg"
+                },
+                {
+                  "id": 19335,
+                  "name": "sugar",
+                  "localizedName": "sugar",
+                  "image": "sugar-in-bowl.png"
+                }
+              ],
+              "equipment": [],
+              "length": {
+                "number": 3,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 4,
+              "step": "Add in egg one at a time and beat till the mixture is well combine without any egg trace.",
+              "ingredients": [
+                {
+                  "id": 1123,
+                  "name": "egg",
+                  "localizedName": "egg",
+                  "image": "egg.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 5,
+              "step": "Add mashed banana, vanilla essence and condensed milk into the butter mixture and give it a quick whisk.",
+              "ingredients": [
+                {
+                  "id": 1012050,
+                  "name": "artificial vanilla",
+                  "localizedName": "artificial vanilla",
+                  "image": "vanilla-extract.jpg"
+                },
+                {
+                  "id": 1095,
+                  "name": "sweetened condensed milk",
+                  "localizedName": "sweetened condensed milk",
+                  "image": "evaporated-milk.png"
+                },
+                {
+                  "id": 1009040,
+                  "name": "mashed banana",
+                  "localizedName": "mashed banana",
+                  "image": "bananas.jpg"
+                },
+                {
+                  "id": 1001,
+                  "name": "butter",
+                  "localizedName": "butter",
+                  "image": "butter-sliced.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404661,
+                  "name": "whisk",
+                  "localizedName": "whisk",
+                  "image": "whisk.png"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "step": "Lower the mixer speed, add flour mixture and blend the mixture till smooth.",
+              "ingredients": [
+                {
+                  "id": 20081,
+                  "name": "all purpose flour",
+                  "localizedName": "all purpose flour",
+                  "image": "flour.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404726,
+                  "name": "blender",
+                  "localizedName": "blender",
+                  "image": "blender.png"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "step": "Stir in the oreo cookies crumbs till combined, scoop the mixture into prepared muffin cups to 3/4 full.",
+              "ingredients": [
+                {
+                  "id": 10018166,
+                  "name": "oreo cookies",
+                  "localizedName": "oreo cookies",
+                  "image": "oreos.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404676,
+                  "name": "muffin liners",
+                  "localizedName": "muffin liners",
+                  "image": "muffin-or-cupcake-forms.png"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "step": "Top the muffin batter with some extra banana slices and oreo cookies, bake them in preheated 180 degree oven for about 20 - 25 minutes or till a toothpick inserted in the center and comes out clean.",
+              "ingredients": [
+                {
+                  "id": 10018166,
+                  "name": "oreo cookies",
+                  "localizedName": "oreo cookies",
+                  "image": "oreos.png"
+                },
+                {
+                  "id": 9040,
+                  "name": "banana",
+                  "localizedName": "banana",
+                  "image": "bananas.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404644,
+                  "name": "toothpicks",
+                  "localizedName": "toothpicks",
+                  "image": "toothpicks.jpg"
+                },
+                {
+                  "id": 404784,
+                  "name": "oven",
+                  "localizedName": "oven",
+                  "image": "oven.jpg"
+                }
+              ],
+              "length": {
+                "number": 25,
+                "unit": "minutes"
+              }
+            }
+          ]
+        }
+      ],
+      "originalId": null,
+      "spoonacularSourceUrl": "https://spoonacular.com/banana-oreo-muffin-633970"
+    },
+    {
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "dairyFree": false,
+      "veryHealthy": false,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "lowFodmap": false,
+      "weightWatcherSmartPoints": 21,
+      "gaps": "no",
+      "preparationMinutes": -1,
+      "cookingMinutes": -1,
+      "aggregateLikes": 15,
+      "healthScore": 2,
+      "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+      "license": "CC BY 3.0",
+      "sourceName": "Foodista",
+      "pricePerServing": 59.75,
+      "extendedIngredients": [
+        {
+          "id": 1001,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "butter-sliced.jpg",
+          "consistency": "SOLID",
+          "name": "butter",
+          "nameClean": "butter",
+          "original": "110 grams Of Butter, soften",
+          "originalName": "Of Butter, soften",
+          "amount": 110.0,
+          "unit": "grams",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 3.88,
+              "unitShort": "oz",
+              "unitLong": "ounces"
+            },
+            "metric": {
+              "amount": 110.0,
+              "unitShort": "g",
+              "unitLong": "grams"
+            }
+          }
+        },
+        {
+          "id": 19335,
+          "aisle": "Baking",
+          "image": "sugar-in-bowl.png",
+          "consistency": "SOLID",
+          "name": "sugar",
+          "nameClean": "sugar",
+          "original": "100 grams (½ Cup) Sugar",
+          "originalName": "100 grams Sugar",
+          "amount": 0.5,
+          "unit": "Cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            }
+          }
+        },
+        {
+          "id": 20081,
+          "aisle": "Baking",
+          "image": "flour.png",
+          "consistency": "SOLID",
+          "name": "flour",
+          "nameClean": "wheat flour",
+          "original": "110 grams (1 cup) Flour",
+          "originalName": "110 grams Flour",
+          "amount": 1.0,
+          "unit": "cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "cup",
+              "unitLong": "cup"
+            },
+            "metric": {
+              "amount": 236.588,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 18369,
+          "aisle": "Baking",
+          "image": "white-powder.jpg",
+          "consistency": "SOLID",
+          "name": "baking powder",
+          "nameClean": "baking powder",
+          "original": "1/2 teaspoon Baking Powder",
+          "originalName": "Baking Powder",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 18372,
+          "aisle": "Baking",
+          "image": "white-powder.jpg",
+          "consistency": "SOLID",
+          "name": "baking soda",
+          "nameClean": "baking soda",
+          "original": "1/2 teaspoon Baking Soda",
+          "originalName": "Baking Soda",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 1123,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "egg.png",
+          "consistency": "SOLID",
+          "name": "egg",
+          "nameClean": "egg",
+          "original": "2 Egg",
+          "originalName": "Egg",
+          "amount": 2.0,
+          "unit": "",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 1095,
+          "aisle": "Baking",
+          "image": "evaporated-milk.png",
+          "consistency": "SOLID",
+          "name": "condensed milk",
+          "nameClean": "sweetened condensed milk",
+          "original": "2 tablespoons Condensed Milk",
+          "originalName": "Condensed Milk",
+          "amount": 2.0,
+          "unit": "tablespoons",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 9040,
+          "aisle": "Produce",
+          "image": "bananas.jpg",
+          "consistency": "SOLID",
+          "name": "banana",
+          "nameClean": "banana",
+          "original": "2 Medium Banana, mashed with fork",
+          "originalName": "Medium Banana, mashed with fork",
+          "amount": 2.0,
+          "unit": "",
+          "meta": ["with fork", "mashed"],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 10018166,
+          "aisle": "Sweet Snacks",
+          "image": "oreos.png",
+          "consistency": "SOLID",
+          "name": "oreo cookies",
+          "nameClean": "oreo cookies",
+          "original": "8 pieces of Oreo Cookies",
+          "originalName": "Oreo Cookies",
+          "amount": 8.0,
+          "unit": "pieces",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 8.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 8.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 1012050,
+          "aisle": "Baking",
+          "image": "vanilla-extract.jpg",
+          "consistency": "LIQUID",
+          "name": "vanilla essence",
+          "nameClean": "artificial vanilla",
+          "original": "1/2 teaspoon Vanilla Essence",
+          "originalName": "Vanilla Essence",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 9040,
+          "aisle": "Produce",
+          "image": "bananas.jpg",
+          "consistency": "SOLID",
+          "name": "banana essence",
+          "nameClean": "banana",
+          "original": "1/4 teaspoon Banana Essence, optional",
+          "originalName": "Banana Essence, optional",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.25,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.25,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        }
+      ],
+      "id": 633970564,
+      "title": "Banana & Oreo Muffin",
+      "readyInMinutes": 45,
+      "servings": 4,
+      "sourceUrl": "https://www.foodista.com/recipe/NQN8VNQT/banana-oreo-muffin",
+      "image": "https://spoonacular.com/recipeImages/633970-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "Banana & Oreo Muffin is a <b>lacto ovo vegetarian</b> recipe with 4 servings. One portion of this dish contains approximately <b>8g of protein</b>, <b>26g of fat</b>, and a total of <b>535 calories</b>. For <b>60 cents per serving</b>, this recipe <b>covers 11%</b> of your daily requirements of vitamins and minerals. It is brought to you by Foodista. If you have egg, vanillan essence, baking powder, and a few other ingredients on hand, you can make it. This recipe is liked by 15 foodies and cooks. It works best as a breakfast, and is done in about <b>45 minutes</b>. This recipe is typical of Southern cuisine. All things considered, we decided this recipe <b>deserves a spoonacular score of 33%</b>. This score is rather bad. Similar recipes are <a href=\"https://spoonacular.com/recipes/banana-muffin-763481\">Banana Muffin</a>, <a href=\"https://spoonacular.com/recipes/the-best-ever-banana-muffin-65697\">The Best Ever Banana Muffin</a>, and <a href=\"https://spoonacular.com/recipes/banana-nut-muffin-535217\">Banana Nut Muffin</a>.",
+      "cuisines": ["Southern"],
+      "dishTypes": ["morning meal", "brunch", "breakfast"],
+      "diets": ["lacto ovo vegetarian"],
+      "occasions": [],
+      "instructions": "Sift the flour, baking power and baking soda together and set aside.\nRemove the cream from the cookies, place the cookies in a ziplock bag, use a rolling pin, crush the cookie into fine crumbs.\nCream butter and sugar with electric beater till light and fluffy(about 3 minutes on medium speed).\nAdd in egg one at a time and beat till the mixture is well combine without any egg trace.\nAdd mashed banana, vanilla essence and condensed milk into the butter mixture and give it a quick whisk.\nLower the mixer speed, add flour mixture and blend the mixture till smooth.\nStir in the oreo cookies crumbs till combined, scoop the mixture into prepared muffin cups to 3/4 full.\nTop the muffin batter with some extra banana slices and oreo cookies, bake them in preheated 180 degree oven for about 20 - 25 minutes or till a toothpick inserted in the center and comes out clean.",
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Sift the flour, baking power and baking soda together and set aside.",
+              "ingredients": [
+                {
+                  "id": 18372,
+                  "name": "baking soda",
+                  "localizedName": "baking soda",
+                  "image": "white-powder.jpg"
+                },
+                {
+                  "id": 20081,
+                  "name": "all purpose flour",
+                  "localizedName": "all purpose flour",
+                  "image": "flour.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 2,
+              "step": "Remove the cream from the cookies, place the cookies in a ziplock bag, use a rolling pin, crush the cookie into fine crumbs.",
+              "ingredients": [
+                {
+                  "id": 10118192,
+                  "name": "cookies",
+                  "localizedName": "cookies",
+                  "image": "shortbread-cookies.jpg"
+                },
+                {
+                  "id": 1053,
+                  "name": "cream",
+                  "localizedName": "cream",
+                  "image": "fluid-cream.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404746,
+                  "name": "rolling pin",
+                  "localizedName": "rolling pin",
+                  "image": "rolling-pin.jpg"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "step": "Cream butter and sugar with electric beater till light and fluffy(about 3 minutes on medium speed).",
+              "ingredients": [
+                {
+                  "id": 1001,
+                  "name": "butter",
+                  "localizedName": "butter",
+                  "image": "butter-sliced.jpg"
+                },
+                {
+                  "id": 1053,
+                  "name": "cream",
+                  "localizedName": "cream",
+                  "image": "fluid-cream.jpg"
+                },
+                {
+                  "id": 19335,
+                  "name": "sugar",
+                  "localizedName": "sugar",
+                  "image": "sugar-in-bowl.png"
+                }
+              ],
+              "equipment": [],
+              "length": {
+                "number": 3,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 4,
+              "step": "Add in egg one at a time and beat till the mixture is well combine without any egg trace.",
+              "ingredients": [
+                {
+                  "id": 1123,
+                  "name": "egg",
+                  "localizedName": "egg",
+                  "image": "egg.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 5,
+              "step": "Add mashed banana, vanilla essence and condensed milk into the butter mixture and give it a quick whisk.",
+              "ingredients": [
+                {
+                  "id": 1012050,
+                  "name": "artificial vanilla",
+                  "localizedName": "artificial vanilla",
+                  "image": "vanilla-extract.jpg"
+                },
+                {
+                  "id": 1095,
+                  "name": "sweetened condensed milk",
+                  "localizedName": "sweetened condensed milk",
+                  "image": "evaporated-milk.png"
+                },
+                {
+                  "id": 1009040,
+                  "name": "mashed banana",
+                  "localizedName": "mashed banana",
+                  "image": "bananas.jpg"
+                },
+                {
+                  "id": 1001,
+                  "name": "butter",
+                  "localizedName": "butter",
+                  "image": "butter-sliced.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404661,
+                  "name": "whisk",
+                  "localizedName": "whisk",
+                  "image": "whisk.png"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "step": "Lower the mixer speed, add flour mixture and blend the mixture till smooth.",
+              "ingredients": [
+                {
+                  "id": 20081,
+                  "name": "all purpose flour",
+                  "localizedName": "all purpose flour",
+                  "image": "flour.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404726,
+                  "name": "blender",
+                  "localizedName": "blender",
+                  "image": "blender.png"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "step": "Stir in the oreo cookies crumbs till combined, scoop the mixture into prepared muffin cups to 3/4 full.",
+              "ingredients": [
+                {
+                  "id": 10018166,
+                  "name": "oreo cookies",
+                  "localizedName": "oreo cookies",
+                  "image": "oreos.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404676,
+                  "name": "muffin liners",
+                  "localizedName": "muffin liners",
+                  "image": "muffin-or-cupcake-forms.png"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "step": "Top the muffin batter with some extra banana slices and oreo cookies, bake them in preheated 180 degree oven for about 20 - 25 minutes or till a toothpick inserted in the center and comes out clean.",
+              "ingredients": [
+                {
+                  "id": 10018166,
+                  "name": "oreo cookies",
+                  "localizedName": "oreo cookies",
+                  "image": "oreos.png"
+                },
+                {
+                  "id": 9040,
+                  "name": "banana",
+                  "localizedName": "banana",
+                  "image": "bananas.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404644,
+                  "name": "toothpicks",
+                  "localizedName": "toothpicks",
+                  "image": "toothpicks.jpg"
+                },
+                {
+                  "id": 404784,
+                  "name": "oven",
+                  "localizedName": "oven",
+                  "image": "oven.jpg"
+                }
+              ],
+              "length": {
+                "number": 25,
+                "unit": "minutes"
+              }
+            }
+          ]
+        }
+      ],
+      "originalId": null,
+      "spoonacularSourceUrl": "https://spoonacular.com/banana-oreo-muffin-633970"
+    },
+    {
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": false,
+      "dairyFree": false,
+      "veryHealthy": false,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "lowFodmap": false,
+      "weightWatcherSmartPoints": 21,
+      "gaps": "no",
+      "preparationMinutes": -1,
+      "cookingMinutes": -1,
+      "aggregateLikes": 15,
+      "healthScore": 2,
+      "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+      "license": "CC BY 3.0",
+      "sourceName": "Foodista",
+      "pricePerServing": 59.75,
+      "extendedIngredients": [
+        {
+          "id": 1001,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "butter-sliced.jpg",
+          "consistency": "SOLID",
+          "name": "butter",
+          "nameClean": "butter",
+          "original": "110 grams Of Butter, soften",
+          "originalName": "Of Butter, soften",
+          "amount": 110.0,
+          "unit": "grams",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 3.88,
+              "unitShort": "oz",
+              "unitLong": "ounces"
+            },
+            "metric": {
+              "amount": 110.0,
+              "unitShort": "g",
+              "unitLong": "grams"
+            }
+          }
+        },
+        {
+          "id": 19335,
+          "aisle": "Baking",
+          "image": "sugar-in-bowl.png",
+          "consistency": "SOLID",
+          "name": "sugar",
+          "nameClean": "sugar",
+          "original": "100 grams (½ Cup) Sugar",
+          "originalName": "100 grams Sugar",
+          "amount": 0.5,
+          "unit": "Cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            }
+          }
+        },
+        {
+          "id": 20081,
+          "aisle": "Baking",
+          "image": "flour.png",
+          "consistency": "SOLID",
+          "name": "flour",
+          "nameClean": "wheat flour",
+          "original": "110 grams (1 cup) Flour",
+          "originalName": "110 grams Flour",
+          "amount": 1.0,
+          "unit": "cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "cup",
+              "unitLong": "cup"
+            },
+            "metric": {
+              "amount": 236.588,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 18369,
+          "aisle": "Baking",
+          "image": "white-powder.jpg",
+          "consistency": "SOLID",
+          "name": "baking powder",
+          "nameClean": "baking powder",
+          "original": "1/2 teaspoon Baking Powder",
+          "originalName": "Baking Powder",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 18372,
+          "aisle": "Baking",
+          "image": "white-powder.jpg",
+          "consistency": "SOLID",
+          "name": "baking soda",
+          "nameClean": "baking soda",
+          "original": "1/2 teaspoon Baking Soda",
+          "originalName": "Baking Soda",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 1123,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "egg.png",
+          "consistency": "SOLID",
+          "name": "egg",
+          "nameClean": "egg",
+          "original": "2 Egg",
+          "originalName": "Egg",
+          "amount": 2.0,
+          "unit": "",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 1095,
+          "aisle": "Baking",
+          "image": "evaporated-milk.png",
+          "consistency": "SOLID",
+          "name": "condensed milk",
+          "nameClean": "sweetened condensed milk",
+          "original": "2 tablespoons Condensed Milk",
+          "originalName": "Condensed Milk",
+          "amount": 2.0,
+          "unit": "tablespoons",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 9040,
+          "aisle": "Produce",
+          "image": "bananas.jpg",
+          "consistency": "SOLID",
+          "name": "banana",
+          "nameClean": "banana",
+          "original": "2 Medium Banana, mashed with fork",
+          "originalName": "Medium Banana, mashed with fork",
+          "amount": 2.0,
+          "unit": "",
+          "meta": ["with fork", "mashed"],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 10018166,
+          "aisle": "Sweet Snacks",
+          "image": "oreos.png",
+          "consistency": "SOLID",
+          "name": "oreo cookies",
+          "nameClean": "oreo cookies",
+          "original": "8 pieces of Oreo Cookies",
+          "originalName": "Oreo Cookies",
+          "amount": 8.0,
+          "unit": "pieces",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 8.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 8.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 1012050,
+          "aisle": "Baking",
+          "image": "vanilla-extract.jpg",
+          "consistency": "LIQUID",
+          "name": "vanilla essence",
+          "nameClean": "artificial vanilla",
+          "original": "1/2 teaspoon Vanilla Essence",
+          "originalName": "Vanilla Essence",
+          "amount": 0.5,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        },
+        {
+          "id": 9040,
+          "aisle": "Produce",
+          "image": "bananas.jpg",
+          "consistency": "SOLID",
+          "name": "banana essence",
+          "nameClean": "banana",
+          "original": "1/4 teaspoon Banana Essence, optional",
+          "originalName": "Banana Essence, optional",
+          "amount": 0.25,
+          "unit": "teaspoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.25,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            },
+            "metric": {
+              "amount": 0.25,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
+            }
+          }
+        }
+      ],
+      "id": 633970,
+      "title": "Banana & Oreo Muffin",
+      "readyInMinutes": 45,
+      "servings": 4,
+      "sourceUrl": "https://www.foodista.com/recipe/NQN8VNQT/banana-oreo-muffin",
+      "image": "https://spoonacular.com/recipeImages/633970-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "Banana & Oreo Muffin is a <b>lacto ovo vegetarian</b> recipe with 4 servings. One portion of this dish contains approximately <b>8g of protein</b>, <b>26g of fat</b>, and a total of <b>535 calories</b>. For <b>60 cents per serving</b>, this recipe <b>covers 11%</b> of your daily requirements of vitamins and minerals. It is brought to you by Foodista. If you have egg, vanillan essence, baking powder, and a few other ingredients on hand, you can make it. This recipe is liked by 15 foodies and cooks. It works best as a breakfast, and is done in about <b>45 minutes</b>. This recipe is typical of Southern cuisine. All things considered, we decided this recipe <b>deserves a spoonacular score of 33%</b>. This score is rather bad. Similar recipes are <a href=\"https://spoonacular.com/recipes/banana-muffin-763481\">Banana Muffin</a>, <a href=\"https://spoonacular.com/recipes/the-best-ever-banana-muffin-65697\">The Best Ever Banana Muffin</a>, and <a href=\"https://spoonacular.com/recipes/banana-nut-muffin-535217\">Banana Nut Muffin</a>.",
+      "cuisines": ["Southern"],
+      "dishTypes": ["morning meal", "brunch", "breakfast"],
+      "diets": ["lacto ovo vegetarian"],
+      "occasions": [],
+      "instructions": "Sift the flour, baking power and baking soda together and set aside.\nRemove the cream from the cookies, place the cookies in a ziplock bag, use a rolling pin, crush the cookie into fine crumbs.\nCream butter and sugar with electric beater till light and fluffy(about 3 minutes on medium speed).\nAdd in egg one at a time and beat till the mixture is well combine without any egg trace.\nAdd mashed banana, vanilla essence and condensed milk into the butter mixture and give it a quick whisk.\nLower the mixer speed, add flour mixture and blend the mixture till smooth.\nStir in the oreo cookies crumbs till combined, scoop the mixture into prepared muffin cups to 3/4 full.\nTop the muffin batter with some extra banana slices and oreo cookies, bake them in preheated 180 degree oven for about 20 - 25 minutes or till a toothpick inserted in the center and comes out clean.",
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Sift the flour, baking power and baking soda together and set aside.",
+              "ingredients": [
+                {
+                  "id": 18372,
+                  "name": "baking soda",
+                  "localizedName": "baking soda",
+                  "image": "white-powder.jpg"
+                },
+                {
+                  "id": 20081,
+                  "name": "all purpose flour",
+                  "localizedName": "all purpose flour",
+                  "image": "flour.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 2,
+              "step": "Remove the cream from the cookies, place the cookies in a ziplock bag, use a rolling pin, crush the cookie into fine crumbs.",
+              "ingredients": [
+                {
+                  "id": 10118192,
+                  "name": "cookies",
+                  "localizedName": "cookies",
+                  "image": "shortbread-cookies.jpg"
+                },
+                {
+                  "id": 1053,
+                  "name": "cream",
+                  "localizedName": "cream",
+                  "image": "fluid-cream.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404746,
+                  "name": "rolling pin",
+                  "localizedName": "rolling pin",
+                  "image": "rolling-pin.jpg"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "step": "Cream butter and sugar with electric beater till light and fluffy(about 3 minutes on medium speed).",
+              "ingredients": [
+                {
+                  "id": 1001,
+                  "name": "butter",
+                  "localizedName": "butter",
+                  "image": "butter-sliced.jpg"
+                },
+                {
+                  "id": 1053,
+                  "name": "cream",
+                  "localizedName": "cream",
+                  "image": "fluid-cream.jpg"
+                },
+                {
+                  "id": 19335,
+                  "name": "sugar",
+                  "localizedName": "sugar",
+                  "image": "sugar-in-bowl.png"
+                }
+              ],
+              "equipment": [],
+              "length": {
+                "number": 3,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 4,
+              "step": "Add in egg one at a time and beat till the mixture is well combine without any egg trace.",
+              "ingredients": [
+                {
+                  "id": 1123,
+                  "name": "egg",
+                  "localizedName": "egg",
+                  "image": "egg.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 5,
+              "step": "Add mashed banana, vanilla essence and condensed milk into the butter mixture and give it a quick whisk.",
+              "ingredients": [
+                {
+                  "id": 1012050,
+                  "name": "artificial vanilla",
+                  "localizedName": "artificial vanilla",
+                  "image": "vanilla-extract.jpg"
+                },
+                {
+                  "id": 1095,
+                  "name": "sweetened condensed milk",
+                  "localizedName": "sweetened condensed milk",
+                  "image": "evaporated-milk.png"
+                },
+                {
+                  "id": 1009040,
+                  "name": "mashed banana",
+                  "localizedName": "mashed banana",
+                  "image": "bananas.jpg"
+                },
+                {
+                  "id": 1001,
+                  "name": "butter",
+                  "localizedName": "butter",
+                  "image": "butter-sliced.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404661,
+                  "name": "whisk",
+                  "localizedName": "whisk",
+                  "image": "whisk.png"
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "step": "Lower the mixer speed, add flour mixture and blend the mixture till smooth.",
+              "ingredients": [
+                {
+                  "id": 20081,
+                  "name": "all purpose flour",
+                  "localizedName": "all purpose flour",
+                  "image": "flour.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404726,
+                  "name": "blender",
+                  "localizedName": "blender",
+                  "image": "blender.png"
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "step": "Stir in the oreo cookies crumbs till combined, scoop the mixture into prepared muffin cups to 3/4 full.",
+              "ingredients": [
+                {
+                  "id": 10018166,
+                  "name": "oreo cookies",
+                  "localizedName": "oreo cookies",
+                  "image": "oreos.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404676,
+                  "name": "muffin liners",
+                  "localizedName": "muffin liners",
+                  "image": "muffin-or-cupcake-forms.png"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "step": "Top the muffin batter with some extra banana slices and oreo cookies, bake them in preheated 180 degree oven for about 20 - 25 minutes or till a toothpick inserted in the center and comes out clean.",
+              "ingredients": [
+                {
+                  "id": 10018166,
+                  "name": "oreo cookies",
+                  "localizedName": "oreo cookies",
+                  "image": "oreos.png"
+                },
+                {
+                  "id": 9040,
+                  "name": "banana",
+                  "localizedName": "banana",
+                  "image": "bananas.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404644,
+                  "name": "toothpicks",
+                  "localizedName": "toothpicks",
+                  "image": "toothpicks.jpg"
+                },
+                {
+                  "id": 404784,
+                  "name": "oven",
+                  "localizedName": "oven",
+                  "image": "oven.jpg"
+                }
+              ],
+              "length": {
+                "number": 25,
+                "unit": "minutes"
+              }
+            }
+          ]
+        }
+      ],
+      "originalId": null,
+      "spoonacularSourceUrl": "https://spoonacular.com/banana-oreo-muffin-633970"
+    },
+    {
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": true,
+      "dairyFree": false,
+      "veryHealthy": false,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "lowFodmap": false,
+      "weightWatcherSmartPoints": 18,
+      "gaps": "no",
+      "preparationMinutes": -1,
+      "cookingMinutes": -1,
+      "aggregateLikes": 71,
+      "healthScore": 32,
+      "creditsText": "Full Belly Sisters",
+      "license": "CC BY-SA 3.0",
+      "sourceName": "Full Belly Sisters",
+      "pricePerServing": 791.17,
+      "extendedIngredients": [
+        {
+          "id": 10211282,
+          "aisle": "Produce",
+          "image": "brown-onion.png",
+          "consistency": "SOLID",
+          "name": "caramelized onions",
+          "nameClean": "caramelized onions",
+          "original": "1 cup chopped caramelized onions",
+          "originalName": "chopped caramelized onions",
+          "amount": 1.0,
+          "unit": "cup",
+          "meta": ["chopped"],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "cup",
+              "unitLong": "cup"
+            },
+            "metric": {
+              "amount": 236.588,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 2017,
+          "aisle": "Spices and Seasonings",
+          "image": "dill.jpg",
+          "consistency": "SOLID",
+          "name": "dill",
+          "nameClean": "dried dill",
+          "original": "2 T dried dill",
+          "originalName": "dried dill",
+          "amount": 2.0,
+          "unit": "T",
+          "meta": ["dried"],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 2029,
+          "aisle": "Spices and Seasonings",
+          "image": "dried-parsley.png",
+          "consistency": "SOLID",
+          "name": "parsley",
+          "nameClean": "dried parsley",
+          "original": "1 T dried parsley",
+          "originalName": "dried parsley",
+          "amount": 1.0,
+          "unit": "T",
+          "meta": ["dried"],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "Tbsp",
+              "unitLong": "Tbsp"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "Tbsp",
+              "unitLong": "Tbsp"
+            }
+          }
+        },
+        {
+          "id": 11156,
+          "aisle": "Produce",
+          "image": "fresh-chives.jpg",
+          "consistency": "SOLID",
+          "name": "chives",
+          "nameClean": "chives",
+          "original": "1/4 cup chopped fresh chives",
+          "originalName": "chopped fresh chives",
+          "amount": 0.25,
+          "unit": "cup",
+          "meta": ["fresh", "chopped"],
+          "measures": {
+            "us": {
+              "amount": 0.25,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 59.147,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 1159,
+          "aisle": "Cheese",
+          "image": "goat-cheese.jpg",
+          "consistency": "SOLID",
+          "name": "goat cheese",
+          "nameClean": "goat cheese",
+          "original": "4 ounce goat cheese",
+          "originalName": "goat cheese",
+          "amount": 4.0,
+          "unit": "ounce",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 4.0,
+              "unitShort": "oz",
+              "unitLong": "ounces"
+            },
+            "metric": {
+              "amount": 113.398,
+              "unitShort": "g",
+              "unitLong": "grams"
+            }
+          }
+        },
+        {
+          "id": 1256,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "plain-yogurt.jpg",
+          "consistency": "LIQUID",
+          "name": "greek yogurt",
+          "nameClean": "greek yogurt",
+          "original": "1 cup Greek yogurt",
+          "originalName": "Greek yogurt",
+          "amount": 1.0,
+          "unit": "cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "cup",
+              "unitLong": "cup"
+            },
+            "metric": {
+              "amount": 236.588,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 1022034,
+          "aisle": "Spices and Seasonings",
+          "image": "seasoning.png",
+          "consistency": "SOLID",
+          "name": "steak seasoning",
+          "nameClean": "montreal steak seasoning",
+          "original": "steak seasoning",
+          "originalName": "steak seasoning",
+          "amount": 1.0,
+          "unit": "serving",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "serving",
+              "unitLong": "serving"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "serving",
+              "unitLong": "serving"
+            }
+          }
+        }
+      ],
+      "id": 716435,
+      "title": "Herbed Goat Cheese Yogurt Dip w. Caramelized Onions",
+      "readyInMinutes": 45,
+      "servings": 1,
+      "sourceUrl": "http://fullbellysisters.blogspot.com/2014/02/herbed-goat-cheese-yogurt-dip-w.html",
+      "image": "https://spoonacular.com/recipeImages/716435-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "If you want to add more <b>gluten free, lacto ovo vegetarian, and primal</b> recipes to your collection, Herbed Goat Cheese Yogurt Dip w. Caramelized Onions might be a recipe you should try. This recipe serves 1. This side dish has <b>545 calories</b>, <b>46g of protein</b>, and <b>25g of fat</b> per serving. For <b>$7.91 per serving</b>, this recipe <b>covers 33%</b> of your daily requirements of vitamins and minerals. This recipe from fullbellysisters.blogspot.com requires caramelized onions, goat cheese, parsley, and steak seasoning. This recipe is liked by 71 foodies and cooks. From preparation to the plate, this recipe takes approximately <b>45 minutes</b>. It is perfect for <b>The Super Bowl</b>. Overall, this recipe earns a <b>great spoonacular score of 90%</b>. If you like this recipe, take a look at these similar recipes: <a href=\"https://spoonacular.com/recipes/pumpkin-goat-cheese-dip-with-caramelized-onions-935634\">Pumpkin Goat Cheese Dip with Caramelized Onions</a>, <a href=\"https://spoonacular.com/recipes/flatbread-with-goat-cheese-and-caramelized-onions-1206579\">Flatbread with Goat Cheese and Caramelized Onions</a>, and <a href=\"https://spoonacular.com/recipes/flatbread-with-goat-cheese-and-caramelized-onions-1272923\">Flatbread with Goat Cheese and Caramelized Onions</a>.",
+      "cuisines": [],
+      "dishTypes": ["side dish"],
+      "diets": ["gluten free", "lacto ovo vegetarian", "primal"],
+      "occasions": ["super bowl"],
+      "instructions": "",
+      "analyzedInstructions": [],
+      "originalId": null,
+      "spoonacularSourceUrl": "https://spoonacular.com/herbed-goat-cheese-yogurt-dip-w-caramelized-onions-716435"
+    },
+    {
+      "vegetarian": false,
+      "vegan": false,
+      "glutenFree": true,
+      "dairyFree": false,
+      "veryHealthy": true,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "lowFodmap": false,
+      "weightWatcherSmartPoints": 11,
+      "gaps": "no",
+      "preparationMinutes": -1,
+      "cookingMinutes": -1,
+      "aggregateLikes": 9,
+      "healthScore": 81,
+      "creditsText": "foodista.com",
+      "sourceName": "foodista.com",
+      "pricePerServing": 312.55,
+      "extendedIngredients": [
+        {
+          "id": 11090,
+          "aisle": "Produce",
+          "image": "broccoli.jpg",
+          "consistency": "SOLID",
+          "name": "broccoli",
+          "nameClean": "broccoli",
+          "original": "1 medium head of broccoli, cut into florets",
+          "originalName": "broccoli, cut into florets",
+          "amount": 1.0,
+          "unit": "medium head",
+          "meta": ["cut into florets"],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "medium head",
+              "unitLong": "medium head"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "medium head",
+              "unitLong": "medium head"
+            }
+          }
+        },
+        {
+          "id": 1002044,
+          "aisle": "Produce;Spices and Seasonings",
+          "image": "mixed-fresh-herbs.jpg",
+          "consistency": "SOLID",
+          "name": "pack maggi so herbs",
+          "nameClean": "lemon basil",
+          "original": "1 x pack Maggi So Juicy Mixed Herbs",
+          "originalName": "1 x pack Maggi So Juicy Mixed Herbs",
+          "amount": 4.0,
+          "unit": "servings",
+          "meta": ["mixed", "juicy"],
+          "measures": {
+            "us": {
+              "amount": 4.0,
+              "unitShort": "servings",
+              "unitLong": "servings"
+            },
+            "metric": {
+              "amount": 4.0,
+              "unitShort": "servings",
+              "unitLong": "servings"
+            }
+          }
+        },
+        {
+          "id": 4053,
+          "aisle": "Oil, Vinegar, Salad Dressing",
+          "image": "olive-oil.jpg",
+          "consistency": "LIQUID",
+          "name": "olive oil",
+          "nameClean": "olive oil",
+          "original": "1/4 cup olive oil (60 mL)",
+          "originalName": "1/4 cup olive oil",
+          "amount": 60.0,
+          "unit": "mL",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 60.0,
+              "unitShort": "mL",
+              "unitLong": "mLs"
+            },
+            "metric": {
+              "amount": 60.0,
+              "unitShort": "mL",
+              "unitLong": "mLs"
+            }
+          }
+        },
+        {
+          "id": 11353,
+          "aisle": "Produce",
+          "image": "russet-or-idaho-potatoes.png",
+          "consistency": "SOLID",
+          "name": "russet potato",
+          "nameClean": "russet potato",
+          "original": "1 large Russet potato, peeled and diced",
+          "originalName": "Russet potato, peeled and diced",
+          "amount": 1.0,
+          "unit": "large",
+          "meta": ["diced", "peeled"],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "large",
+              "unitLong": "large"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "large",
+              "unitLong": "large"
+            }
+          }
+        },
+        {
+          "id": 1002030,
+          "aisle": "Spices and Seasonings",
+          "image": "pepper.jpg",
+          "consistency": "SOLID",
+          "name": "pepper and salt",
+          "nameClean": "black pepper",
+          "original": "Freshly ground black pepper and salt",
+          "originalName": "Freshly ground black pepper and salt",
+          "amount": 4.0,
+          "unit": "servings",
+          "meta": ["black", "freshly ground"],
+          "measures": {
+            "us": {
+              "amount": 4.0,
+              "unitShort": "servings",
+              "unitLong": "servings"
+            },
+            "metric": {
+              "amount": 4.0,
+              "unitShort": "servings",
+              "unitLong": "servings"
+            }
+          }
+        },
+        {
+          "id": 1055062,
+          "aisle": "Meat",
+          "image": "chicken-breasts.png",
+          "consistency": "SOLID",
+          "name": "chicken breasts",
+          "nameClean": "boneless skinless chicken breast",
+          "original": "1 1/2 pounds of boneless, skinless chicken breasts",
+          "originalName": "boneless, skinless chicken breasts",
+          "amount": 1.5,
+          "unit": "pounds",
+          "meta": ["boneless", "skinless"],
+          "measures": {
+            "us": {
+              "amount": 1.5,
+              "unitShort": "lb",
+              "unitLong": "pounds"
+            },
+            "metric": {
+              "amount": 680.389,
+              "unitShort": "g",
+              "unitLong": "grams"
+            }
+          }
+        },
+        {
+          "id": 11507,
+          "aisle": "Produce",
+          "image": "sweet-potato.png",
+          "consistency": "SOLID",
+          "name": "sweet potatoes",
+          "nameClean": "sweet potato",
+          "original": "3 large sweet potatoes, peeled and diced",
+          "originalName": "sweet potatoes, peeled and diced",
+          "amount": 3.0,
+          "unit": "large",
+          "meta": ["diced", "peeled"],
+          "measures": {
+            "us": {
+              "amount": 3.0,
+              "unitShort": "large",
+              "unitLong": "larges"
+            },
+            "metric": {
+              "amount": 3.0,
+              "unitShort": "large",
+              "unitLong": "larges"
+            }
+          }
+        },
+        {
+          "id": 1145,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "butter-sliced.jpg",
+          "consistency": "SOLID",
+          "name": "butter",
+          "nameClean": "unsalted butter",
+          "original": "2 tablespoons Chilled unsalted butter",
+          "originalName": "Chilled unsalted butter",
+          "amount": 2.0,
+          "unit": "tablespoons",
+          "meta": ["unsalted", "chilled"],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        }
+      ],
+      "id": 646651,
+      "title": "Herb chicken with sweet potato mash and sautéed broccoli",
+      "readyInMinutes": 45,
+      "servings": 4,
+      "sourceUrl": "http://www.foodista.com/recipe/NHZKT2K8/serve-a-sensationally-seasoned-chicken-dish",
+      "image": "https://spoonacular.com/recipeImages/646651-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "Herb chicken with sweet potato mash and sautéed broccoli might be a good recipe to expand your main course recipe box. One portion of this dish contains roughly <b>47g of protein</b>, <b>25g of fat</b>, and a total of <b>710 calories</b>. For <b>$3.13 per serving</b>, this recipe <b>covers 50%</b> of your daily requirements of vitamins and minerals. This recipe serves 4. 9 people have made this recipe and would make it again. Head to the store and pick up broccoli, butter, pepper and salt, and a few other things to make it today. It is a good option if you're following a <b>gluten free</b> diet. It is brought to you by Foodista. From preparation to the plate, this recipe takes around <b>45 minutes</b>. Taking all factors into account, this recipe <b>earns a spoonacular score of 95%</b>, which is awesome. Try <a href=\"https://spoonacular.com/recipes/herb-chicken-with-sweet-potato-mash-and-sauted-broccoli-1263701\">Herb chicken with sweet potato mash and sautéed broccoli</a>, <a href=\"https://spoonacular.com/recipes/herb-chicken-with-sweet-potato-mash-and-sauted-broccoli-1516743\">Herb chicken with sweet potato mash and sautéed broccoli</a>, and <a href=\"https://spoonacular.com/recipes/herb-chicken-with-sweet-potato-mash-and-sauted-broccoli-1337501\">Herb chicken with sweet potato mash and sautéed broccoli</a> for similar recipes.",
+      "cuisines": [],
+      "dishTypes": ["lunch", "main course", "main dish", "dinner"],
+      "diets": ["gluten free"],
+      "occasions": [],
+      "instructions": "<ol><li> Preheat the oven to 350F (180C) or 320F (160C) for convection oven and cook the chicken according to the pack instructions.</li><li> About 15 minutes before the end of the chicken cooking time, place the diced potato into boiling water for 5 minutes, then add the sweet potato and cook until the potatoes are tender. Roughly mash, adding butter, salt, and pepper to taste, then mash thoroughly.</li><li> Heat the oil in a pan and quickly saut the broccoli until tender. Cover to keep warm.</li><li> Remove the chicken from the oven, leave to cool for a minute then cut the bag open and gently tip the contents into a dish.</li><li> Slice the chicken breasts into chunky pieces on a board, keeping the chicken breast shape together.</li><li> Serve the mash potato topped with the chicken and remaining sauce with a side of broccoli.</li></ol>",
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Preheat the oven to 350F (180C) or 320F (160C) for convection oven and cook the chicken according to the pack instructions. About 15 minutes before the end of the chicken cooking time, place the diced potato into boiling water for 5 minutes, then add the sweet potato and cook until the potatoes are tender. Roughly mash, adding butter, salt, and pepper to taste, then mash thoroughly.",
+              "ingredients": [
+                {
+                  "id": 11507,
+                  "name": "sweet potato",
+                  "localizedName": "sweet potato",
+                  "image": "sweet-potato.png"
+                },
+                {
+                  "id": 11352,
+                  "name": "potato",
+                  "localizedName": "potato",
+                  "image": "potatoes-yukon-gold.png"
+                },
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                },
+                {
+                  "id": 1001,
+                  "name": "butter",
+                  "localizedName": "butter",
+                  "image": "butter-sliced.jpg"
+                },
+                {
+                  "id": 1002030,
+                  "name": "pepper",
+                  "localizedName": "pepper",
+                  "image": "pepper.jpg"
+                },
+                {
+                  "id": 14412,
+                  "name": "water",
+                  "localizedName": "water",
+                  "image": "water.png"
+                },
+                {
+                  "id": 2047,
+                  "name": "salt",
+                  "localizedName": "salt",
+                  "image": "salt.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404784,
+                  "name": "oven",
+                  "localizedName": "oven",
+                  "image": "oven.jpg",
+                  "temperature": {
+                    "number": 350.0,
+                    "unit": "Fahrenheit"
+                  }
+                }
+              ],
+              "length": {
+                "number": 20,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 2,
+              "step": "Heat the oil in a pan and quickly saut the broccoli until tender. Cover to keep warm.",
+              "ingredients": [
+                {
+                  "id": 11090,
+                  "name": "broccoli",
+                  "localizedName": "broccoli",
+                  "image": "broccoli.jpg"
+                },
+                {
+                  "id": 4582,
+                  "name": "cooking oil",
+                  "localizedName": "cooking oil",
+                  "image": "vegetable-oil.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404645,
+                  "name": "frying pan",
+                  "localizedName": "frying pan",
+                  "image": "pan.png"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "step": "Remove the chicken from the oven, leave to cool for a minute then cut the bag open and gently tip the contents into a dish. Slice the chicken breasts into chunky pieces on a board, keeping the chicken breast shape together.",
+              "ingredients": [
+                {
+                  "id": 5062,
+                  "name": "chicken breast",
+                  "localizedName": "chicken breast",
+                  "image": "chicken-breasts.png"
+                },
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404784,
+                  "name": "oven",
+                  "localizedName": "oven",
+                  "image": "oven.jpg"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "step": "Serve the mash potato topped with the chicken and remaining sauce with a side of broccoli.",
+              "ingredients": [
+                {
+                  "id": 11090,
+                  "name": "broccoli",
+                  "localizedName": "broccoli",
+                  "image": "broccoli.jpg"
+                },
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                },
+                {
+                  "id": 11352,
+                  "name": "potato",
+                  "localizedName": "potato",
+                  "image": "potatoes-yukon-gold.png"
+                },
+                {
+                  "id": 0,
+                  "name": "sauce",
+                  "localizedName": "sauce",
+                  "image": ""
+                }
+              ],
+              "equipment": []
+            }
+          ]
+        }
+      ],
+      "originalId": null,
+      "spoonacularSourceUrl": "https://spoonacular.com/herb-chicken-with-sweet-potato-mash-and-sauted-broccoli-646651"
+    },
+    {
+      "vegetarian": true,
+      "vegan": false,
+      "glutenFree": true,
+      "dairyFree": false,
+      "veryHealthy": false,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "lowFodmap": false,
+      "weightWatcherSmartPoints": 112,
+      "gaps": "no",
+      "preparationMinutes": -1,
+      "cookingMinutes": -1,
+      "aggregateLikes": 42,
+      "healthScore": 23,
+      "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+      "license": "CC BY 3.0",
+      "sourceName": "Foodista",
+      "pricePerServing": 436.17,
+      "extendedIngredients": [
+        {
+          "id": 1053,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "fluid-cream.jpg",
+          "consistency": "LIQUID",
+          "name": "cream",
+          "nameClean": "cream",
+          "original": "2 cups cream",
+          "originalName": "cream",
+          "amount": 2.0,
+          "unit": "cups",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 473.176,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 98861,
+          "aisle": "Nut butters, Jams, and Honey;Ethnic Foods;Frozen;Baking",
+          "image": "dulce-de-leche.png",
+          "consistency": "SOLID",
+          "name": "dulce de leche",
+          "nameClean": "dulce de leche",
+          "original": "3 tablespoons Dulce de leche",
+          "originalName": "Dulce de leche",
+          "amount": 3.0,
+          "unit": "tablespoons",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 3.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 3.0,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 19335,
+          "aisle": "Baking",
+          "image": "sugar-in-bowl.png",
+          "consistency": "SOLID",
+          "name": "sugar",
+          "nameClean": "sugar",
+          "original": "1/2 cup sugar",
+          "originalName": "sugar",
+          "amount": 0.5,
+          "unit": "cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 118.294,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 1125,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "egg-yolk.jpg",
+          "consistency": "SOLID",
+          "name": "egg yolks",
+          "nameClean": "egg yolk",
+          "original": "5 large egg yolks",
+          "originalName": "egg yolks",
+          "amount": 5.0,
+          "unit": "large",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 5.0,
+              "unitShort": "large",
+              "unitLong": "larges"
+            },
+            "metric": {
+              "amount": 5.0,
+              "unitShort": "large",
+              "unitLong": "larges"
+            }
+          }
+        }
+      ],
+      "id": 641727,
+      "title": "Dulce De Leche Crème Brûlée",
+      "readyInMinutes": 45,
+      "servings": 1,
+      "sourceUrl": "https://www.foodista.com/recipe/T6DWSM6W/dulce-de-leche-creme-brulee",
+      "image": "https://spoonacular.com/recipeImages/641727-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "If you want to add more <b>gluten free and lacto ovo vegetarian</b> recipes to your repertoire, Dulce De Leche Crème Brûlée might be a recipe you should try. This recipe serves 1 and costs $4.36 per serving. One serving contains <b>2277 calories</b>, <b>27g of protein</b>, and <b>195g of fat</b>. This recipe from Foodista has 42 fans. From preparation to the plate, this recipe takes around <b>45 minutes</b>. A mixture of cream, dulce de leche, sugar, and a handful of other ingredients are all it takes to make this recipe so yummy. A few people really liked this main course. Overall, this recipe earns an <b>excellent spoonacular score of 83%</b>. Users who liked this recipe also liked <a href=\"https://spoonacular.com/recipes/alfajores-dulce-de-leche-sandwich-crme-cookies-170895\">Alfajores (Dulce de Leche Sandwich Crème Cookies)</a>, <a href=\"https://spoonacular.com/recipes/russian-dulce-de-leche-waffle-cake-and-instant-pot-dulce-de-leche-1062236\">Russian Dulce De Leche Waffle Cake and Instant Pot Dulce De Leche</a>, and <a href=\"https://spoonacular.com/recipes/dulce-de-leche-milkshake-malteada-de-arequipe-o-dulce-de-leche-226960\">Dulce de Leche Milkshake (Malteada de Arequipe o Dulce de Leche)</a>.",
+      "cuisines": [],
+      "dishTypes": ["lunch", "main course", "main dish", "dinner"],
+      "diets": ["gluten free", "lacto ovo vegetarian"],
+      "occasions": [],
+      "instructions": "Oven: 325F\nPlace six ramekins in a water bath. Whisk eggs and sugar until pale, then slowly pour the hot cream into the yolks, whisking thoroughly. Pour custards into ramekins and bake ~35 min. until set. Chill at least 3 hours before serving.\nTo serve, sprinkle ~2 tsp sugar evenly over each custard and heat with a kitchen torch until a burnt crust forms atop each custard.",
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Oven: 325F",
+              "ingredients": [],
+              "equipment": [
+                {
+                  "id": 404784,
+                  "name": "oven",
+                  "localizedName": "oven",
+                  "image": "oven.jpg",
+                  "temperature": {
+                    "number": 325.0,
+                    "unit": "Fahrenheit"
+                  }
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "step": "Place six ramekins in a water bath.",
+              "ingredients": [
+                {
+                  "id": 14412,
+                  "name": "water",
+                  "localizedName": "water",
+                  "image": "water.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404781,
+                  "name": "ramekin",
+                  "localizedName": "ramekin",
+                  "image": "ramekin.jpg"
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "step": "Whisk eggs and sugar until pale, then slowly pour the hot cream into the yolks, whisking thoroughly.",
+              "ingredients": [
+                {
+                  "id": 1053,
+                  "name": "cream",
+                  "localizedName": "cream",
+                  "image": "fluid-cream.jpg"
+                },
+                {
+                  "id": 19335,
+                  "name": "sugar",
+                  "localizedName": "sugar",
+                  "image": "sugar-in-bowl.png"
+                },
+                {
+                  "id": 1125,
+                  "name": "egg yolk",
+                  "localizedName": "egg yolk",
+                  "image": "egg-yolk.jpg"
+                },
+                {
+                  "id": 1123,
+                  "name": "egg",
+                  "localizedName": "egg",
+                  "image": "egg.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404661,
+                  "name": "whisk",
+                  "localizedName": "whisk",
+                  "image": "whisk.png"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "step": "Pour custards into ramekins and bake ~35 min. until set. Chill at least 3 hours before serving.",
+              "ingredients": [],
+              "equipment": [
+                {
+                  "id": 404784,
+                  "name": "oven",
+                  "localizedName": "oven",
+                  "image": "oven.jpg"
+                },
+                {
+                  "id": 404781,
+                  "name": "ramekin",
+                  "localizedName": "ramekin",
+                  "image": "ramekin.jpg"
+                }
+              ],
+              "length": {
+                "number": 215,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 5,
+              "step": "To serve, sprinkle ~2 tsp sugar evenly over each custard and heat with a kitchen torch until a burnt crust forms atop each custard.",
+              "ingredients": [
+                {
+                  "id": 19170,
+                  "name": "custard",
+                  "localizedName": "custard",
+                  "image": "custard.png"
+                },
+                {
+                  "id": 0,
+                  "name": "crust",
+                  "localizedName": "crust",
+                  "image": ""
+                },
+                {
+                  "id": 19335,
+                  "name": "sugar",
+                  "localizedName": "sugar",
+                  "image": "sugar-in-bowl.png"
+                }
+              ],
+              "equipment": []
+            }
+          ]
+        }
+      ],
+      "originalId": null,
+      "spoonacularSourceUrl": "https://spoonacular.com/dulce-de-leche-crme-brle-641727"
+    },
+    {
+      "vegetarian": true,
+      "vegan": true,
+      "glutenFree": true,
+      "dairyFree": true,
+      "veryHealthy": false,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "lowFodmap": false,
+      "weightWatcherSmartPoints": 0,
+      "gaps": "no",
+      "preparationMinutes": -1,
+      "cookingMinutes": -1,
+      "aggregateLikes": 14,
+      "healthScore": 47,
+      "creditsText": "Afrolems",
+      "license": "CC BY 4.0",
+      "sourceName": "Afrolems",
+      "pricePerServing": 428.51,
+      "extendedIngredients": [
+        {
+          "id": 10311529,
+          "aisle": "Produce",
+          "image": "cherry-tomatoes.png",
+          "consistency": "SOLID",
+          "name": "cherry tomatoes",
+          "nameClean": "cherry tomato",
+          "original": "a handful of cherry tomatoes",
+          "originalName": "cherry tomatoes",
+          "amount": 1.0,
+          "unit": "handful",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "handful",
+              "unitLong": "handful"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "handful",
+              "unitLong": "handful"
+            }
+          }
+        },
+        {
+          "id": 11333,
+          "aisle": "Produce",
+          "image": "green-pepper.jpg",
+          "consistency": "SOLID",
+          "name": "bell pepper",
+          "nameClean": "green pepper",
+          "original": "1/2 green bell pepper",
+          "originalName": "green bell pepper",
+          "amount": 0.5,
+          "unit": "",
+          "meta": ["green"],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 9160,
+          "aisle": "Produce",
+          "image": "lime-juice.png",
+          "consistency": "LIQUID",
+          "name": "lime juice",
+          "nameClean": "lime juice",
+          "original": "1 tablespoon of lime juice",
+          "originalName": "lime juice",
+          "amount": 1.0,
+          "unit": "tablespoon",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "Tbsp",
+              "unitLong": "Tbsp"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "Tbsp",
+              "unitLong": "Tbsp"
+            }
+          }
+        },
+        {
+          "id": 9176,
+          "aisle": "Produce",
+          "image": "mango.jpg",
+          "consistency": "SOLID",
+          "name": "mangoes",
+          "nameClean": "mango",
+          "original": "2 Large Mangoes",
+          "originalName": "Large Mangoes",
+          "amount": 2.0,
+          "unit": "",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 2064,
+          "aisle": "Produce",
+          "image": "mint.jpg",
+          "consistency": "SOLID",
+          "name": "mint leaves",
+          "nameClean": "mint",
+          "original": "A few scent leaves or mint leaves",
+          "originalName": "A few scent or mint leaves",
+          "amount": 3.0,
+          "unit": "leaves",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 3.0,
+              "unitShort": "leaf",
+              "unitLong": "leaves"
+            },
+            "metric": {
+              "amount": 3.0,
+              "unitShort": "leaf",
+              "unitLong": "leaves"
+            }
+          }
+        },
+        {
+          "id": 11821,
+          "aisle": "Produce",
+          "image": "red-pepper.jpg",
+          "consistency": "SOLID",
+          "name": "bell pepper",
+          "nameClean": "red pepper",
+          "original": "1/2 red bell pepper",
+          "originalName": "red bell pepper",
+          "amount": 0.5,
+          "unit": "",
+          "meta": ["red"],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "",
+              "unitLong": ""
+            },
+            "metric": {
+              "amount": 0.5,
+              "unitShort": "",
+              "unitLong": ""
+            }
+          }
+        },
+        {
+          "id": 10011282,
+          "aisle": "Produce",
+          "image": "red-onion.png",
+          "consistency": "SOLID",
+          "name": "onions",
+          "nameClean": "red onion",
+          "original": "2 handfuls of chopped red onions",
+          "originalName": "chopped red onions",
+          "amount": 2.0,
+          "unit": "handfuls",
+          "meta": ["red", "chopped"],
+          "measures": {
+            "us": {
+              "amount": 2.0,
+              "unitShort": "handfuls",
+              "unitLong": "handfuls"
+            },
+            "metric": {
+              "amount": 2.0,
+              "unitShort": "handfuls",
+              "unitLong": "handfuls"
+            }
+          }
+        },
+        {
+          "id": 19335,
+          "aisle": "Baking",
+          "image": "sugar-in-bowl.png",
+          "consistency": "SOLID",
+          "name": "sugar",
+          "nameClean": "sugar",
+          "original": "A pinch of sugar",
+          "originalName": "sugar",
+          "amount": 1.0,
+          "unit": "pinch",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 1.0,
+              "unitShort": "pinch",
+              "unitLong": "pinch"
+            },
+            "metric": {
+              "amount": 1.0,
+              "unitShort": "pinch",
+              "unitLong": "pinch"
+            }
+          }
+        }
+      ],
+      "id": 716290,
+      "title": "Mango Salsa",
+      "readyInMinutes": 45,
+      "servings": 1,
+      "sourceUrl": "http://www.afrolems.com/2014/03/21/mango-salsa/",
+      "image": "https://spoonacular.com/recipeImages/716290-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "Mango Salsan is a Mexican hor d'oeuvre. This gluten free, dairy free, lacto ovo vegetarian, and vegan recipe serves 1 and costs <b>$4.29 per serving</b>. One serving contains <b>298 calories</b>, <b>5g of protein</b>, and <b>2g of fat</b>. If you have cherry tomatoes, bell pepper, lime juice, and a few other ingredients on hand, you can make it. This recipe is liked by 14 foodies and cooks. From preparation to the plate, this recipe takes approximately <b>45 minutes</b>. It is brought to you by Afrolems. With a spoonacular <b>score of 91%</b>, this dish is spectacular. Similar recipes are <a href=\"https://spoonacular.com/recipes/grilled-mango-chicken-with-strawberry-mango-salsa-733371\">Grilled Mango Chicken with Strawberry Mango Salsa</a>, <a href=\"https://spoonacular.com/recipes/grilled-mango-chicken-with-strawberry-mango-salsa-1119805\">Grilled Mango Chicken with Strawberry Mango Salsa</a>, and <a href=\"https://spoonacular.com/recipes/sunny-hot-salsa-pineapple-mango-kiwi-salsa-148792\">Sunny & Hot! Salsa (Pineapple Mango Kiwi Salsa)</a>.",
+      "cuisines": ["Mexican"],
+      "dishTypes": [
+        "antipasti",
+        "condiment",
+        "starter",
+        "snack",
+        "appetizer",
+        "dip",
+        "antipasto",
+        "hor d'oeuvre",
+        "spread"
+      ],
+      "diets": ["gluten free", "dairy free", "lacto ovo vegetarian", "vegan"],
+      "occasions": [],
+      "instructions": "Peel and chop your mango into small cubesCube your bell peppers and onions as well and mix in with the mangoes. Add the cherry tomatoes and mix in.sprinkle your sugar and lime juice over it.Chop your scent/mint leaves and mix in and refrigerate.Serve cool as a side dish or if you want something refreshing on a hot day.",
+      "analyzedInstructions": [
+        {
+          "name": "",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Peel and chop your mango into small cubes",
+              "ingredients": [
+                {
+                  "id": 9176,
+                  "name": "mango",
+                  "localizedName": "mango",
+                  "image": "mango.jpg"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 2,
+              "step": "Cube your bell peppers and onions as well and mix in with the mangoes.",
+              "ingredients": [
+                {
+                  "id": 10211821,
+                  "name": "bell pepper",
+                  "localizedName": "bell pepper",
+                  "image": "bell-pepper-orange.png"
+                },
+                {
+                  "id": 9176,
+                  "name": "mango",
+                  "localizedName": "mango",
+                  "image": "mango.jpg"
+                },
+                {
+                  "id": 11282,
+                  "name": "onion",
+                  "localizedName": "onion",
+                  "image": "brown-onion.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 3,
+              "step": "Add the cherry tomatoes and mix in.sprinkle your sugar and lime juice over it.Chop your scent/mint leaves and mix in and refrigerate.",
+              "ingredients": [
+                {
+                  "id": 10311529,
+                  "name": "cherry tomato",
+                  "localizedName": "cherry tomato",
+                  "image": "cherry-tomatoes.png"
+                },
+                {
+                  "id": 2064,
+                  "name": "mint",
+                  "localizedName": "mint",
+                  "image": "mint.jpg"
+                },
+                {
+                  "id": 9160,
+                  "name": "lime juice",
+                  "localizedName": "lime juice",
+                  "image": "lime-juice.png"
+                },
+                {
+                  "id": 19335,
+                  "name": "sugar",
+                  "localizedName": "sugar",
+                  "image": "sugar-in-bowl.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 4,
+              "step": "Serve cool as a side dish or if you want something refreshing on a hot day.",
+              "ingredients": [],
+              "equipment": []
+            }
+          ]
+        }
+      ],
+      "originalId": null,
+      "spoonacularSourceUrl": "https://spoonacular.com/mango-salsa-716290"
+    }
+  ]
+}
