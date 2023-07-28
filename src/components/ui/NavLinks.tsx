@@ -2,9 +2,14 @@
 import { usePathname } from 'next/navigation';
 
 import { NavLink } from '~/components/ui/NavLink';
-import { categories } from '~/constant/categories';
 
-export const NavLinks = () => {
+interface Props {
+  categories: Category[];
+  shallow: boolean;
+  type: string;
+}
+
+export const NavLinks = ({ categories, shallow, type }: Props) => {
   const pathname = usePathname();
   const isActive = (path: string) => {
     return pathname?.split(`/`).pop() === path;
@@ -13,8 +18,10 @@ export const NavLinks = () => {
     <nav>
       {categories.map((category) => (
         <NavLink
+          shallow={shallow}
           key={category as string}
           category={category as string}
+          type={type}
           isActive={isActive(category as string)}
         />
       ))}

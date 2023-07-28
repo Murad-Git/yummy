@@ -10,5 +10,5 @@ export const recipesMainPage = [
   { id: 9, mealType: `japanese` },
   { id: 10, mealType: `mediterranean` },
 ];
-
-export const recipeGroupItems = `2`;
+export const recipeGroupItems = 2;
+export const similarRecipes = 1;

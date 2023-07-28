@@ -1,6 +1,11 @@
 'use client';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
+import { likedList } from '~/store/recipesSlice';
+import { useAppDispatch, useAppSelector } from '~/types/main';
 
 interface Props {
   recipe: Recipe | searchResult;
@@ -9,20 +14,21 @@ interface Props {
 
 export default function ImageWithLike({ recipe, link }: Props) {
   // const recipeLink = makeSlug(recipe.id, recipe.sourceUrl, recipe.title);
-  // const addLikedHandler = () => {
-  //   dispatch(likedList(recipe));
-  // };
-  // const isLiked = useAppSelector(
-  //   (state) =>
-  //     state.likedRecipes.find((storeRecipe) => storeRecipe.id === recipe.id) ||
-  //     false
-  // );
+  const dispatch = useAppDispatch();
+  const addLikedHandler = () => {
+    dispatch(likedList(recipe));
+  };
+  const isLiked = useAppSelector(
+    (state) =>
+      state.likedRecipes.find((storeRecipe) => storeRecipe.id === recipe.id) ||
+      false
+  );
   return (
     <div className='relative overflow-hidden rounded-t-sm'>
       <Link href={link}>
         {/* <Link href={recipeLink}> */}
         <Image
-          className='cursor-pointer rounded-sm transition-all duration-200 hover:scale-125'
+          className='w-full cursor-pointer rounded-sm transition-all duration-200 hover:scale-110'
           src={
             `https://spoonacular.com/recipeImages/${recipe.id}-636x393.jpg
           ` || `/images/no-food.png`
@@ -30,9 +36,10 @@ export default function ImageWithLike({ recipe, link }: Props) {
           height={500}
           width={500}
           alt='product'
+          priority
         />
       </Link>
-      {/* <button
+      <button
         className='icons absolute right-3 top-4 mb-3 flex h-16 w-16 flex-col items-center justify-center rounded-full bg-gray-100'
         onClick={addLikedHandler}
       >
@@ -41,7 +48,7 @@ export default function ImageWithLike({ recipe, link }: Props) {
           size='2x'
           icon={isLiked ? solidHeart : faHeart}
         />
-      </button> */}
+      </button>
     </div>
   );
 }

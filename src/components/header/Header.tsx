@@ -1,22 +1,31 @@
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { cookies } from 'next/headers';
 import Link from 'next/link';
-
 import { SearchField } from '~/components/header/SearchField';
-import UserLogin from '~/components/header/UserLogin';
+import { UserLogin } from '~/components/header/UserLogin';
 import { NavLinks } from '~/components/ui/NavLinks';
+import { categories } from '~/constant/typesConts';
+import { Database } from '~/types/database';
 
-export const Header = () => {
+export const Header = async () => {
+  const supabase = createServerComponentClient<Database>({ cookies });
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
   return (
     <div className='h-40 md:h-40 lg:h-64'>
-      <header className='sticky top-0 z-50 flex h-24 w-screen flex-col justify-center bg-mainColor py-1 px-5 text-center'>
+      <header className='sticky top-0 z-50 flex h-24 w-screen flex-col justify-center bg-slate-400 py-1 px-5 text-center'>
         <div className='container'>
           <div className='flex items-center justify-around pb-4'>
             <Link href='/' className='p-3 text-lg font-bold'>
               YUMMY
             </Link>
             <SearchField />
-            <UserLogin />
+            <UserLogin session={session} />
           </div>
-          <NavLinks />
+          <NavLinks categories={categories} shallow={true} type='category' />
         </div>
       </header>
       <div className='custom-shape-divider-top-1677837874'>

@@ -120,3 +120,67 @@ interface searchResult {
   image: string;
   imageType: string;
 }
+interface pubTemp {
+  id: number;
+  name: string;
+}
+interface userTemps {
+  id: number;
+  name: string;
+  days: {
+    nutritionSummary: tempInfo[];
+    nutritionSummaryBreakfast: tempInfo[];
+    nutritionSummaryLunch: tempInfo[];
+    nutritionSummaryDinner: tempInfo[];
+  }[];
+  day: string;
+  items: {
+    id: number;
+    slot: number;
+    position: number;
+    type: 'RECIPE';
+    value: {
+      id: number;
+      title: 'Double Chocolate Protein Cookies';
+      imageType: 'jpg';
+    };
+  }[];
+}
+
+type tempInfo = {
+  nutrients: {
+    name: string;
+    amount: number;
+    unit: string;
+    percentOfDailyNeeds: number;
+  };
+};
+type mealType = {
+  id: number;
+  imageType: 'jpg';
+  title: string;
+  readyInMinutes: number;
+  servings: number;
+  sourceUrl: string;
+};
+type mealDetails = {
+  meals: mealType[];
+  nutrients: {
+    calories: number;
+    protein: number;
+    fat: number;
+    carbohydrates: number;
+  };
+};
+interface weekMeals {
+  monday: mealDetails;
+  tuesday: mealDetails;
+  wednesday: mealDetails;
+  thursday: mealDetails;
+  friday: mealDetails;
+  saturday: mealDetails;
+  sunday: mealDetails;
+}
+interface mealPlanType {
+  week: weekMeals;
+}

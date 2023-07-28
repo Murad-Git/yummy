@@ -9,11 +9,13 @@ interface Props {
 
 export default function Ingredient({ ingredient }: Props) {
   const [checked, setChecked] = useState(false);
-
   return (
-    <li key={ingredient.id} className='cursor-pointer space-y-4'>
+    <li
+      onClick={() => setChecked((prev) => !prev)}
+      key={ingredient.id}
+      className='cursor-pointer space-y-4'
+    >
       <FontAwesomeIcon
-        onClick={() => setChecked((prev) => !prev)}
         icon={checked ? faCircleCheck : faCircle}
         className='mr-2 text-mainColor'
         size='1x'

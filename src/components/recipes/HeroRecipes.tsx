@@ -18,11 +18,7 @@ export default function HeroRecipes({ heroRecipes }: Props) {
           className='relative mb-8 overflow-hidden md:col-span-2 md:row-span-2 md:m-1'
         >
           <Link
-            href={makeSlug(
-              heroRecipes[0].id,
-              heroRecipes[0].sourceUrl,
-              heroRecipes[0].title
-            )}
+            href={makeSlug(heroRecipes[0].id, heroRecipes[0].title)}
             aria-label='top product'
           >
             <Image
@@ -37,7 +33,7 @@ export default function HeroRecipes({ heroRecipes }: Props) {
         {heroRecipes.slice(1).map((recipe) => (
           <li key={recipe.id} className='relative mb-8 overflow-hidden md:m-1'>
             <Link
-              href={makeSlug(recipe.id, recipe.sourceUrl, recipe.title)}
+              href={makeSlug(recipe.id, recipe.title)}
               aria-label='top product'
             >
               <Image
