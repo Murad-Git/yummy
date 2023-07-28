@@ -32,11 +32,24 @@
   .navLink--active {
     @apply text-lg font-bold underline decoration-orange-500 underline-offset-4;
   }
+  .md-meal-planner-calendar .md-meal-planner-event-title {
+    font-size: 15px;
+  }
   .link--active {
     @apply font-bold underline decoration-orange-500 underline-offset-4;
   }
   .container {
     @apply mx-auto w-full px-5 sm:max-w-[540px] md:max-w-[720px] lg:max-w-[1024px] xl:max-w-[1200px] 2xl:max-w-[1400px];
+  }
+  .btn{
+    @apply font-bold py-1 px-2 rounded;
+  }
+  .btn-blue {
+    @apply bg-blue-500 text-white;
+  }
+
+  .btn-blue:hover {
+    @apply bg-blue-700;
   }
   .footer__contact {
     @apply grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6;
@@ -50,15 +63,35 @@
   .custom-shape-divider-top-1677837874 {
     @apply absolute top-24 left-0 w-full overflow-auto leading-none;
   }
+  .auth-title {
+    @apply py-4 text-4xl font-black text-gray-800;
+  }
+
+  .auth-card {
+    @apply column min-w-[20rem] items-center gap-8 rounded-2xl bg-white py-8 px-4 shadow-md sm:min-w-[24rem] sm:px-10 absolute top-[10rem] left-[40%] m-0 z-30;
+  }
+ .custom-focus {
+   @apply focus:outline-none focus:ring-offset-0 active:outline-none;
+ }
+  .column {
+    @apply flex flex-col items-start justify-center gap-4;
+    input {
+      @apply w-full custom-focus rounded-xl border border-slate-300 focus:shadow-none;
+    }
+  }
+
+
   .custom-shape-divider-bottom-1677847582 {
     @apply absolute left-0 -top-32 w-full rotate-180 overflow-hidden leading-none;
     svg {
       @apply relative block h-[132px] w-[calc(100%+1.3px)];
     }
     .shape-fill {
-      @apply fill-[#12837c];
+      @apply fill-slate-500;
+      // @apply fill-[#12837c];
       // @apply fill-mainColor
     }
+  }
     // .scroller{
     //     ::-webkit-scrollbar {
     //         width: 12px;
@@ -99,9 +132,9 @@
   }
 
   .custom-shape-divider-top-1678015577 .shape-fill {
-    fill: #12837c;
+    // fill: #12837c;
+    fill: #64748b;
   }
-}
 
 // beautiful blue color - #3A98B9
 // good light brown/yellow color - #E8D5C4

@@ -10,15 +10,15 @@ import { makeSlug } from '~/utils/helpers';
 
 interface Props {
   recipes: searchResult[];
+  title: string;
 }
 
-export default function RecipeScroll({ recipes }: Props) {
+export default function RecipeScroll({ recipes, title }: Props) {
   const scrollerRef: RefObject<HTMLUListElement> = useRef(null);
 
-  // SWR,
   return (
-    <section className=' relative mb-24'>
-      <h1 className='section-title'>Ideas for Dinner</h1>
+    <section className=' relative my-24'>
+      <h1 className='section-title'>{title}</h1>
       <ul
         ref={scrollerRef}
         className=' scroll-h flex scroll-m-1 space-x-2 overflow-hidden scroll-smooth whitespace-nowrap'

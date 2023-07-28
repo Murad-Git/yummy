@@ -1,4 +1,4 @@
-import Recipe from '~/components/recipesComponents/Recipe';
+import Recipe from '~/components/recipes/Recipe';
 import { More } from '~/components/ui/More';
 
 interface Props {

@@ -1,12 +1,123 @@
-// interface Props {
-//   className?: string;
-//   src: string;
-//   height?: number;
-//   width?: number;
-//   alt: string;
-// }
+'use client';
+interface Props {
+  className?: string;
+  src: string;
+  height?: number;
+  width?: number;
+  alt: string;
+}
 // reflow, repaint ====================================================================================================
-export default function Divider() {
+export default function Divider({ className, src, height, width, alt }: Props) {
+  // const A = [2, 3, 9, 2, 5, 1, 3, 7, 10];
+  // const B = [2, 1, 3, 4, 3, 10, 6, 6, 1, 7, 10, 10, 10];
+  // const P = 2;
+  // // expected results for that inputs
+  // // [2,9,2,5,7,10]
+
+  // // test larger input arrays
+  // // for (let i = 0; i < 100000; i += 1) {
+  // //   A.push(Math.floor(Math.random()*1000))
+  // //   B.push(Math.floor(Math.random()*1000))
+  // // }
+
+  // const isPrimeNumber = (num) => {
+  //   // 6k + 1 algorithm based on https://en.wikipedia.org/wiki/Primality_test
+
+  //   if (num <= 3) {
+  //     return num > 1;
+  //   }
+
+  //   if (num % 2 === 0 || num % 3 === 0) {
+  //     return false;
+  //   }
+
+  //   for (let i = 5; i ** 2 <= num; i += 6) {
+  //     if (num % i === 0 || num % (i + 2) === 0) {
+  //       return false;
+  //     }
+
+  //     return true;
+  //   }
+  // };
+
+  // const solveAlgorithm = (p, seqA, seqB) => {
+  //   if (p > seqB.length) {
+  //     throw RangeError('First argument must be less or equal than seqB length');
+  //   } else if (!isPrimeNumber(p)) {
+  //     throw RangeError('First argument must be a prime number');
+  //   }
+
+  //   const cache = {
+  //     include: [],
+  //     exclude: [],
+  //   };
+
+  //   const checkCount = (numToCount) => {
+  //     // indexOf has fast C implemenation in JS engine
+  //     // but benefits of using it here cancel out 50% of a time with random values
+  //     // if (seqB.indexOf(numToCount) === -1) {
+  //     //   return false;
+  //     // }
+
+  //     const count = seqB.reduce(
+  //       (acc, num) => (num === numToCount ? (acc += 1) : acc),
+  //       0
+  //     );
+
+  //     if (count === p) {
+  //       cache.exclude.push(numToCount);
+  //       return true;
+  //     }
+
+  //     cache.include.push(numToCount);
+  //     return false;
+  //   };
+
+  //   const retSeq = seqA.filter((num) => {
+  //     if (cache.exclude.indexOf(num) !== -1) {
+  //       return false;
+  //     } else if (cache.include.indexOf(num) !== -1) {
+  //       return true;
+  //     } else {
+  //       return !checkCount(num);
+  //     }
+  //   });
+
+  //   return retSeq;
+  // };
+
+  // const t0 = Date.now();
+  // const results = solveAlgorithm(P, A, B);
+  // const t1 = Date.now();
+
+  // console.log('*****END******');
+  // console.log(`Results contain ${results.length} numbers, displaying first 20`);
+  // console.log(results.slice(0, 20));
+  // console.log(`TOOK ${t1 - t0}ms`);
+  // const taskFunction = (arr1: number[], arr2: number[]) => {
+  //   const arr123 = arr1.map((number, index) => {
+  //     let counter;
+  //     let result = [];
+  //     for (let i = 0; i < arr2.length; i++) {
+  //       if (
+  //         (number === arr2[i] && counter == 2) ||
+  //         counter == 3 ||
+  //         counter == 5 ||
+  //         counter == 7
+  //       ) {
+  //         counter = counter++;
+  //         console.log(counter);
+  //       } else if (number === arr2[i]) result.push(number);
+  //     }
+  //     return result;
+  //   });
+  //   return arr123.flat();
+  // };
+  // const result = taskFunction(
+  //   [2, 3, 9, 2, 5, 1, 3, 7, 10],
+  //   [2, 1, 3, 4, 3, 10, 6, 6, 1, 7, 10, 10, 10]
+  // );
+  // console.log(result);
   // const sanitizedData = () => ({
   //   __html: DOMPurify.sanitize(recipe.summary),
   // });

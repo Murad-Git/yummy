@@ -1,6 +1,6 @@
 'use client';
 
-import Ingredient from '~/components/recipesComponents/Ingredient';
+import Ingredient from '~/components/recipes/Ingredient';
 
 interface Props {
   ingredients: Ingredient[];

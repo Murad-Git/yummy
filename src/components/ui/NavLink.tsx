@@ -1,22 +1,31 @@
+'use client';
 import Link from 'next/link';
+import { setProfNav } from '~/store/recipesSlice';
+import { useAppDispatch } from '~/types/main';
 
 interface Props {
   category: string;
   isActive: boolean;
-  setCategories?: (prev: string) => void;
+  type?: string;
+  shallow?: boolean;
+  setCategories?: boolean;
   size?: 'lg' | 'xl' | '2xl';
 }
 
 export const NavLink = ({
   category,
   isActive,
+  type,
   setCategories,
+  shallow,
   size = `2xl`,
 }: Props) => {
+  const dispatch = useAppDispatch();
+
   if (setCategories) {
     return (
       <li
-        onClick={() => setCategories(category)}
+        onClick={() => dispatch(setProfNav(category))}
         className={`navLink ${
           !!isActive && `link--active`
         } text-${size} font-semibold`}
@@ -27,7 +36,8 @@ export const NavLink = ({
   }
   return (
     <Link
-      href={`/recipes/${category}`}
+      shallow={shallow}
+      href={`/${type}/${category}`}
       className={`navLink ${
         !!isActive && `navLink--active`
       } text-xl font-semibold`}

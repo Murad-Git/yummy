@@ -4,8 +4,9 @@ import Providers from '@/providers';
 
 import Footer from '~/components/footer/Footer';
 import { Header } from '~/components/header/Header';
+import Container from '~/components/layout/Container';
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -14,9 +15,10 @@ export default function RootLayout({
     <html>
       <head />
       <body className='bg-gray-100'>
+        <div id='overlays' />
         <Providers>
           <Header />
-          {children}
+          <Container>{children}</Container>
         </Providers>
         <Footer />
       </body>
