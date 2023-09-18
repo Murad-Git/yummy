@@ -1,17 +1,10 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { GetServerSidePropsContext } from 'next';
-import { cookies } from 'next/headers';
 import ProfilePage from '~/components/profile/ProfilePage';
-import { Database } from '~/types/database';
 // import { authOptions } from '~/pages/api/auth/[...nextauth]';
 
 export default async function Profile(context: GetServerSidePropsContext) {
   // const session = await getServerSession(authOptions);
-  const supabase = createServerComponentClient<Database>({ cookies });
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
   // const checkCookiesWhenEnter = async () => {
   //   'use server';
   // const data = await getServerSession(authOptions);
@@ -100,8 +93,6 @@ export default async function Profile(context: GetServerSidePropsContext) {
   // console.log(userData.username);
   // console.log('userdata.hash');
   // console.log(userData.hash);
-  {
-    /* @ts-expect-error Server Component */
-  }
-  return <ProfilePage session={session} />;
+  {/* @ts-expect-error Server Component */}
+  return <ProfilePage />;
 }

@@ -6,6 +6,7 @@ import { Field, Form, Formik } from 'formik';
 import { useRouter } from 'next/navigation';
 import { Dispatch, SetStateAction, useState } from 'react';
 import * as Yup from 'yup';
+import { Database } from '~/types/database';
 
 const SignUpSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -13,14 +14,14 @@ const SignUpSchema = Yup.object().shape({
 });
 
 interface Props {
-  setView: Dispatch<SetStateAction<AuthTypes>>;
+  setView: Dispatch<SetStateAction<string>>;
 }
 
 export const SignUp = ({ setView }: Props) => {
   const router = useRouter();
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
-  const supabase = createClientComponentClient();
+  const supabase = createClientComponentClient<Database>();
 
   const handleSignUp = async (formData: formDataType) => {
     if (formData.password && formData.email) {
@@ -36,7 +37,9 @@ export const SignUp = ({ setView }: Props) => {
         : setSuccessMsg(
             'Success! Please check your email for further instructions.'
           );
-      router.refresh();
+      setTimeout(() => {
+        setSuccessMsg('');
+      }, 3000);
     } else setErrorMsg('Failed to signUp');
   };
 
@@ -58,7 +61,7 @@ export const SignUp = ({ setView }: Props) => {
               className={cn('input', errors.email && 'bg-red-50')}
               id='email'
               name='email'
-              placeholder='jane@acme.com'
+              placeholder='test@test.com'
               type='email'
             />
             {errors.email && touched.email ? (
@@ -88,8 +91,10 @@ export const SignUp = ({ setView }: Props) => {
           </Form>
         )}
       </Formik>
-      {errorMsg && <div className='text-red-600'>{errorMsg}</div>}
-      {successMsg && <div className='text-green-500'>{successMsg}</div>}
+      {errorMsg && <p className='text-red-600'>{errorMsg}</p>}
+      {successMsg && (
+        <p className='break-normal text-center text-green-500'>{successMsg}</p>
+      )}
       <button
         className='link w-full'
         type='button'

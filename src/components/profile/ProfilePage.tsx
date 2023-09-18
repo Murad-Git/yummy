@@ -1,32 +1,35 @@
-import {
-  createServerComponentClient,
-  Session,
-} from '@supabase/auth-helpers-nextjs';
-import axios from 'axios';
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
-import ProfileInfo from '~/components/profile/ProfileInfo';
-import ProfileLinks from '~/components/profile/ProfileLinks';
-// import { authOptions } from '~/pages/api/auth/[...nextauth]';
+import { Auth } from '~/components/auth/Auth';
+import Links from '~/components/profile/Links';
+import NavProf from '~/components/profile/NavProf';
 import { Database } from '~/types/database';
+// import { authOptions } from '~/pages/api/auth/[...nextauth]';
 
-interface Props {
-  session: Session | null;
-  children?: React.ReactNode;
-}
-
-export default async function ProfilePage({ session, children }: Props) {
-  const usernameCook = cookies().get('username');
-  const hashCook = cookies().get('hash');
-  console.log(hashCook);
-  console.log(usernameCook);
-  const mealPlanW = await axios(
-    `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&apiKey=${process.env.API_KEY}`
-  );
-  console.log(mealPlanW);
+export default async function ProfilePage() {
+  // const usernameCook = cookies().get('username');
+  // const hashCook = cookies().get('hash');
+  // console.log(hashCook);
+  // console.log(usernameCook);
+  // const mealPlanW = await axios(
+  //   `https://api.spoonacular.com/mealplanner/generate?timeFrame=week&apiKey=${process.env.API_KEY}`
+  // );
+  // const supabase = createServerComponentClient<Database>({ cookies });
+  // const { data:{session} } = await supabase.auth.getSession();
   const supabase = createServerComponentClient<Database>({ cookies });
-  console.log('supabase');
-  console.log(supabase);
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  if (!session) return <Auth />;
+  // const supabase = createServerActionClient({ cookies });
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  const loginDate = new Date(user?.last_sign_in_at || '').toUTCString();
+  // console.log('session');
+  // console.log(session);
   // const myTemps = await axios(
   //   `https://api.spoonacular.com/mealplanner/${usernameCook?.value}/templates/?apiKey=${process.env.API_KEY}&hash=${hashCook?.value}`
   // );
@@ -89,41 +92,50 @@ export default async function ProfilePage({ session, children }: Props) {
   // }
 
   return (
-    <div className='grid grid-cols-6'>
+    <div className='grid grid-cols-1 md:grid-cols-6'>
       {/* <form action={sendAuthRequest}>
         <button>Make Authorization</button>
       </form> */}
       <section className='col-span-1 bg-white p-4'>
-        <div className='flex flex-col items-center justify-start p-2'>
+        <div className='flex md:flex-col items-center justify-start p-2'>
           {/* <form action={checkCookiesWhenEnter}>
             <button>Cookies Button</button>
           </form> */}
           <div className='mr-3 mb-3'>
             <Image
-              className='w-16'
-              src={session?.user?.image || `/images/profile/no-person.png`}
+              className='w-20'
+              src={
+                session?.user.user_metadata.picture ||
+                `/images/profile/no-person.png`
+              }
               width={500}
               height={500}
               alt='avatar'
             />
           </div>
           <div>
-            <h1 className='whitespace-nowrap text-xl font-bold'>
-              Hi, {session?.user?.name || `user`}
+            <h1 className='break-normal text-xl font-bold'>
+              Hi, {session?.user?.user_metadata.name || `user`}
             </h1>
           </div>
         </div>
         <nav className='px-2 py-3'>
-          <ProfileLinks />
+          <Links />
         </nav>
       </section>
-      <section className='col-span-5 bg-white p-4'>
+      <section className='md:col-span-5 bg-white p-4'>
         <div>
           <div>
             <h1 className='text-2xl font-bold'>Personal Information</h1>
-            <p>Some additional information</p>
+            <p>
+              Your email:{' '}
+              <span className='font-semibold'>{session.user.email}</span>
+            </p>
+            <p>
+              Last signed in: <span className='font-semibold'>{loginDate}</span>
+            </p>
           </div>
-          <ProfileInfo mealPlan={mealPlanW.data} />
+          <NavProf />
         </div>
       </section>
     </div>

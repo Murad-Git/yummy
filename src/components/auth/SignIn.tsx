@@ -2,9 +2,10 @@
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import cn from 'classnames';
 import { Field, Form, Formik } from 'formik';
-import { useRouter } from 'next/navigation';
 import { Dispatch, SetStateAction, useState } from 'react';
 import * as Yup from 'yup';
+import { useAuth } from '~/components/auth/AuthProvider';
+import { Oauth } from '~/components/auth/Oauth';
 import { Database } from '~/types/database';
 
 const SignInSchema = Yup.object().shape({
@@ -13,47 +14,14 @@ const SignInSchema = Yup.object().shape({
 });
 
 interface Props {
-  setView: Dispatch<SetStateAction<AuthTypes>>;
+  setView: Dispatch<SetStateAction<string>>;
 }
 
-export const SignIn = ({ setView }: Props) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const router = useRouter();
+export const SignIn = () => {
   const supabase = createClientComponentClient<Database>();
   const [errorMsg, setErrorMsg] = useState('');
-
-  // const handleSignUp = async () => {
-  //   console.log('signUp');
-  //   console.log(email, password);
-
-  //   await supabase.auth.signUp({
-  //     email,
-  //     password,
-  //     options: {
-  //       emailRedirectTo: `${location.origin}/auth/callback`,
-  //     },
-  //   });
-  //   router.refresh();
-  // };
-
-  // const handleSignIn = async () => {
-  //   console.log('signIn');
-
-  //   console.log(email, password);
-  //   const { error } = await supabase.auth.signInWithPassword({
-  //     email,
-  //     password,
-  //   });
-  //   if (error) {
-  //     console.log({ error });
-  //   }
-  // };
-
-  // const handleSignOut = async () => {
-  //   await supabase.auth.signOut();
-  //   router.refresh();
-  // };
+  const [successMsg, setSuccessMsg] = useState('');
+  const { setView } = useAuth();
 
   const handleSignIn = async (formData: formDataType) => {
     if (formData.password && formData.email) {
@@ -61,14 +29,19 @@ export const SignIn = ({ setView }: Props) => {
         email: formData.email,
         password: formData.password,
       });
-      error && setErrorMsg(error.message);
-      router.refresh();
+      error
+        ? setErrorMsg(error.message)
+        : setSuccessMsg('Successfully logged in');
+      setTimeout(() => {
+        setSuccessMsg('');
+      }, 3000);
     } else setErrorMsg('Failed to signIn');
   };
 
   return (
     <div className='auth-card'>
       <h2 className='auth-title w-full text-center'>Sign In</h2>
+      <Oauth setErrorMsg={setErrorMsg} />
       <Formik
         initialValues={{
           email: '',
@@ -126,6 +99,9 @@ export const SignIn = ({ setView }: Props) => {
         )}
       </Formik>
       {errorMsg && <div className='text-red-600'>{errorMsg}</div>}
+      {successMsg && (
+        <p className='break-normal text-center text-green-500'>{successMsg}</p>
+      )}
       <button
         className='link w-full'
         type='button'

@@ -1,14 +1,14 @@
-export const recipesMainPage = [
-  { id: 1, mealType: `american` },
-  { id: 2, mealType: `british` },
-  { id: 3, mealType: `chinese` },
-  { id: 4, mealType: `mexican` },
-  { id: 5, mealType: `european` },
-  { id: 6, mealType: `french` },
-  { id: 7, mealType: `italian` },
-  { id: 8, mealType: `indian` },
-  { id: 9, mealType: `japanese` },
-  { id: 10, mealType: `mediterranean` },
+export const cuisineConst = [
+  { id: 1, cuisineType: `American` },
+  { id: 2, cuisineType: `British` },
+  { id: 3, cuisineType: `Chinese` },
+  { id: 4, cuisineType: `Mexican` },
+  { id: 5, cuisineType: `European` },
+  { id: 6, cuisineType: `French` },
+  { id: 7, cuisineType: `Italian` },
+  { id: 8, cuisineType: `Indian` },
+  { id: 9, cuisineType: `Japanese` },
+  { id: 10, cuisineType: `Mediterranean` },
 ];
 export const recipeGroupItems = 2;
-export const similarRecipes = 1;
+export const similarRecipes = 2;

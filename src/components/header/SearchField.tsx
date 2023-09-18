@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-export const SearchField = () => {
+export const SearchField = ({ className }: { className?: string }) => {
   const router = useRouter();
   const [placeholder, setPlaceholder] = useState('Search...');
 
@@ -28,18 +28,18 @@ export const SearchField = () => {
     router.push(`/search?term=${searchTerm.value}&type=${type.value}`);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div className=' mx-auto flex pt-2 text-gray-600'>
-        <div className='relative'>
+    <form className={`${className} `} onSubmit={handleSubmit}>
+      <div className='mx-auto flex flex-col pt-2 text-gray-600'>
+        <div className='relative mb-3 md:mb-auto'>
           <input
-            className='h-10 rounded-lg border-2 border-gray-300 bg-gray-100 px-5 pr-10 text-sm focus-within:outline-none focus:border-mainColor focus:outline-none focus-visible:outline-none'
+            className='h-10 rounded-lg border-2 border-gray-300 bg-gray-100 px-3 md:px-5 md:pr-10 text-sm focus-within:outline-none focus:border-green-400 focus:outline-none focus-visible:outline-none'
             type='search'
             name='search'
             placeholder={placeholder}
           />
           <button
             type='submit'
-            className='absolute right-0 top-0 mt-[0.8rem] mr-4'
+            className='absolute left-[60%] md:right-0 top-0 mt-[0.8rem] mr-4'
           >
             <svg
               className='h-4 w-4 fill-current text-gray-600'
@@ -61,8 +61,9 @@ export const SearchField = () => {
           </button>
         </div>
         <div>
+          <label htmlFor='searchSelect' />
           <select
-            className='h-10 rounded-lg border-2 border-gray-300 bg-gray-100 px-5 pt-2 text-sm focus-within:outline-none focus:border-mainColor focus:outline-none focus-visible:outline-none'
+            className='h-10 rounded-lg border-2 border-gray-300 bg-gray-100 px-3 md:px-5 pt-2 text-sm focus-within:outline-none focus:border-mainColor focus:outline-none focus-visible:outline-none'
             id='searchSelect'
             name='searchSelect'
             onChange={handleOptionChange}

@@ -18,13 +18,16 @@ export default async function CategoryPage({ params: { category } }: Props) {
 
   const data = await searchRec(undefined, category);
   if (!data) notFound();
+  // console.log(typeof category);
+  // console.log(category[0]);
+  const formCategory = category[0].replace(/[^a-zA-Z ]/g, '');
 
   return (
     <div>
       <Recipes
         recipes={data.results}
         items='four'
-        sectionTitle={`Search results for ${category}`}
+        sectionTitle={`Search results for ${formCategory}`}
       />
     </div>
   );

@@ -12,7 +12,7 @@ const ResetPasswordSchema = Yup.object().shape({
 });
 
 interface Props {
-  setView: Dispatch<SetStateAction<AuthTypes>>;
+  setView: Dispatch<SetStateAction<string>>;
 }
 
 export const ResetPass = ({ setView }: Props) => {
@@ -22,12 +22,19 @@ export const ResetPass = ({ setView }: Props) => {
   const [successMsg, setSuccessMsg] = useState('');
 
   const handleReset = async (formData: formDataType) => {
-    const { error } = await supabase.auth.resetPasswordForEmail(
-      formData?.email,
-      { redirectTo: `${location.origin}/auth/callback` }
-    );
-    if (error) return setErrorMsg(error.message);
-    return setSuccessMsg('Password reset instructions sent.');
+    if (formData.email) {
+      const { error } = await supabase.auth.resetPasswordForEmail(
+        formData?.email,
+        { redirectTo: `${location.origin}/auth/callback` }
+      );
+      if (error) return setErrorMsg(error.message);
+      setSuccessMsg(
+        'Password reset instructions is sent. Check your spam folder'
+      );
+      setTimeout(() => {
+        setSuccessMsg('');
+      }, 3000);
+    } else setErrorMsg('Please provide a password');
   };
   return (
     <div className='auth-card'>
@@ -62,7 +69,9 @@ export const ResetPass = ({ setView }: Props) => {
         )}
       </Formik>
       {errorMsg && <div className='text-center text-red-600'>{errorMsg}</div>}
-      {successMsg && <div className='text-center text-black'>{successMsg}</div>}
+      {successMsg && (
+        <div className='text-center text-green-500'>{successMsg}</div>
+      )}
       <button className='link' type='button' onClick={() => setView('signIn')}>
         Remember your password? Sign In.
       </button>

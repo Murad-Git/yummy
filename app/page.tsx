@@ -1,18 +1,19 @@
 import Loading from '@/loading';
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
 import { Suspense } from 'react';
-import { Database } from '~/types/database';
+import { HeroNav } from '~/components/header/HeroNav';
+import Container from '~/components/layout/Container';
+import HeroRecipes from '~/components/recipes/HeroRecipes';
+import Recipes from '~/components/recipes/Recipes';
+import RecipeScroll from '~/components/recipes/RecipeScroll';
+import RecipesCuisine from '~/components/recipes/RecipesCuisine';
+import { recipes } from '~/constant/recipes';
 
 interface Props {
   params: string;
 }
 
 export default async function HomePage() {
-  const supabase = createServerComponentClient<Database>({ cookies });
-  console.log('from Page.tsx, user:');
-  console.log(await supabase.auth.getUser());
-
+  // console.log(user);
   // const heroData = await fetchRecipes({
   //   recipe: { items: '13', isDynamic: false, random: true },
   // });
@@ -29,9 +30,27 @@ export default async function HomePage() {
   // });
   return (
     <main>
+      <HeroNav />
+      <Container>
+        <section className='py-12'>
+          <Suspense fallback={<Loading />}>
+            <HeroRecipes
+              heroRecipes={recipes.slice(0, 5)}
+              title='What&#39;s new on our table'
+            />
+          </Suspense>
+          <Suspense fallback={<Loading />}>
+            <Recipes sectionTitle='Featured Today' recipes={recipes} />
+          </Suspense>
+          <Suspense fallback={<Loading />}>
+            <RecipeScroll recipes={recipes} title='Ideas for Dinner' />
+          </Suspense>
+          <RecipesCuisine recipes={recipes} />
+        </section>
+      </Container>
       {/* <main className='background-pattern'> */}
-      <section className='py-12'>
-        {/* <Suspense fallback={<Loading />}>
+
+      {/* <Suspense fallback={<Loading />}>
             <HeroRecipes
               heroRecipes={!!heroData && heroData.recipes.slice(0, 5)}
             />
@@ -42,17 +61,17 @@ export default async function HomePage() {
               recipes={heroData.recipes.slice(6, 13)}
             />
           </Suspense> */}
-        {/* <Divider
+      {/* <Divider
           src='/images/divider-img-2.jpg'
           alt='divider'
           className='h-80 w-screen object-cover'
         /> */}
-        {/* <Container> */}
-        <Suspense fallback={<Loading />}>
-          {/* <RecipeScroll recipes={scrollData.results} title='Ideas for Dinner' /> */}
-        </Suspense>
-        {/* <RecipesGroup recipes={groupData.results} /> */}
-      </section>
+      {/* <Container> */}
+
+      {/* <RecipeScroll recipes={scrollData.results} title='Ideas for Dinner' /> */}
+
+      {/* <p>{user || 'no user'}</p> */}
+      {/* <RecipesCuisine recipes={groupData.results} /> */}
     </main>
   );
 }

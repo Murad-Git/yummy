@@ -8,7 +8,7 @@ export const More = () => {
     <div className='flex items-center justify-center rounded-b-sm bg-gray-100 opacity-90 shadow-md hover:opacity-100'>
       <Link href='/'>
         <FontAwesomeIcon
-          className='h-40 font-extralight text-mainColor'
+          className='h-40 font-extralight text-green-500'
           icon={faArrowRight}
           size='10x'
         />

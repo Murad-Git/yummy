@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hero-title {
+    font-family: 'Lora', serif;
+  }
+
+  .navLink {
+    @apply cursor-pointer rounded-full p-4 text-center uppercase decoration-green-400 decoration-2 underline-offset-8 transition-transform duration-200 ease-out hover:scale-110 hover:font-bold hover:underline active:underline;
+  }
+
+.section-title {
+  @apply mb-4 md:mb-20 text-3xl lg:text-4xl font-bold uppercase ;
+}
+  .background {
+    width: 100%;
+    height: calc(100vh/1.2);
+    background-image: url('/images/background/bottom-bg.jpg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+
+    // z-index: -100;
+    &-text {
+      h6 {
+        @apply text-green-400 text-sm font-semibold tracking-wide uppercase;
+      }
+
+      h2 {
+        @apply text-white text-5xl font-bold leading-[44px] mb-4;
+      }
+
+      p {
+        @apply text-gray-400 my-6 tracking-wide;
+      }
+
+      button {
+        @apply bg-green-500 text-white rounded-sm mt-6 py-4 px-8 cursor-pointer hover:bg-green-600;
+      }
+    }
+  }
+}

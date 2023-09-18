@@ -1,29 +1,47 @@
 'use client';
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { faRightToBracket, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  createClientComponentClient,
-  Session,
-} from '@supabase/auth-helpers-nextjs';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Auth } from '~/components/auth/Auth';
+import { useAuth } from '~/components/auth/AuthProvider';
+import { SignOut } from '~/components/auth/SignOut';
 import { Overlay } from '~/components/ui/Overlay';
-import { Database } from '~/types/database';
+// import { Auth } from '~/components/auth/Auth';
+// import { SignOut } from '~/components/auth/SignOut';
+// import { Overlay } from '~/components/ui/Overlay';
+// import { Database } from '~/types/database';
 
-export const UserLogin = ({ session }: { session: Session | null }) => {
+export const UserLogin = () => {
   // const { data: session } = useSession();
-  const supabase = createClientComponentClient<Database>();
   const [showAuth, setShowAuth] = useState(false);
+  // const [session, setSession] = useState<Session | null>(null);
+  const { session } = useAuth();
+  // useEffect(() => {
+  //   const getSession = async () => {
+  //     const {
+  //       data: { session },
+  //     } = await supabase.auth.getSession();
+  //     setSession(session);
+  //   };
+  //   getSession();
+  //   supabase.auth.onAuthStateChange(async() => {
+  //     setUser(await supabase.auth.getUser());
+  //   });
+  // }, []);
+  // console.log('session from userlogin');
+  // console.log(session);
   // const loginHandle = () => {
   //   session ? signOut() : signIn();
   // };
-  const handleLogOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) console.log({ error });
-  };
+  // const handleLogOut = async () => {
+  //   const { error } = await supabase.auth.signOut();
+  //   if (error) console.log({ error });
+  // };
 
   return (
-    <div className='flex items-center justify-around space-x-4'>
+    <div className='flex items-end md:items-center md:justify-around md:space-x-4 flex-col md:flex-row'>
+      {/* <div className='flex items-end md:items-center md:justify-around md:space-x-4 flex-col md:flex-row space-y-2'> */}
       {/* <button
         className='flex h-10 w-10 cursor-pointer flex-col items-center justify-center rounded-full bg-white'
         onClick={loginHandle}
@@ -34,27 +52,29 @@ export const UserLogin = ({ session }: { session: Session | null }) => {
           <FontAwesomeIcon icon={faRightToBracket} />
         )}
       </button> */}
-      {/* {session && (
-        <Link
-          href='/profile'
-          className='flex h-10 w-10 flex-col items-center justify-center rounded-full bg-white'
-        >
-          <FontAwesomeIcon icon={faUser} />
-        </Link>
-      )} */}
+
       {session ? (
-        <button onClick={handleLogOut}>
-          <FontAwesomeIcon icon={faRightToBracket} />
-        </button>
+        <SignOut />
       ) : (
-        <button onClick={() => setShowAuth((prev) => !prev)}>
+        <button
+          className='text-white xl:text-lg transition-all xl:p-3'
+          // className='hover:bg-green-200'
+          onClick={() => setShowAuth((prev) => !prev)}
+        >
           <FontAwesomeIcon icon={faRightToBracket} />
         </button>
       )}
       {showAuth && <Auth />}
       {showAuth && <Overlay onConfirm={setShowAuth} />}
-      {/* <SignIn /> */}
-      {/* <button></button> */}
+      {session && (
+        <Link
+          href='/profile'
+          className='hover:text-white xl:text-lg transition-all xl:p-3'
+          // className='flex h-10 w-10 flex-col items-center justify-center rounded-full p-3 transition-all hover:bg-green-200'
+        >
+          <FontAwesomeIcon icon={faUser} />
+        </Link>
+      )}
     </div>
   );
 };

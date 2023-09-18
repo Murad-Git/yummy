@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .navLink--active {
+    @apply text-lg font-bold underline decoration-green-400 underline-offset-4;
+  }
+  .md-meal-planner-calendar .md-meal-planner-event-title {
+    font-size: 15px;
+  }
+
+  .link--active {
+    @apply font-bold underline decoration-green-400 underline-offset-4;
+  }
+
+  .container {
+    @apply mx-auto w-full px-5 sm:max-w-[540px] md:max-w-[720px] lg:max-w-[1024px] xl:max-w-[1200px] 2xl:max-w-[1400px];
+  }
+
+  .btn {
+    @apply font-bold py-1 px-2 rounded;
+  }
+
+  .btn-blue {
+    @apply bg-blue-500 text-white;
+  }
+
+  .btn-blue:hover {
+    @apply bg-blue-700;
+  }
+
+  .footer__contact {
+    @apply grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6;
+
+    div {
+      @apply space-y-2;
+
+      h2 {
+        @apply text-lg font-bold;
+      }
+    }
+  }
+
+
+  .auth-title {
+    @apply py-4 text-4xl font-black text-gray-800;
+  }
+
+  .auth-card {
+    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-white py-8 px-4 shadow-md sm:min-w-[24rem] sm:px-10 absolute top-[10rem] left-[40%] m-0 z-30;
+  }
+
+  .auth-card-rel {
+    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-white px-4 sm:min-w-[24rem] sm:px-10 m-0;
+  }
+
+  .custom-focus {
+    @apply focus:outline-none focus:ring-offset-0 active:outline-none;
+  }
+
+  .column {
+    @apply flex flex-col items-start justify-center gap-4;
+
+    input {
+      @apply w-full custom-focus rounded-xl border border-slate-300 focus:shadow-none;
+    }
+  }
+
+
+  .landingImage {
+    background-image: url('/images/hero-recipe/recipe-header.jpg');
+    object-fit: cover;
+    height: calc(100vh/2.2);
+    width: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  .nav-links {
+    @apply space-x-2 flex items-center;
+
+    li {
+      @apply font-bold uppercase xl:text-lg cursor-pointer hover:text-white transition-all xl:p-3;
+    }
+  }
+
+  .dropdown-menu {
+    @apply absolute top-20 bg-gray-900 rounded-lg py-3 px-4 opacity-0 invisible -translate-y-5 transition-all;
+
+    // @apply absolute top-24 bg-white rounded-lg py-3 px-5;
+    ul li {
+      @apply py-2 px-0 border-t border-slate-50;
+    }
+
+    &:before {
+      @apply content-none absolute -top-1 right-5 h-5 w-5 bg-white rotate-45
+    }
+  }
+  .dropdown-mobile{
+    @apply py-3 px-4 hidden origin-top opacity-0 transition-all duration-500 space-y-2;
+    ul li{
+      @apply flex my-3;
+      a{
+        @apply text-gray-300 capitalize;
+      }
+    }
+    &--active{
+      @apply origin-center block opacity-100;
+    }
+  }
+
+  .dropdownItem {
+    @apply flex my-3 mx-auto;
+
+    a {
+      @apply max-w-[200px] ml-3 transition-all text-gray-200;
+
+      &:hover {
+        @apply text-white;
+      }
+    }
+  }
+
+  .active {
+    @apply opacity-100 visible translate-y-0 transition-all z-30;
+  }
+}
