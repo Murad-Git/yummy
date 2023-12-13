@@ -1,7 +1,7 @@
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { navMobileList } from '~/constant/nav';
+import { navList } from '~/constant/nav';
 
 // interface Props {
 //   listItems: typeof navRecipes;
@@ -9,7 +9,7 @@ import { navMobileList } from '~/constant/nav';
 //   className?: string;
 // }
 interface Props {
-  menuItem: (typeof navMobileList)[0];
+  menuItem: (typeof navList)[0];
 }
 
 export const DropdownMob = ({ menuItem }: Props) => {
@@ -27,7 +27,7 @@ export const DropdownMob = ({ menuItem }: Props) => {
       </span>
       <ul
         className={`dropdown-mobile ${
-          openNavigation ? 'dropdown-mobile--active' : ''
+          openNavigation ? `dropdown-mobile--active` : ``
         }`}
       >
         {menuItem.subRecipes.map((li) => (

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { recipeGroupItems, similarRecipes } from '~/constant/mainConst';
 
 const keys = process.env.API_KEY2;
@@ -17,12 +16,12 @@ type specificRecipe = {
 interface Props {
   recipe: specificRecipe | RecipesTypes;
 }
-interface userAuth {
-  username: string;
-  firstName: string;
-  lastName: string;
-  email: string | undefined | null;
-}
+// interface userAuth {
+//   username: string;
+//   firstName: string;
+//   lastName: string;
+//   email: string | undefined | null;
+// }
 
 export const makeSlug = (id: number, title: string) => {
   const formatTitle = title
@@ -35,19 +34,19 @@ export const makeSlug = (id: number, title: string) => {
 export const formatMeals = (mealPlan: mealPlanType) => {
   const mealArr: object[] = [];
   Object.values(mealPlan.week).forEach((plan) => mealArr.push(plan));
-  console.log('mealArr');
-  console.log(mealArr);
+  // console.log(`mealArr`);
+  // console.log(mealArr);
   const mealRes = mealArr.flatMap((item) => item);
   return mealRes;
 };
 
 export const formatMeals2 = (meals: mealPlanType) => {
-  console.log('meals');
-  console.log(meals);
+  // console.log(`meals`);
+  // console.log(meals);
   const dateForMeal = (num: number) => {
     const today = new Date();
     return new Date(
-      today.setDate(today.getDate() - today.getDay() + (num + 1))
+      today.setDate(today.getDate() - today.getDay() + (num + 1)),
     ).toISOString();
   };
 
@@ -62,7 +61,7 @@ export const formatMeals2 = (meals: mealPlanType) => {
         resource: index + 1,
         allDay: true,
         link: makeSlug(item.id, item.title),
-      })
+      }),
     );
   }
   return results;
@@ -74,7 +73,7 @@ export const formatMeals2 = (meals: mealPlanType) => {
 
 export const fetchRecipes = async ({ recipe }: Props) => {
   try {
-    if ('id' in recipe && recipe.id) {
+    if (`id` in recipe && recipe.id) {
       const { id, isDynamic } = recipe;
       const request = await fetch(
         `https://api.spoonacular.com/recipes/${id}/information?apiKey=${keys}`,
@@ -84,16 +83,16 @@ export const fetchRecipes = async ({ recipe }: Props) => {
             'Content-Type': `application/json`,
           },
           next: isDynamic ? { revalidate: 0 } : { revalidate: 60 },
-        }
+        },
       );
       const response = await request.json();
       return response;
     }
-    if ('items' in recipe) {
+    if (`items` in recipe) {
       const { items, random, type, value, isDynamic } = recipe;
       const request = await fetch(
         `https://api.spoonacular.com/recipes/${
-          random ? 'random?' : `complexSearch?${type}=${value}&`
+          random ? `random?` : `complexSearch?${type}=${value}&`
         }number=1&apiKey=${keys}`,
         {
           method: `GET`,
@@ -101,7 +100,7 @@ export const fetchRecipes = async ({ recipe }: Props) => {
             'Content-Type': `application/json`,
           },
           next: { revalidate: 60 },
-        }
+        },
       );
       const response = await request.json();
       return response;
@@ -113,13 +112,13 @@ export const fetchRecipes = async ({ recipe }: Props) => {
 
 export const searchRec = async (query?: string, type?: string) => {
   try {
-    if (type === 'ingredients') {
+    if (type === `ingredients`) {
       const searchItems =
-        query && query?.split(',').length > 1
+        query && query?.split(`,`).length > 1
           ? query
-              ?.split(',')
+              ?.split(`,`)
               .map((item) => item.trim())
-              .join(',+')
+              .join(`,+`)
           : query;
       const request = await fetch(
         `
@@ -129,7 +128,7 @@ export const searchRec = async (query?: string, type?: string) => {
           headers: {
             'Content-Type': `application/json`,
           },
-        }
+        },
       );
 
       const response = await request.json();
@@ -145,7 +144,7 @@ export const searchRec = async (query?: string, type?: string) => {
         headers: {
           'Content-Type': `application/json`,
         },
-      }
+      },
     );
     const response = await request.json();
     return response;
@@ -173,17 +172,17 @@ export const fetchSimilar = async (id: string) => {
           headers: {
             'Content-Type': `application/json`,
           },
-        }
+        },
       );
-      console.log('api');
-      console.log(
-        `https://api.spoonacular.com/recipes/${id.trim()}/similar?number=${similarRecipes}&apiKey=${keys}`
-      );
+      // console.log(`api`);
+      // console.log(
+      //   `https://api.spoonacular.com/recipes/${id.trim()}/similar?number=${similarRecipes}&apiKey=${keys}`,
+      // );
       const response = await request.json();
-      console.log('response');
-      console.log(response);
+      // console.log(`response`);
+      // console.log(response);
       return response;
-    } else console.error('no recipe id was provided');
+    } else console.error(`no recipe id was provided`);
   } catch (error) {
     if (error instanceof Error) console.error(error.message);
   }
@@ -196,7 +195,7 @@ export const fetcher = async (cuisine: string) => {
       {
         method: `GET`,
         next: { revalidate: 60 },
-      }
+      },
     );
     const response = await request.json();
     return response;
@@ -205,24 +204,24 @@ export const fetcher = async (cuisine: string) => {
   }
 };
 
-export const userAuth = async ({
-  username,
-  firstName,
-  lastName,
-  email = 'example@goolgle.com',
-}: userAuth) => {
-  try {
-    const requestAuth = await axios.post(
-      `https://api.spoonacular.com/users/connect?apiKey=${keys}`,
-      {
-        username,
-        firstName,
-        lastName,
-        email,
-      }
-    );
-    console.log('requestAuth');
-    console.log(requestAuth);
-    return requestAuth;
-  } catch (error) {}
-};
+// export const userAuth = async ({
+//   username,
+//   firstName,
+//   lastName,
+//   email = `example@goolgle.com`,
+// }: userAuth) => {
+//   try {
+//     const requestAuth = await axios.post(
+//       `https://api.spoonacular.com/users/connect?apiKey=${keys}`,
+//       {
+//         username,
+//         firstName,
+//         lastName,
+//         email,
+//       },
+//     );
+//     console.log(`requestAuth`);
+//     console.log(requestAuth);
+//     return requestAuth;
+//   } catch (error) {}
+// };

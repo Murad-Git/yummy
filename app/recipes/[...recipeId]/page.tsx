@@ -6,7 +6,7 @@ import Container from '~/components/layout/Container';
 import Ingredients from '~/components/recipes/Ingredients';
 import { RecipeHeader } from '~/components/recipes/RecipeHeader';
 import { Similar } from '~/components/recipes/Similar';
-import { Comments } from '~/components/ui/Comments';
+import { CommentsHandler } from '~/components/ui/CommentsHandler';
 import RecipeImg from '~/components/ui/RecipeImg';
 import { recipe as recipeInfo, recipes } from '~/constant/recipes';
 import { makeSlug } from '~/utils/fetch-helpers';
@@ -22,8 +22,31 @@ export default async function RecipePage({ params: { recipeId } }: Props) {
   const calories = recipeInfo.summary.substring(stringEnd - 4, stringEnd - 1);
 
   const description = {
-    __html: `summary` in recipeInfo ? xss(recipeInfo.summary) : '',
+    __html: `summary` in recipeInfo ? xss(recipeInfo.summary) : ``,
   };
+
+  // const onCommentHandle = async (
+  //   formData: React.FormEvent<HTMLFormElement>,
+  //   user: User | null,
+  // ) => {
+  //   formData.preventDefault();
+  //   if (user && user.id) {
+  //     const supabase = createPagesBrowserClient<Database>();
+  //     const { comment } = formData.target as typeof formData.target &
+  //       commentForm;
+  //     const { data, error } = await supabase
+  //       .from(`recipe_comments`)
+  //       .insert({
+  //         user_id: user.id,
+  //         comment_text: comment.value,
+  //         recipe_id: recipeId,
+  //       })
+  //       .select();
+  //     error
+  //       ? console.error(error.message)
+  //       : console.log(`your message was sent ${data.map((item) => item)}`);
+  //   } else alert(`you should be logged in`);
+  // };
   return (
     <div>
       <RecipeHeader recipeName={recipeInfo.title} />
@@ -103,13 +126,13 @@ export default async function RecipePage({ params: { recipeId } }: Props) {
               <ol className='space-y-2'>
                 {recipeInfo.analyzedInstructions[0].steps.map(
                   (recipe, index) => (
-                    <li className='px-4'>
+                    <li key={index} className='px-4'>
                       <span className='mr-3 inline'>{index + 1}.</span>
                       <p className='text-gray-700 leading-[2.5] px-2 text-justify text-md inline'>
                         {recipe.step}
                       </p>
                     </li>
-                  )
+                  ),
                 )}
               </ol>
             </div>
@@ -124,8 +147,12 @@ export default async function RecipePage({ params: { recipeId } }: Props) {
             <Similar title='Similar recipes:' recipes={recipes} />
           </div>
         </section>
-        <section className='mt-6'></section>
-        <Comments recipeId={recipeInfo.id} />
+        <section className='mt-6'>
+          <CommentsHandler
+            recipeId={recipeInfo.id}
+            commentsType='recipe_comments'
+          />
+        </section>
       </Container>
       <div className='mt-5 relative'>
         <div className='background' />

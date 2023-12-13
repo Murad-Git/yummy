@@ -17,7 +17,7 @@ export const Header = () => {
   // } = await supabase.auth.getSession();
   // const session = use(getUserSession())
   return (
-    <div className='bg-gray-900 px-10 py-4 w-screen '>
+    <div className='bg-gray-900 px-10 py-4 w-full '>
       <Nav />
       <NavMobile />
     </div>

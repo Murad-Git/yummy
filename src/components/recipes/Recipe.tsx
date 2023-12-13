@@ -19,7 +19,7 @@ export default function Recipe({ recipe }: Props) {
   //   __html: ``,
   // });
   const anotherDesc = {
-    __html: `summary` in recipe ? DOMPurify.sanitize(recipe.summary) : '',
+    __html: `summary` in recipe ? DOMPurify.sanitize(recipe.summary) : ``,
   };
   // useEffect(() => {
   //   if (`summary` in recipe) {
@@ -53,7 +53,11 @@ export default function Recipe({ recipe }: Props) {
           />
         </Link>
       </div> */}
-      <div className='flex h-48 flex-col items-start justify-between px-3 pb-1 pt-6 hover:bg-gray-100'>
+      <div
+        className={`flex ${
+          anotherDesc.__html.length > 0 ? `h-48` : `h-32`
+        } flex-col items-start justify-between px-3 pb-1 pt-6 hover:bg-gray-100`}
+      >
         {/* <div className='flex h-40 flex-col items-start justify-between px-3 pb-1 pt-6 opacity-80 hover:opacity-100'> */}
         <div className='mb-3 text-left'>
           <Link href={recipeLink}>

@@ -9,9 +9,9 @@ export const Auth = () => {
   //   ('signIn');
   const { view, setView } = useAuth();
   switch (view) {
-    case 'resetPassword':
+    case `resetPassword`:
       return <ResetPass setView={setView} />;
-    case 'signUp':
+    case `signUp`:
       return <SignUp setView={setView} />;
     default:
       return <SignIn />;

@@ -29,5 +29,5 @@ yarn-error.log*
 .vercel
 
 # styling
-.scss
+*.scss
 

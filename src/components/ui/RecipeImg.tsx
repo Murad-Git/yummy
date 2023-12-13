@@ -18,25 +18,25 @@ export default function RecipeImg({ recipe, link }: Props) {
   const { user, usersRecipes } = useAuth();
 
   const addToLiked = async () => {
-    if (user === null) return alert('no need to login first');
+    if (user === null) return alert(`no need to login first`);
     const { id: userId } = user;
     const { data, error } = await supabase
-      .from('recipes2')
+      .from(`liked_recipes`)
       .select()
-      .eq('recipe_id', recipe.id);
-    console.log('data from checking exist');
+      .eq(`recipe_id`, recipe.id);
+    console.log(`data from checking exist`);
     console.log(data);
     if (data === null || data.length === 0) {
       const { data, error } = await supabase
-        .from('recipes2')
+        .from(`liked_recipes`)
         .upsert({ recipe, user_id: userId, recipe_id: recipe.id })
         .select();
       if (error) console.log(console.error(error?.message));
     } else {
       const { error } = await supabase
-        .from('recipes2')
+        .from(`liked_recipes`)
         .delete()
-        .eq('recipe_id', recipe.id);
+        .eq(`recipe_id`, recipe.id);
       console.log(console.error(error?.message));
     }
   };
@@ -55,7 +55,6 @@ export default function RecipeImg({ recipe, link }: Props) {
           height={500}
           width={500}
           alt='product'
-          priority
         />
       </Link>
       <button

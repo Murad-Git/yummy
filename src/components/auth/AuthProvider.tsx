@@ -19,15 +19,15 @@ import {
 } from 'react';
 
 export const EVENTS = {
-  PASSWORD_RECOVERY: 'PASSWORD_RECOVERY',
-  SIGNED_OUT: 'SIGNED_OUT',
-  USER_UPDATED: 'USER_UPDATED',
+  PASSWORD_RECOVERY: `PASSWORD_RECOVERY`,
+  SIGNED_OUT: `SIGNED_OUT`,
+  USER_UPDATED: `USER_UPDATED`,
 };
 
 export const VIEWS = {
-  SIGN_IN: 'signIn',
-  SIGN_UP: 'signUp',
-  FORGOTTEN_PASSWORD: 'resetPassword',
+  SIGN_IN: `signIn`,
+  SIGN_UP: `signUp`,
+  FORGOTTEN_PASSWORD: `resetPassword`,
   // MAGIC_LINK: 'magic_link',
   // UPDATE_PASSWORD: 'update_password',
 };
@@ -38,7 +38,8 @@ type AuthContextState = {
   user: User | null;
   view: string;
   usersRecipes: Recipe[] | [];
-  comments: Comment[] | [];
+  recipeComments: RecipeComment[] | [];
+  blogComments: RecipeComment[] | [];
   setView: Dispatch<SetStateAction<string>>;
   signOut: () => Promise<{
     error: AuthError | null;
@@ -50,10 +51,11 @@ const contextDefaultValues: AuthContextState = {
   initial: true,
   session: null,
   user: null,
-  view: 'signIn',
+  view: `signIn`,
   usersRecipes: [],
-  comments: [],
-  setView: () => {},
+  recipeComments: [],
+  blogComments: [],
+  setView: () => ``,
   signOut: async () => {
     return { error: null };
   },
@@ -72,7 +74,10 @@ export const AuthProvider = ({
   const [initial, setInitial] = useState(true);
   const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<User | null>(null);
-  const [comments, setComments] = useState<Comment[] | []>([]);
+  const [recipeComments, setRecipeComments] = useState<RecipeComment[] | []>(
+    [],
+  );
+  const [blogComments, setBlogComments] = useState<RecipeComment[] | []>([]);
   const [usersRecipes, setUsersRecipes] = useState<Recipe[] | []>([]);
   const [view, setView] = useState<string>(VIEWS.SIGN_IN);
   const router = useRouter();
@@ -98,13 +103,14 @@ export const AuthProvider = ({
       }
       setSession(currentSession);
       setUser(currentSession?.user ?? null);
-      console.log('user');
-      console.log(currentSession?.user);
-      if (currentSession?.user && currentSession?.user !== undefined) {
-        const { id: userId } = currentSession?.user;
-        const unsubscribe = realtime<RecipeSupabase>(supabase)
-          .from('recipes2')
-          .eq('user_id', userId)
+      // console.log('user');
+      // console.log(currentSession?.user);
+      if (currentSession?.user && currentSession?.user.id !== undefined) {
+        const userId = currentSession?.user.id;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const liked_recipes = realtime<RecipeSupabase>(supabase)
+          .from(`liked_recipes`)
+          .eq(`user_id`, userId)
           .subscribe((snap) => {
             const recList = snap.data.map((item) => item.recipe);
             setUsersRecipes(recList);
@@ -120,11 +126,25 @@ export const AuthProvider = ({
         //     }
         //   )
         //   .subscribe();
-        const unsubscripbeComm = realtime<Comment>(supabase)
-          .from('comments')
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const recipe_comments = realtime<RecipeComment>(supabase)
+          .from(`recipe_comments`)
           .subscribe((snap) => {
-            setComments(snap.data);
+            setRecipeComments(snap.data);
           });
+        const blog_comments = realtime<RecipeComment>(supabase)
+          .from(`blog_comments`)
+          .subscribe((snap) => {
+            setBlogComments(snap.data);
+          });
+        console.log(`blogComments`);
+        console.log(blogComments);
+        //             const query = `*[_type== 'comment' && post._ref == "${blogId}"][0]{
+        //       comment,
+        //         name,
+        //         "created":_createdAt
+        // }`;
+        //         client.fetch()
       }
 
       switch (event) {
@@ -153,10 +173,20 @@ export const AuthProvider = ({
       view,
       setView,
       usersRecipes,
-      comments,
+      recipeComments,
+      blogComments,
       signOut: () => supabase.auth.signOut(),
     };
-  }, [initial, session, user, view, usersRecipes, comments]);
+  }, [
+    initial,
+    session,
+    user,
+    view,
+    usersRecipes,
+    recipeComments,
+    blogComments,
+    supabase.auth,
+  ]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
@@ -164,7 +194,7 @@ export const AuthProvider = ({
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error(`useAuth must be used within an AuthProvider`);
   }
   return context;
 };

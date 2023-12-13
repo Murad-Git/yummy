@@ -8,19 +8,6 @@ interface Props {
 export const CuisineDrop = ({ onCuisine }: Props) => {
   const handleOptionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     onCuisine(e.target.value);
-    // switch (e.target.value) {
-    //   case 'recipe':
-    //     console.log('Search...');
-    //     break;
-    //   case 'ingredients':
-    //     console.log('apples, flour, sugar');
-    //     break;
-    //   case 'all':
-    //     console.log('Recipes, articles, videos, ingredients, etc...');
-    //     break;
-    //   default:
-    //     console.log('Search...');
-    // }
   };
   return (
     <div className='md:hidden mb-4 mt-2'>

@@ -16,7 +16,7 @@ export default function Recipes({
   // const { recipes } = recipesData;
 
   return (
-    <section className='py-4'>
+    <section className='my-10'>
       {!!sectionTitle && <h1 className='section-title'>{sectionTitle}</h1>}
       {/* <div className='grid grid-cols-fluid- gap-6'> */}
       <div

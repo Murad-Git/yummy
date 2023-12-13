@@ -8,10 +8,6 @@ import RecipeScroll from '~/components/recipes/RecipeScroll';
 import RecipesCuisine from '~/components/recipes/RecipesCuisine';
 import { recipes } from '~/constant/recipes';
 
-interface Props {
-  params: string;
-}
-
 export default async function HomePage() {
   // console.log(user);
   // const heroData = await fetchRecipes({
@@ -36,6 +32,7 @@ export default async function HomePage() {
           <Suspense fallback={<Loading />}>
             <HeroRecipes
               heroRecipes={recipes.slice(0, 5)}
+              // eslint-disable-next-line prettier/prettier
               title='What&#39;s new on our table'
             />
           </Suspense>

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { UserLogin } from '~/components/header/UserLogin';
 import { DropdownMob } from '~/components/ui/DropdownMob';
 import { Overlay } from '~/components/ui/Overlay';
-import { navMobileList } from '~/constant/nav';
+import { navList } from '~/constant/nav';
 
 export const NavMobile = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -32,8 +32,8 @@ export const NavMobile = () => {
         </button>
       </div> */}
       <div
-        className={`absolute z-50 h-screen w-3/5 top-0 bg-gray-900 transition-all duration-300 px-10 py-4 ${
-          openNav ? 'right-0 opacity-100' : '-right-full opacity-0'
+        className={`absolute z-50 h-screen w-3/5 top-0 bg-gray-900 transition-all duration-300 px-10 py-4 block md:hidden ${
+          openNav ? `right-0 opacity-100` : `-right-full opacity-0`
         }`}
       >
         <button className='mr-2' onClick={() => setOpenNav((prev) => !prev)}>
@@ -41,7 +41,7 @@ export const NavMobile = () => {
         </button>
         <div className='text-gray-200 pr-4 pt-12'>
           <ul className='space-y-5 text-xl'>
-            {navMobileList.map((menuItem) => (
+            {navList.map((menuItem) => (
               <DropdownMob key={menuItem.id} menuItem={menuItem} />
             ))}
             <li>Blog</li>

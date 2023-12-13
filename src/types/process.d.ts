@@ -51,7 +51,7 @@ interface Ingredient {
   };
 }
 
-interface Comment {
+interface RecipeComment {
   created_at: string;
   user_id: string;
   comment_text: string;
@@ -133,41 +133,7 @@ interface searchResult {
   image: string;
   imageType: string;
 }
-// interface pubTemp {
-//   id: number;
-//   name: string;
-// }
-// interface userTemps {
-//   id: number;
-//   name: string;
-//   days: {
-//     nutritionSummary: tempInfo[];
-//     nutritionSummaryBreakfast: tempInfo[];
-//     nutritionSummaryLunch: tempInfo[];
-//     nutritionSummaryDinner: tempInfo[];
-//   }[];
-//   day: string;
-//   items: {
-//     id: number;
-//     slot: number;
-//     position: number;
-//     type: 'RECIPE';
-//     value: {
-//       id: number;
-//       title: 'Double Chocolate Protein Cookies';
-//       imageType: 'jpg';
-//     };
-//   }[];
-// }
 
-// type tempInfo = {
-//   nutrients: {
-//     name: string;
-//     amount: number;
-//     unit: string;
-//     percentOfDailyNeeds: number;
-//   };
-// };
 type mealType = {
   id: number;
   imageType: 'jpg';

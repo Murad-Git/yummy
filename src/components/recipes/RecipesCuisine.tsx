@@ -15,7 +15,7 @@ export default function RecipesCuisine({ recipes }: Props) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [currentCuisine, setCurrentCuisine] = useState(
-    cuisineConst[0].cuisineType
+    cuisineConst[0].cuisineType,
   );
 
   const cuisineHandle = (cuisine: string) => {

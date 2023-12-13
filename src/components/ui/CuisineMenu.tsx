@@ -6,7 +6,7 @@ interface Props {
 
 export const CuisineMenu = ({ onCuisine }: Props) => {
   const [currentCategory, setCurrentCuisine] = useState(
-    cuisineConst[0].cuisineType
+    cuisineConst[0].cuisineType,
   );
   const handleCurrentCuisine = (cuisine: string) => {
     setCurrentCuisine(cuisine);

@@ -5,8 +5,7 @@ import axios from 'axios';
 import { Suspense, useEffect, useState } from 'react';
 import Recipes from '~/components/recipes/Recipes';
 import { NavButton } from '~/components/ui/NavButton';
-import { recipesMainPage } from '~/constant/mainConst';
-import { recipesMainPage2 } from '~/constant/typesConts';
+import { cuisineConst } from '~/constant/mainConst';
 
 interface Props {
   recipes: searchResult[];
@@ -16,14 +15,14 @@ export default function RecipesGroup({ recipes }: Props) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [currentCategory, setCurrentCategory] = useState(
-    recipesMainPage[0].mealType
+    cuisineConst[0].cuisineType,
   );
 
   useEffect(() => {
     const dataFetch = async () => {
       try {
         setLoading(true);
-        const data = await axios.post('/api/hello', { currentCategory });
+        const data = await axios.post(`/api/hello`, { currentCategory });
 
         if (!data) return <p>No data was found</p>;
         setData(data.data.results);
@@ -43,12 +42,12 @@ export default function RecipesGroup({ recipes }: Props) {
     <div className='menu'>
       <h1 className='section-title'>cuisine</h1>
       <ul className='mb-10 flex flex-wrap items-center space-x-3 overflow-hidden'>
-        {recipesMainPage2.map((category) => (
+        {cuisineConst.map((category) => (
           <NavButton
-            item={category}
-            key={category}
+            item={category.cuisineType}
+            key={category.id}
             setCategories={setCurrentCategory}
-            isActive={currentCategory === category}
+            isActive={currentCategory === category.cuisineType}
           />
         ))}
       </ul>

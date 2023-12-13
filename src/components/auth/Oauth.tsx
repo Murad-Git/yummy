@@ -11,22 +11,22 @@ export const Oauth = ({ setErrorMsg }: Props) => {
     let url =
       process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
       process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
-      'http://localhost:3000/';
+      `http://localhost:3000/`;
     // Make sure to include `https://` when not localhost.
-    url = url.includes('http') ? url : `https://${url}`;
+    url = url.includes(`http`) ? url : `https://${url}`;
     // Make sure to include a trailing `/`.
-    url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;
+    url = url.charAt(url.length - 1) === `/` ? url : `${url}/`;
     return url;
   };
 
   const handleGoogle = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
+      provider: `google`,
       options: {
         redirectTo: getURL(),
         queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
+          access_type: `offline`,
+          prompt: `consent`,
         },
       },
     });
@@ -35,12 +35,12 @@ export const Oauth = ({ setErrorMsg }: Props) => {
   };
   const handleFB = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'facebook',
+      provider: `facebook`,
       options: {
         redirectTo: getURL(),
         queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
+          access_type: `offline`,
+          prompt: `consent`,
         },
       },
     });
@@ -49,12 +49,12 @@ export const Oauth = ({ setErrorMsg }: Props) => {
   };
   const handleGH = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
+      provider: `github`,
       options: {
         redirectTo: getURL(),
         queryParams: {
-          access_type: 'offline',
-          prompt: 'consent',
+          access_type: `offline`,
+          prompt: `consent`,
         },
       },
     });

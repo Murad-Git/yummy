@@ -6,6 +6,7 @@
   .navLink--active {
     @apply text-lg font-bold underline decoration-green-400 underline-offset-4;
   }
+
   .md-meal-planner-calendar .md-meal-planner-event-title {
     font-size: 15px;
   }
@@ -69,7 +70,7 @@
 
 
   .landingImage {
-    background-image: url('/images/hero-recipe/recipe-header.jpg');
+    background-image: url('/images/hero/recipe-header.jpg');
     object-fit: cover;
     height: calc(100vh/2.2);
     width: 100%;
@@ -78,7 +79,7 @@
   }
 
   .nav-links {
-    @apply space-x-2 flex items-center;
+    @apply space-x-2 flex items-center text-gray-200;
 
     li {
       @apply font-bold uppercase xl:text-lg cursor-pointer hover:text-white transition-all xl:p-3;
@@ -86,41 +87,53 @@
   }
 
   .dropdown-menu {
-    @apply absolute top-20 bg-gray-900 rounded-lg py-3 px-4 opacity-0 invisible -translate-y-5 transition-all;
+    @apply absolute bg-gray-900 rounded-lg py-3 px-4 z-40 -translate-y-5 transition-all hidden top-20;
+    // @apply absolute top-20 bg-gray-900 rounded-lg py-3 px-4 opacity-0 invisible z-30 -translate-y-5 transition-all hover:opacity-100 hover:visible;
 
     // @apply absolute top-24 bg-white rounded-lg py-3 px-5;
-    ul li {
-      @apply py-2 px-0 border-t border-slate-50;
-    }
+    // ul li {
+    //   @apply py-2 px-0 border-t border-slate-50 my-3 mx-auto;  
+    //     a {
+    //       @apply max-w-[200px] ml-3 transition-all text-gray-200 hover:text-white ;
+    //     }
+    // }
 
     &:before {
       @apply content-none absolute -top-1 right-5 h-5 w-5 bg-white rotate-45
     }
+
+    .dropdownItem {
+      @apply hover:bg-gray-500;
+
+      li {
+        @apply py-2 px-0 border-t border-slate-50 my-3 mx-auto;
+
+        a {
+          @apply max-w-[200px] ml-3 transition-all text-gray-200 hover:text-white;
+        }
+      }
+    }
   }
-  .dropdown-mobile{
+
+  .dropdown-mobile {
     @apply py-3 px-4 hidden origin-top opacity-0 transition-all duration-500 space-y-2;
-    ul li{
+
+    ul li {
       @apply flex my-3;
-      a{
+
+      a {
         @apply text-gray-300 capitalize;
       }
     }
-    &--active{
+
+    &--active {
       @apply origin-center block opacity-100;
     }
   }
 
-  .dropdownItem {
-    @apply flex my-3 mx-auto;
+  // .dropdownItem {
 
-    a {
-      @apply max-w-[200px] ml-3 transition-all text-gray-200;
-
-      &:hover {
-        @apply text-white;
-      }
-    }
-  }
+  // }
 
   .active {
     @apply opacity-100 visible translate-y-0 transition-all z-30;

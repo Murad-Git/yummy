@@ -1,15 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['spoonacular.com', 'lh3.googleusercontent.com'],
+    domains: ['spoonacular.com', 'lh3.googleusercontent.com', 'cdn.sanity.io'],
   },
   // eslint: {
   //   dirs: ['src', 'app'],
   // },
-  experimental: {
-    appDir: true,
-    serverActions: true,
-  },
   reactStrictMode: true,
   swcMinify: true,
 };

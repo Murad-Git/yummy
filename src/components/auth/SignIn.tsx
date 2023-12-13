@@ -9,8 +9,8 @@ import { Oauth } from '~/components/auth/Oauth';
 import { Database } from '~/types/database';
 
 const SignInSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().required('Required'),
+  email: Yup.string().email(`Invalid email`).required(`Required`),
+  password: Yup.string().required(`Required`),
 });
 
 interface Props {
@@ -19,8 +19,8 @@ interface Props {
 
 export const SignIn = () => {
   const supabase = createClientComponentClient<Database>();
-  const [errorMsg, setErrorMsg] = useState('');
-  const [successMsg, setSuccessMsg] = useState('');
+  const [errorMsg, setErrorMsg] = useState(``);
+  const [successMsg, setSuccessMsg] = useState(``);
   const { setView } = useAuth();
 
   const handleSignIn = async (formData: formDataType) => {
@@ -31,11 +31,11 @@ export const SignIn = () => {
       });
       error
         ? setErrorMsg(error.message)
-        : setSuccessMsg('Successfully logged in');
+        : setSuccessMsg(`Successfully logged in`);
       setTimeout(() => {
-        setSuccessMsg('');
+        setSuccessMsg(``);
       }, 3000);
-    } else setErrorMsg('Failed to signIn');
+    } else setErrorMsg(`Failed to signIn`);
   };
 
   return (
@@ -44,8 +44,8 @@ export const SignIn = () => {
       <Oauth setErrorMsg={setErrorMsg} />
       <Formik
         initialValues={{
-          email: '',
-          password: '',
+          email: ``,
+          password: ``,
         }}
         validationSchema={SignInSchema}
         onSubmit={handleSignIn}
@@ -55,8 +55,8 @@ export const SignIn = () => {
             <label htmlFor='email'>Email</label>
             <Field
               className={cn(
-                'input',
-                errors.email && touched.email && 'bg-red-50'
+                `input`,
+                errors.email && touched.email && `bg-red-50`,
               )}
               id='email'
               name='email'
@@ -70,8 +70,8 @@ export const SignIn = () => {
             <label htmlFor='email'>Password</label>
             <Field
               className={cn(
-                'input',
-                errors.password && touched.password && 'bg-red-50'
+                `input`,
+                errors.password && touched.password && `bg-red-50`,
               )}
               id='password'
               name='password'
@@ -84,7 +84,7 @@ export const SignIn = () => {
             <button
               className='link btn w-full'
               type='button'
-              onClick={() => setView('resetPassword')}
+              onClick={() => setView(`resetPassword`)}
             >
               Forgot your password?
             </button>
@@ -105,7 +105,7 @@ export const SignIn = () => {
       <button
         className='link w-full'
         type='button'
-        onClick={() => setView('signUp')}
+        onClick={() => setView(`signUp`)}
       >
         Don&apos;t have an account? Sign Up.
       </button>

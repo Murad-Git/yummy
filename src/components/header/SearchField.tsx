@@ -4,21 +4,21 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 
 export const SearchField = ({ className }: { className?: string }) => {
   const router = useRouter();
-  const [placeholder, setPlaceholder] = useState('Search...');
+  const [placeholder, setPlaceholder] = useState(`Search...`);
 
   const handleOptionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     switch (e.target.value) {
-      case 'recipe':
-        setPlaceholder('Search...');
+      case `recipe`:
+        setPlaceholder(`Search...`);
         break;
-      case 'ingredients':
-        setPlaceholder('apples, flour, sugar');
+      case `ingredients`:
+        setPlaceholder(`apples, flour, sugar`);
         break;
-      case 'all':
-        setPlaceholder('Recipes, articles, videos, ingredients, etc...');
+      case `all`:
+        setPlaceholder(`Recipes, articles, videos, ingredients, etc...`);
         break;
       default:
-        setPlaceholder('Search...');
+        setPlaceholder(`Search...`);
     }
   };
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
