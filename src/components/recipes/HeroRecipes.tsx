@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { makeSlug } from '~/utils/fetch-helpers';
+import { makeSlug } from '~/utils/helpers';
 
 interface Props {
   heroRecipes: Recipe[];

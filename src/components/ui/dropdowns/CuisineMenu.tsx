@@ -12,16 +12,13 @@ export const CuisineMenu = ({ onCuisine }: Props) => {
     setCurrentCuisine(cuisine);
     onCuisine(cuisine);
   };
-  // const onChangeCategory = (item: string) => {
-  //   setCategories(item);
-  // };
   return (
     <ul className='mb-10 md:flex flex-wrap items-center space-x-3 overflow-hidden hidden'>
       {cuisineConst.map((cuisine) => (
         <li
           key={cuisine.id}
           onClick={() => handleCurrentCuisine(cuisine.cuisineType)}
-          className={`navLink ${
+          className={`navLink capitalize ${
             currentCategory === cuisine.cuisineType && `link--active`
           } text-2xl font-semibold`}
         >
@@ -30,14 +27,4 @@ export const CuisineMenu = ({ onCuisine }: Props) => {
       ))}
     </ul>
   );
-  // return (
-  //   <li
-  //     onClick={() => onChangeCategory(item)}
-  //     className={`navLink ${
-  //       !!isActive && `link--active`
-  //     } text-2xl font-semibold`}
-  //   >
-  //     {item}
-  //   </li>
-  // );
 };

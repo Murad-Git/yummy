@@ -3,12 +3,12 @@
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import cn from 'classnames';
 import { Field, Form, Formik } from 'formik';
-import { useRouter } from 'next/navigation';
 import { Dispatch, SetStateAction, useState } from 'react';
 import * as Yup from 'yup';
+import { Button } from '~/components/ui/Button';
 
 const ResetPasswordSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Required'),
+  email: Yup.string().email(`Invalid email`).required(`Required`),
 });
 
 interface Props {
@@ -16,41 +16,37 @@ interface Props {
 }
 
 export const ResetPass = ({ setView }: Props) => {
-  const router = useRouter();
   const supabase = createClientComponentClient();
-  const [errorMsg, setErrorMsg] = useState('');
-  const [successMsg, setSuccessMsg] = useState('');
+  const [errorMsg, setErrorMsg] = useState(``);
+  const [successMsg, setSuccessMsg] = useState(``);
 
   const handleReset = async (formData: formDataType) => {
     if (formData.email) {
       const { error } = await supabase.auth.resetPasswordForEmail(
         formData?.email,
-        { redirectTo: `${location.origin}/auth/callback` }
+        { redirectTo: `http://localhost:3000/profile/update` },
       );
       if (error) return setErrorMsg(error.message);
-      setSuccessMsg(
-        'Password reset instructions is sent. Check your spam folder'
-      );
-      setTimeout(() => {
-        setSuccessMsg('');
-      }, 3000);
-    } else setErrorMsg('Please provide a password');
+      setSuccessMsg(`Instructions were sent. Check your spam folder`);
+    } else setErrorMsg(`Please provide a password`);
   };
   return (
     <div className='auth-card'>
       <h2 className='auth-title w-full text-center'>Forgot Password</h2>
       <Formik
         initialValues={{
-          email: '',
+          email: ``,
         }}
         validationSchema={ResetPasswordSchema}
         onSubmit={handleReset}
       >
         {({ errors, touched }) => (
           <Form className='column w-full'>
-            <label htmlFor='email'>Email</label>
+            <label className='text-gray-800' htmlFor='email'>
+              Email
+            </label>
             <Field
-              className={cn('input', errors.email && 'bg-red-50')}
+              className={cn(`input`, errors.email && `border-red-50`)}
               id='email'
               name='email'
               placeholder='jane@acme.com'
@@ -59,22 +55,38 @@ export const ResetPass = ({ setView }: Props) => {
             {errors.email && touched.email ? (
               <div className='text-red-600'>{errors.email}</div>
             ) : null}
-            <button
+            <Button bType='btn-filled' className='w-full' type='submit'>
+              Send Instructions
+            </Button>
+            {/* <button
               className='button-inverse btn btn-blue w-full'
               type='submit'
             >
               Send Instructions
-            </button>
+            </button> */}
           </Form>
         )}
       </Formik>
       {errorMsg && <div className='text-center text-red-600'>{errorMsg}</div>}
       {successMsg && (
-        <div className='text-center text-green-500'>{successMsg}</div>
+        <Button type='button' bType='btn-green-outline'>
+          {successMsg}
+        </Button>
+        // <div className='w-fit text-center text-sm text-green-500'>
+        //   {successMsg}
+        // </div>
       )}
-      <button className='link' type='button' onClick={() => setView('signIn')}>
+      <Button
+        bType='btn-outline'
+        className='w-full'
+        type='submit'
+        onClick={() => setView(`signIn`)}
+      >
+        Sign In
+      </Button>
+      {/* <button className='link' type='button' onClick={() => setView(`signIn`)}>
         Remember your password? Sign In.
-      </button>
+      </button> */}
     </div>
   );
 };

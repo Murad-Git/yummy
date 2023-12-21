@@ -1,14 +1,28 @@
 export const cuisineConst = [
-  { id: 1, cuisineType: `American` },
-  { id: 2, cuisineType: `British` },
-  { id: 3, cuisineType: `Chinese` },
-  { id: 4, cuisineType: `Mexican` },
-  { id: 5, cuisineType: `European` },
-  { id: 6, cuisineType: `French` },
-  { id: 7, cuisineType: `Italian` },
-  { id: 8, cuisineType: `Indian` },
-  { id: 9, cuisineType: `Japanese` },
-  { id: 10, cuisineType: `Mediterranean` },
+  { id: 1, cuisineType: `american` },
+  { id: 2, cuisineType: `british` },
+  { id: 3, cuisineType: `chinese` },
+  { id: 4, cuisineType: `mexican` },
+  { id: 5, cuisineType: `european` },
+  { id: 6, cuisineType: `french` },
+  { id: 7, cuisineType: `italian` },
+  { id: 8, cuisineType: `indian` },
+  { id: 9, cuisineType: `japanese` },
+  { id: 10, cuisineType: `mediterranean` },
 ];
-export const recipeGroupItems = 2;
-export const similarRecipes = 2;
+
+export const profileLinks: ProfileLinks[] = [
+  `Personal Info`,
+  `Your Favourite Recipes`,
+];
+
+export const searchResults = 4;
+export const similarRecipes = 4;
+
+export const footerItems = [
+  `Lorem ipsum`,
+  `Praesent pretium`,
+  `Pellentesque`,
+  `Aliquam`,
+  `Lorem ipsum`,
+];

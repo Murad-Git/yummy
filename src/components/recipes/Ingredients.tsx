@@ -12,7 +12,7 @@ export default function Ingredients({ ingredients, servings }: Props) {
     (elem, index, self) =>
       self.findIndex((t) => {
         return t.nameClean === elem.nameClean;
-      }) === index
+      }) === index,
   );
   return (
     <div className='bg-black py-10 px-6 text-white relative z-30 -mt-24'>
@@ -28,15 +28,4 @@ export default function Ingredients({ ingredients, servings }: Props) {
       </ul>
     </div>
   );
-  // return (
-  //   <div>
-  //     <h3 className='text-md my-2'>2 Servings</h3>
-  //     <ul>
-  //       {!!ingredients &&
-  //         ingredients.map((ingredient) => (
-  //           <Ingredient key={ingredient.id} ingredient={ingredient} />
-  //         ))}
-  //     </ul>
-  //   </div>
-  // );
 }

@@ -13,6 +13,8 @@ export const Auth = () => {
       return <ResetPass setView={setView} />;
     case `signUp`:
       return <SignUp setView={setView} />;
+    case ``:
+      return null;
     default:
       return <SignIn />;
   }

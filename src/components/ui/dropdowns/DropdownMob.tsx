@@ -3,17 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { navList } from '~/constant/nav';
 
-// interface Props {
-//   listItems: typeof navRecipes;
-//   isOpen?: boolean;
-//   className?: string;
-// }
 interface Props {
   menuItem: (typeof navList)[0];
 }
 
 export const DropdownMob = ({ menuItem }: Props) => {
-  // export const DropdownMob = ({ listItems, isOpen, className }: Props) => {
   const [openNavigation, setOpenNavigation] = useState(false);
   return (
     <li key={menuItem.id} onClick={() => setOpenNavigation((prev) => !prev)}>
@@ -32,24 +26,10 @@ export const DropdownMob = ({ menuItem }: Props) => {
       >
         {menuItem.subRecipes.map((li) => (
           <li key={li.id}>
-            <a href='#' className='capitalize'>
-              {li.text}
-            </a>
+            <button className='capitalize'>{li.text}</button>
           </li>
         ))}
       </ul>
     </li>
   );
-  // return (
-  //   <ul
-  //     className={`dropdown-mobile ${
-  //       !!isOpen && 'dropdown-mobile--active'
-  //     } ${className}`}
-  //   >
-  //     {listItems.map((li) => (
-  //       <li key={li.id}>{li.text}</li>
-  //     ))}
-  //     {/* <li>pizza</li> */}
-  //   </ul>
-  // );
 };

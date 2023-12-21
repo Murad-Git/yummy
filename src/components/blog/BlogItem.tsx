@@ -5,8 +5,6 @@ interface Props {
   post: Blog;
 }
 export const BlogItem = ({ post }: Props) => {
-  console.log(`post`);
-  console.log(post);
   return (
     <div className='shadow-md rounded-b-sm max-w-lg'>
       <Link href={`/blog/${post.slug}`}>

@@ -58,11 +58,11 @@ export default function RecipeImg({ recipe, link }: Props) {
         />
       </Link>
       <button
-        className='icons absolute right-3 top-4 mb-3 flex h-16 w-16 flex-col items-center justify-center rounded-full bg-gray-100 '
+        className='icons absolute right-3 top-4 mb-3 flex h-10 w-10 md:h-16 md:w-16 flex-col items-center justify-center rounded-full bg-gray-100 '
         onClick={addToLiked}
       >
         <FontAwesomeIcon
-          className='h-8 text-green-500 transition-all duration-200'
+          className='h-6 md:h-8 text-green-500 transition-all duration-200'
           size='2x'
           icon={isLiked ? solidHeart : faHeart}
         />

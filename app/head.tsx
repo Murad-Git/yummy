@@ -1,10 +1,10 @@
 export default function Head() {
   return (
     <>
-      <title>Home Page</title>
+      <title>Yummy Recipes</title>
       <meta content='width=device-width, initial-scale=1' name='viewport' />
-      <meta name='description' content='Yummy recipes page' />
-      <link rel='icon' href='/favicon.ico' />
+      <meta name='description' content='Yummy recipes' />
+      <link rel='icon' href='/logo/restaurant.png' />
     </>
   );
 }

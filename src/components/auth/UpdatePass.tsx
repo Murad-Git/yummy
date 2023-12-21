@@ -5,47 +5,72 @@ import { Field, Form, Formik } from 'formik';
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { useAuth } from '~/components/auth/AuthProvider';
+import { Button } from '~/components/ui/Button';
 import { Database } from '~/types/database';
 
 const UpdatePassSchema = Yup.object().shape({
-  password: Yup.string().required('Required'),
+  password: Yup.string().required(`Required`),
 });
 
 export const UpdatePass = () => {
   const supabase = createClientComponentClient<Database>();
-  const [errorMsg, setErrorMsg] = useState('');
-  const [successMsg, setSuccessMsg] = useState('');
-  console.log('supabase');
-  console.log(supabase);
+  // const supabase = createBrowserClient(
+  //   process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  //   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  // );
+  const [errorMsg, setErrorMsg] = useState(``);
+  const [successMsg, setSuccessMsg] = useState(``);
   const { setView } = useAuth();
 
   const handleUpdatePass = async (formData: formDataType) => {
     if (formData.password) {
       const { error } = await supabase.auth.updateUser({
+        email: formData.email,
         password: formData.password,
       });
       error
         ? setErrorMsg(error.message)
-        : setSuccessMsg('Success! Please use your new password to login');
-    } else setErrorMsg('Failed to update the password');
+        : setSuccessMsg(`Success! Please use your new password to login`);
+    } else setErrorMsg(`Failed to update the password`);
   };
   return (
     <div className='auth-card-rel w-[40%] border-none'>
-      <h2 className='auth-title w-full text-center'>Change Password</h2>
+      <h2 className='auth-title w-full text-center'>Update Password</h2>
+
       <Formik
         initialValues={{
-          password: '',
+          email: ``,
+          password: ``,
         }}
         validationSchema={UpdatePassSchema}
         onSubmit={handleUpdatePass}
       >
         {({ errors, touched }) => (
           <Form className='column w-full'>
-            <label htmlFor='email'>Password</label>
+            <label className='text-gray-800' htmlFor='email'>
+              Email
+            </label>
             <Field
               className={cn(
-                'input',
-                errors.password && touched.password && 'bg-red-50'
+                `input`,
+                errors.email && touched.email && `bg-red-50`,
+              )}
+              id='email'
+              name='email'
+              placeholder='jane@acme.com'
+              type='email'
+            />
+            {errors.email && touched.email ? (
+              <div className='text-red-600'>{errors.email}</div>
+            ) : null}
+
+            <label className='text-gray-800' htmlFor='email'>
+              New Password
+            </label>
+            <Field
+              className={cn(
+                `input`,
+                errors.password && touched.password && `bg-red-50`,
               )}
               id='password'
               name='password'
@@ -55,12 +80,15 @@ export const UpdatePass = () => {
               <div className='text-red-600'>{errors.password}</div>
             ) : null}
 
-            <button
+            <Button className='w-full' bType='btn-filled' type='submit'>
+              Submit
+            </Button>
+            {/* <button
               className='button-inverse btn btn-blue w-full'
-              type='submit'
+              type=''
             >
               Submit
-            </button>
+            </button> */}
           </Form>
         )}
       </Formik>
@@ -68,13 +96,6 @@ export const UpdatePass = () => {
       {successMsg && (
         <p className='break-normal text-center text-green-500'>{successMsg}</p>
       )}
-      {/* <button
-        className='link w-full'
-        type='button'
-        onClick={() => setView('signIn')}
-      >
-        Already have an account? Sign In.
-      </button> */}
     </div>
   );
 };

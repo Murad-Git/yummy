@@ -24,16 +24,6 @@ export const DropList = ({ items }: Props) => {
             </svg>
           </button>
           <DropItem subItems={item.subRecipes} />
-          {/* <ul className="absolute hidden text-gray-700 pt-1 group-hover:block z-40 bg-gray-900">
-            {item.subRecipes.map(item => (
-          <li className='hover:bg-slate-800' key={item.id}>
-            <a
-              className="rounded-t text-base text-gray-200 hover:text-white p-4 capitalize block whitespace-no-wrap"
-              href={item.src}
-            >{ item.text}</a>
-          </li>
-        ))}
-        </ul> */}
         </div>
       ))}
     </div>

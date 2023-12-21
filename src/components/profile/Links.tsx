@@ -1,6 +1,6 @@
 'use client';
 import { NavLink } from '~/components/ui/NavLink';
-import { profileLinks } from '~/constant/typesConts';
+import { profileLinks } from '~/constant/mainConst';
 import { useAppSelector } from '~/types/main';
 
 export default function Links() {

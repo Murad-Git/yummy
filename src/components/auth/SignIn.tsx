@@ -6,6 +6,7 @@ import { Dispatch, SetStateAction, useState } from 'react';
 import * as Yup from 'yup';
 import { useAuth } from '~/components/auth/AuthProvider';
 import { Oauth } from '~/components/auth/Oauth';
+import { Button } from '~/components/ui/Button';
 import { Database } from '~/types/database';
 
 const SignInSchema = Yup.object().shape({
@@ -33,6 +34,7 @@ export const SignIn = () => {
         ? setErrorMsg(error.message)
         : setSuccessMsg(`Successfully logged in`);
       setTimeout(() => {
+        setView(``);
         setSuccessMsg(``);
       }, 3000);
     } else setErrorMsg(`Failed to signIn`);
@@ -52,7 +54,9 @@ export const SignIn = () => {
       >
         {({ errors, touched }) => (
           <Form className='column w-full'>
-            <label htmlFor='email'>Email</label>
+            <label className='text-gray-800' htmlFor='email'>
+              Email
+            </label>
             <Field
               className={cn(
                 `input`,
@@ -67,7 +71,9 @@ export const SignIn = () => {
               <div className='text-red-600'>{errors.email}</div>
             ) : null}
 
-            <label htmlFor='email'>Password</label>
+            <label className='text-gray-800' htmlFor='email'>
+              Password
+            </label>
             <Field
               className={cn(
                 `input`,
@@ -80,21 +86,22 @@ export const SignIn = () => {
             {errors.password && touched.password ? (
               <div className='text-red-600'>{errors.password}</div>
             ) : null}
-
-            <button
+            {/* <button
               className='link btn w-full'
               type='button'
               onClick={() => setView(`resetPassword`)}
             >
               Forgot your password?
-            </button>
-
-            <button
+            </button> */}
+            <Button className='w-full' bType='btn-filled' type='submit'>
+              Submit
+            </Button>
+            {/* <button
               className='button-inverse btn btn-blue w-full '
               type='submit'
             >
               Submit
-            </button>
+            </button> */}
           </Form>
         )}
       </Formik>
@@ -102,31 +109,29 @@ export const SignIn = () => {
       {successMsg && (
         <p className='break-normal text-center text-green-500'>{successMsg}</p>
       )}
-      <button
+      <Button
+        className='w-full text-base'
+        bType='btn-outline'
+        type='button'
+        onClick={() => setView(`resetPassword`)}
+      >
+        Password recovery
+      </Button>
+      <Button
+        className='w-full text-base'
+        bType='btn-outline'
+        type='button'
+        onClick={() => setView(`signUp`)}
+      >
+        Sign Up
+      </Button>
+      {/* <button
         className='link w-full'
         type='button'
         onClick={() => setView(`signUp`)}
       >
         Don&apos;t have an account? Sign Up.
-      </button>
+      </button> */}
     </div>
   );
-  // return (
-  //   <div className='auth-card'>
-  //     <input
-  //       name='email'
-  //       onChange={(e) => setEmail(e.target.value)}
-  //       value={email}
-  //     />
-  //     <input
-  //       type='password'
-  //       name='password'
-  //       onChange={(e) => setPassword(e.target.value)}
-  //       value={password}
-  //     />
-  //     <button onClick={handleSignUp}>Sign up</button>
-  //     <button onClick={handleSignIn}>Sign in</button>
-  //     <button onClick={handleSignOut}>Sign out</button>
-  //   </div>
-  // );
 };

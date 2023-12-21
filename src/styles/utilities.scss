@@ -20,15 +20,27 @@
   }
 
   .btn {
-    @apply font-bold py-1 px-2 rounded;
-  }
+    @apply font-bold py-2 px-2 rounded capitalize text-base;
 
-  .btn-blue {
-    @apply bg-blue-500 text-white;
-  }
+    &.btn-filled {
+      @apply bg-blue-500 text-white;
 
-  .btn-blue:hover {
-    @apply bg-blue-700;
+      &:hover {
+        @apply bg-blue-700;
+      }
+    }
+
+    &.btn-outline {
+      @apply text-blue-500 bg-white border border-blue-500;
+
+      &:hover {
+        @apply bg-blue-100;
+      }
+    }
+
+    &.btn-green-outline {
+      @apply text-green-400 bg-green-50 border-green-400 border;
+    }
   }
 
   .footer__contact {
@@ -49,11 +61,11 @@
   }
 
   .auth-card {
-    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-white py-8 px-4 shadow-md sm:min-w-[24rem] sm:px-10 absolute top-[10rem] left-[40%] m-0 z-30;
+    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-white p-4 shadow-md sm:min-w-[24rem] sm:px-10 absolute top-[10rem] left-[40%] m-0 z-40 max-w-[24rem];
   }
 
   .auth-card-rel {
-    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-white px-4 sm:min-w-[24rem] sm:px-10 m-0;
+    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-white px-4 sm:min-w-[24rem] max-w-[30rem] sm:px-10 m-0 my-10 mx-auto;
   }
 
   .custom-focus {
@@ -64,7 +76,7 @@
     @apply flex flex-col items-start justify-center gap-4;
 
     input {
-      @apply w-full custom-focus rounded-xl border border-slate-300 focus:shadow-none;
+      @apply w-full custom-focus rounded-xl border border-slate-300 focus:shadow-none text-gray-800;
     }
   }
 

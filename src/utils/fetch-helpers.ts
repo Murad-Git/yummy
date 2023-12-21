@@ -1,6 +1,6 @@
-import { recipeGroupItems, similarRecipes } from '~/constant/mainConst';
+import { searchResults, similarRecipes } from '~/constant/mainConst';
 
-const keys = process.env.API_KEY2;
+const keys = process.env.API_KEY;
 
 type RecipesTypes = {
   random?: boolean;
@@ -16,63 +16,10 @@ type specificRecipe = {
 interface Props {
   recipe: specificRecipe | RecipesTypes;
 }
-// interface userAuth {
-//   username: string;
-//   firstName: string;
-//   lastName: string;
-//   email: string | undefined | null;
-// }
-
-export const makeSlug = (id: number, title: string) => {
-  const formatTitle = title
-    .split(` `)
-    .map((letter) => letter.toLocaleLowerCase())
-    .join(`-`);
-
-  return `/recipes/${id}/${formatTitle}`;
-};
-export const formatMeals = (mealPlan: mealPlanType) => {
-  const mealArr: object[] = [];
-  Object.values(mealPlan.week).forEach((plan) => mealArr.push(plan));
-  // console.log(`mealArr`);
-  // console.log(mealArr);
-  const mealRes = mealArr.flatMap((item) => item);
-  return mealRes;
-};
-
-export const formatMeals2 = (meals: mealPlanType) => {
-  // console.log(`meals`);
-  // console.log(meals);
-  const dateForMeal = (num: number) => {
-    const today = new Date();
-    return new Date(
-      today.setDate(today.getDate() - today.getDay() + (num + 1)),
-    ).toISOString();
-  };
-
-  const objValues = Object.values(meals.week);
-  const results: any[] = [];
-  for (let i = 0; i < objValues.length; i++) {
-    objValues[i].meals.map((item: mealType, index: number) =>
-      results.push({
-        start: dateForMeal(i),
-        end: dateForMeal(i),
-        title: item.title,
-        resource: index + 1,
-        allDay: true,
-        link: makeSlug(item.id, item.title),
-      }),
-    );
-  }
-  return results;
-  //   const today = new Date()
-  //   let firstDay = new Date(today.setDate(today.getDate() - today.getDay()+1))
-  // let lastDay = new Date(today.setDate(today.getDate()- today.getDay()+7))
-};
-// export const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export const fetchRecipes = async ({ recipe }: Props) => {
   try {
+    // search recipe by id
     if (`id` in recipe && recipe.id) {
       const { id, isDynamic } = recipe;
       const request = await fetch(
@@ -88,18 +35,19 @@ export const fetchRecipes = async ({ recipe }: Props) => {
       const response = await request.json();
       return response;
     }
+    // search random or specific recipes
     if (`items` in recipe) {
       const { items, random, type, value, isDynamic } = recipe;
       const request = await fetch(
         `https://api.spoonacular.com/recipes/${
           random ? `random?` : `complexSearch?${type}=${value}&`
-        }number=1&apiKey=${keys}`,
+        }number=${items}&apiKey=${keys}`,
         {
           method: `GET`,
           headers: {
             'Content-Type': `application/json`,
           },
-          next: { revalidate: 60 },
+          next: isDynamic ? { revalidate: 0 } : { revalidate: 60 },
         },
       );
       const response = await request.json();
@@ -112,6 +60,7 @@ export const fetchRecipes = async ({ recipe }: Props) => {
 
 export const searchRec = async (query?: string, type?: string) => {
   try {
+    // search by ingredients
     if (type === `ingredients`) {
       const searchItems =
         query && query?.split(`,`).length > 1
@@ -122,7 +71,7 @@ export const searchRec = async (query?: string, type?: string) => {
           : query;
       const request = await fetch(
         `
-            https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchItems}&number=${recipeGroupItems}&apiKey=${keys}`,
+            https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchItems}&number=${searchResults}&apiKey=${keys}`,
         {
           method: `GET`,
           headers: {
@@ -134,17 +83,12 @@ export const searchRec = async (query?: string, type?: string) => {
       const response = await request.json();
       return response;
     }
+    // search by cuisine
     const request = await fetch(
       `
             https://api.spoonacular.com/recipes/complexSearch?${
-              query ? `query=${query}` : `type=${type}`
-            }&number=${recipeGroupItems}&apiKey=${keys}`,
-      {
-        method: `GET`,
-        headers: {
-          'Content-Type': `application/json`,
-        },
-      },
+              query ? `query=${query}` : `cuisine=${type}`
+            }&number=${searchResults}&apiKey=${keys}`,
     );
     const response = await request.json();
     return response;
@@ -155,15 +99,7 @@ export const searchRec = async (query?: string, type?: string) => {
 
 export const fetchSimilar = async (id: string) => {
   try {
-    // const request = await fetch(
-    //   `https://api.spoonacular.com/recipes/715424/similar?number=5&apiKey=${keys}`,
-    //   {
-    //     method: `GET`,
-    //     headers: {
-    //       'Content-Type': `application/json`,
-    //     },
-    //   }
-    // );
+    // fetch similar based on ID
     if (id) {
       const request = await fetch(
         `https://api.spoonacular.com/recipes/${id.trim()}/similar?number=${similarRecipes}&apiKey=${keys}`,
@@ -174,13 +110,7 @@ export const fetchSimilar = async (id: string) => {
           },
         },
       );
-      // console.log(`api`);
-      // console.log(
-      //   `https://api.spoonacular.com/recipes/${id.trim()}/similar?number=${similarRecipes}&apiKey=${keys}`,
-      // );
       const response = await request.json();
-      // console.log(`response`);
-      // console.log(response);
       return response;
     } else console.error(`no recipe id was provided`);
   } catch (error) {
@@ -188,7 +118,7 @@ export const fetchSimilar = async (id: string) => {
   }
 };
 
-export const fetcher = async (cuisine: string) => {
+export const helloFetcher = async (cuisine: string) => {
   try {
     const request = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisine}&number=${similarRecipes}&apiKey=${keys}`,
@@ -203,25 +133,3 @@ export const fetcher = async (cuisine: string) => {
     if (error instanceof Error) console.error(error.message);
   }
 };
-
-// export const userAuth = async ({
-//   username,
-//   firstName,
-//   lastName,
-//   email = `example@goolgle.com`,
-// }: userAuth) => {
-//   try {
-//     const requestAuth = await axios.post(
-//       `https://api.spoonacular.com/users/connect?apiKey=${keys}`,
-//       {
-//         username,
-//         firstName,
-//         lastName,
-//         email,
-//       },
-//     );
-//     console.log(`requestAuth`);
-//     console.log(requestAuth);
-//     return requestAuth;
-//   } catch (error) {}
-// };

@@ -16,7 +16,10 @@ export const Similar = ({ title, recipes }: Props) => {
             className='flex items-center cursor-pointer hover:bg-gray-100'
           >
             <Image
-              src={recipe.image}
+              src={
+                `https://spoonacular.com/recipeImages/${recipe.id}-636x393.jpg
+          ` || `/images/no-food.png`
+              }
               width={500}
               height={500}
               alt='recipe'

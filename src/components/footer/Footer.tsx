@@ -1,72 +1,123 @@
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
+import Container from '~/components/layout/Container';
+import { footerItems } from '~/constant/mainConst';
 
-export default function Footer() {
+export const Footer = () => {
   return (
-    <section className='relative mt-40 w-full bg-mainColor py-8'>
-      <div className='custom-shape-divider-bottom-1677847582'>
-        <svg
-          data-name='Layer 1'
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 1200 120'
-          preserveAspectRatio='none'
-        >
-          <path
-            d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z'
-            opacity='.25'
-            className='shape-fill'
-          ></path>
-          <path
-            d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z'
-            opacity='.5'
-            className='shape-fill'
-          ></path>
-          <path
-            d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z'
-            className='shape-fill'
-          ></path>
-        </svg>
+    <div>
+      <div className='py-20 bg-gray-900 text-gray-200'>
+        <Container>
+          <div className='grid grid-cols-1 md:grid-cols-4 md:text-base text-sm'>
+            <ul className='space-y-3'>
+              {footerItems.map((item, index) => (
+                <li key={index}>
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className='text-green-400 mr-2'
+                  />
+                  <button className='hover:underline decoration-green-400 decoration-2 hover:underline-offset-2'>
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <ul className='space-y-3'>
+              {footerItems.map((item, index) => (
+                <li key={index}>
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className='text-green-400 mr-2'
+                  />
+                  <button className='hover:underline decoration-green-400 decoration-2 hover:underline-offset-2'>
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <ul className='space-y-3'>
+              {footerItems.map((item, index) => (
+                <li key={index}>
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className='text-green-400 mr-2'
+                  />
+                  <button className='hover:underline decoration-green-400 decoration-2 hover:underline-offset-2'>
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div className='flex flex-col mt-4 md:mt-0'>
+              <h4 className='text-lg md:text-2xl font-bold mb-6'>Yummy</h4>
+              <div className='space-y-2 md:space-y-4'>
+                <p>
+                  Level 99, 99 Elizabeth St, <br />
+                  Melbourne, Victoria 9999
+                </p>
+                <p>
+                  <button className='hover:underline decoration-green-400 decoration-2 hover:underline-offset-2'>
+                    noreply@noreply.com
+                  </button>
+                  <br />
+                  +12 (3) 4 5678 9000
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
       </div>
-      <div className='container divide-y-2 divide-gray-100'>
-        <div className='grid w-full justify-between px-2 pb-3 sm:flex sm:justify-between md:flex md:grid-cols-1'>
-          <div className='h-24 w-24 rounded-full bg-gray-100'>
-            <Image
-              className='w-full '
-              src='/logo/ecofood-logo-nobg.png'
-              width={500}
-              height={500}
-              alt='logo'
-            />
-          </div>
-          <div className='footer__contact'>
-            <div>
-              <h2>About</h2>
-              <p>Contact</p>
-              <p>Contact</p>
+      <div className='border-t md:text-base text-sm '>
+        <Container>
+          <div className='flex items-center justify-between py-5'>
+            <div className='w-1/2 md:w-full'>
+              © 2023 Made by{` `}
+              <a href='https://github.com/Murad-Git'>Murad Kos</a> | All Rights
+              Reserved
             </div>
-            <div>
-              <h2>Follow Us</h2>
-              <p>GitHub</p>
-              <p>Discord</p>
-            </div>
-            <div>
-              <h2>Legal</h2>
-              <p>Privacy Policy</p>
-              <p>Terms & Conditions</p>
-            </div>
+            <ul className='flex items-center space-x-4'>
+              <li>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  height='1.7em'
+                  viewBox='0 0 512 512'
+                  fill='#111827'
+                >
+                  <path d='M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z' />
+                </svg>
+              </li>
+              <li>
+                <svg
+                  fill='#111827'
+                  xmlns='http://www.w3.org/2000/svg'
+                  height='1.7em'
+                  viewBox='0 0 512 512'
+                >
+                  <path d='M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z' />
+                </svg>
+              </li>
+              <li>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  height='1.7em'
+                  viewBox='0 0 448 512'
+                  fill='#111827'
+                >
+                  <path d='M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z' />
+                </svg>
+              </li>
+              <li>
+                <a href='#nav'>
+                  <FontAwesomeIcon
+                    icon={faChevronUp}
+                    className='font-bold text-2xl hover:animate-bounce'
+                  />
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div />
-        <div className='w-full px-2 pt-3 sm:flex sm:items-center sm:justify-between'>
-          <p>2023</p>
-          <div className='mt-4 flex space-x-6 sm:mt-0 sm:justify-center'>
-            <FontAwesomeIcon icon={faUser} />
-            <FontAwesomeIcon icon={faUser} />
-            <FontAwesomeIcon icon={faUser} />
-          </div>
-        </div>
+        </Container>
       </div>
-    </section>
+    </div>
   );
-}
+};

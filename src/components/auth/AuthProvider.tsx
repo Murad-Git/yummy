@@ -115,17 +115,6 @@ export const AuthProvider = ({
             const recList = snap.data.map((item) => item.recipe);
             setUsersRecipes(recList);
           });
-        // const comments = supabase
-        //   .channel('custom-all-channel')
-        //   .on(
-        //     'postgres_changes',
-        //     { event: '*', schema: 'public', table: 'comments' },
-        //     (payload) => {
-        //       setComments((prev) => [...prev, payload.new]);
-        //       console.log('Change received!', payload);
-        //     }
-        //   )
-        //   .subscribe();
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const recipe_comments = realtime<RecipeComment>(supabase)
           .from(`recipe_comments`)
@@ -137,14 +126,6 @@ export const AuthProvider = ({
           .subscribe((snap) => {
             setBlogComments(snap.data);
           });
-        console.log(`blogComments`);
-        console.log(blogComments);
-        //             const query = `*[_type== 'comment' && post._ref == "${blogId}"][0]{
-        //       comment,
-        //         name,
-        //         "created":_createdAt
-        // }`;
-        //         client.fetch()
       }
 
       switch (event) {

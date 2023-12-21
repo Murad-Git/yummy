@@ -9,7 +9,7 @@ export const SignOut = () => {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    console.log('signed out successfully');
+    console.log(`signed out successfully`);
     router.refresh();
   };
   return (

@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { setProfNav } from '~/store/recipesSlice';
+import { setProfNav } from '~/store/navigationSlice';
 import { useAppDispatch } from '~/types/main';
 
 interface Props {

@@ -10,12 +10,12 @@ interface Props {
 
 export default function Ingredient({ ingredient }: Props) {
   const [checked, setChecked] = useState(false);
-  const [isHovering, setIsHovering] = useState({ value: false, id: '' });
+  const [isHovering, setIsHovering] = useState({ value: false, id: `` });
   const handleHover = (id: string) => {
     setIsHovering({ value: true, id });
   };
   const handleHoverExit = () => {
-    setIsHovering({ value: false, id: '' });
+    setIsHovering({ value: false, id: `` });
   };
   return (
     <li
@@ -36,8 +36,10 @@ export default function Ingredient({ ingredient }: Props) {
       {!!isHovering.value && (
         <Image
           className='w-32 absolute top-0 object-cover'
-          // src='/images/no-food.png'
-          src={`https://spoonacular.com/cdn/ingredients_250x250/${isHovering.id}`}
+          src={
+            `https://spoonacular.com/cdn/ingredients_250x250/${isHovering.id}` ||
+            `/images/no-food.png`
+          }
           height={500}
           width={500}
           alt='ingredient'
@@ -45,28 +47,4 @@ export default function Ingredient({ ingredient }: Props) {
       )}
     </li>
   );
-  // return (
-  //   <li
-  //     onClick={() => setChecked((prev) => !prev)}
-  //     key={ingredient.id}
-  //     className='cursor-pointer space-y-4'
-  //   >
-  //     <FontAwesomeIcon
-  //       icon={checked ? faCircleCheck : faCircle}
-  //       className='mr-2 text-mainColor'
-  //       size='1x'
-  //     />
-  //     <p
-  //       className={`inline-block text-xl font-light ${
-  //         !!checked && `line-through`
-  //       }`}
-  //     >
-  //       {ingredient.measures.metric.amount}
-  //       {` `}
-  //       {ingredient.measures.metric.unitShort}
-  //       {` `}
-  //       <span className='font-bold'>{ingredient.originalName}</span>
-  //     </p>
-  //   </li>
-  // );
 }

@@ -27,8 +27,6 @@ export const CuisineDrop = ({ onCuisine }: Props) => {
             {cuisine.cuisineType}
           </option>
         ))}
-        {/* <option value='recipe'>recipe</option>
-        <option value='all'>all</option> */}
       </select>
     </div>
   );

@@ -14,8 +14,5 @@ export default function Loading() {
     >
       <Controls />
     </Player>
-    // <div className='animate-pulse p-10 text-center text-lg text-gray-400'>
-    //   Loading Recipes
-    // </div>
   );
 }

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { RefObject, useRef } from 'react';
 
-import { makeSlug } from '~/utils/fetch-helpers';
+import { makeSlug } from '~/utils/helpers';
 
 interface Props {
   recipes: searchResult[];

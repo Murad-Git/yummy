@@ -1,7 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['spoonacular.com', 'lh3.googleusercontent.com', 'cdn.sanity.io'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'spoonacular.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+      // 'spoonacular.com',
+      // 'lh3.googleusercontent.com',
+      // 'cdn.sanity.io',
+    ],
+    // domains: ['spoonacular.com', 'lh3.googleusercontent.com', 'cdn.sanity.io'],
   },
   // eslint: {
   //   dirs: ['src', 'app'],

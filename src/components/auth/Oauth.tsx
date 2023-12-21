@@ -1,4 +1,5 @@
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import Image from 'next/image';
 import { Database } from '~/types/database';
 
 interface Props {
@@ -64,13 +65,31 @@ export const Oauth = ({ setErrorMsg }: Props) => {
   return (
     <div className='space-x-2'>
       <button className='rounded bg-slate-100' onClick={handleGoogle}>
-        <img src='logo/google-svg.svg' />
+        <Image
+          className='w-8'
+          src='/logo/google-svg.svg'
+          height={500}
+          width={500}
+          alt='google logo'
+        />
       </button>
       <button className='' onClick={handleFB}>
-        <img src='logo/fb-svg.svg' />
+        <Image
+          className='w-8'
+          src='/logo/fb-svg.svg'
+          height={500}
+          width={500}
+          alt='facebook logo'
+        />
       </button>
       <button className='' onClick={handleGH}>
-        <img src='logo/gh-svg.svg' />
+        <Image
+          className='w-8'
+          src='/logo/gh-svg.svg'
+          height={500}
+          width={500}
+          alt='github logo'
+        />
       </button>
     </div>
   );

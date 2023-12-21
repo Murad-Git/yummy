@@ -14,15 +14,12 @@ declare namespace NodeJS {
     AUTH0_SECRET: string;
   }
 }
-interface Category {
-  [`dinners` | `meals` | `ingredients` | `occasions` | `cuisins`];
-}
 // }
 interface Children {
   children?: React.ReactNode | [React.ReactNode];
 }
 interface ProfileLinks {
-  [`Personal Info` | `Your Favourite Recipes` | `Meal Plan`];
+  [`Personal Info` | `Your Favourite Recipes`];
 }
 
 interface Ingredient {
@@ -56,7 +53,7 @@ interface RecipeComment {
   user_id: string;
   comment_text: string;
   id: number;
-  recipe_id: string;
+  page_id: string;
 }
 interface RecipeSupabase {
   recipe_id: number;
@@ -121,45 +118,9 @@ interface Recipe {
   spoonacularSourceUrl: string;
 }
 
-// interface getResponse {
-//   success: boolean;
-//   data: {
-//     results: searchResult[];
-//   };
-// }
 interface searchResult {
   id: number;
   title: string;
   image: string;
   imageType: string;
-}
-
-type mealType = {
-  id: number;
-  imageType: 'jpg';
-  title: string;
-  readyInMinutes: number;
-  servings: number;
-  sourceUrl: string;
-};
-type mealDetails = {
-  meals: mealType[];
-  nutrients: {
-    calories: number;
-    protein: number;
-    fat: number;
-    carbohydrates: number;
-  };
-};
-interface weekMeals {
-  monday: mealDetails;
-  tuesday: mealDetails;
-  wednesday: mealDetails;
-  thursday: mealDetails;
-  friday: mealDetails;
-  saturday: mealDetails;
-  sunday: mealDetails;
-}
-interface mealPlanType {
-  week: weekMeals;
 }
