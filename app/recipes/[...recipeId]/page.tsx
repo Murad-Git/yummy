@@ -1,7 +1,7 @@
 import xss from 'xss';
 
 import { notFound } from 'next/navigation';
-import { RecipePage } from '~/pages/RecipePage';
+import { RecipePage } from '~/page/RecipePage';
 import { fetchRecipes, fetchSimilar } from '~/utils/fetch-helpers';
 
 interface Props {

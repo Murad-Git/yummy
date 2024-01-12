@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { BlogsPage } from '~/pages/BlogsPage';
+import { BlogsPage } from '~/page/BlogsPage';
 import { getBlogs } from '~/utils/sanity/sanity-helper';
 
 export default async function Blogs() {

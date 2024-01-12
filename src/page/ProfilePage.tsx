@@ -9,9 +9,9 @@ interface Props {
   session: Session;
 }
 
-export default function ProfilePage({ user, session }: Props) {
+export const ProfilePage = ({ user, session }: Props) => {
   const loginDate = new Date(user?.last_sign_in_at || ``).toUTCString();
-
+  if (!user) return <p>No user</p>;
   return (
     <div className='grid grid-cols-1 md:grid-cols-6'>
       {/* left side */}
@@ -46,7 +46,9 @@ export default function ProfilePage({ user, session }: Props) {
             <h1 className='text-2xl font-bold'>Personal Information</h1>
             <p>
               Your email:{` `}
-              <span className='font-semibold'>{session.user.email}</span>
+              <span className='font-semibold'>
+                {session?.user?.email || 'no email'}
+              </span>
             </p>
             <p>
               Last signed in: <span className='font-semibold'>{loginDate}</span>
@@ -57,4 +59,4 @@ export default function ProfilePage({ user, session }: Props) {
       </section>
     </div>
   );
-}
+};

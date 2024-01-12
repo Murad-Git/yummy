@@ -12,18 +12,20 @@ interface Props {
 export const BlogPage = ({ post }: Props) => {
   return (
     <>
-      <HeroImg title={post.title || `blog post`} img={post?.image} />
+      <HeroImg title={post.title ? post.title : `blog post`} img={post.image} />
       <Container>
         <div className='my-8'>
           <BlogAuthor post={post} />
         </div>
         <div className='px-6 mb-6 max-w-[60%]'>
           <div>
-            <h1 className='text-3xl font-semibold mb-3'>{post.title}</h1>
-            <p className='text-md px-4'>{post?.text}</p>
+            <h1 className='text-3xl font-semibold mb-3'>
+              {post.title ? post.title : `blog post`}
+            </h1>
+            <p className='text-md px-4'>{post.text}</p>
             <Image
               className='w-full mt-8'
-              src={post?.image || `/images/hero/blog.jpg`}
+              src={post.image || `/images/hero/blog.jpg`}
               width={500}
               height={500}
               alt='post'

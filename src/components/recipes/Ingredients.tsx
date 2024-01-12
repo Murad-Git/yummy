@@ -8,6 +8,8 @@ interface Props {
 }
 
 export default function Ingredients({ ingredients, servings }: Props) {
+  if (!ingredients.length) return <p>No ingredients</p>;
+
   const uniqeIngeredients = ingredients.filter(
     (elem, index, self) =>
       self.findIndex((t) => {

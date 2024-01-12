@@ -14,11 +14,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
       },
-      // 'spoonacular.com',
-      // 'lh3.googleusercontent.com',
-      // 'cdn.sanity.io',
     ],
-    // domains: ['spoonacular.com', 'lh3.googleusercontent.com', 'cdn.sanity.io'],
   },
   // eslint: {
   //   dirs: ['src', 'app'],

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { CategoryPage } from '~/pages/CategoryPage';
+import { CategoryPage } from '~/page/CategoryPage';
 import { searchRec } from '~/utils/fetch-helpers';
 
 interface Props {

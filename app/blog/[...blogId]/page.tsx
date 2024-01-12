@@ -1,6 +1,6 @@
 // import blockContent from 'sanity/schemas/blockContent';
 import { notFound } from 'next/navigation';
-import { BlogPage } from '~/pages/BlogPage';
+import { BlogPage } from '~/page/BlogPage';
 import { getBlog } from '~/utils/sanity/sanity-helper';
 
 interface Props {

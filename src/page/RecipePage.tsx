@@ -26,7 +26,9 @@ export const RecipePage = ({
 }: Props) => {
   return (
     <>
-      <RecipeHeader recipeName={recipeInfo.title} />
+      <RecipeHeader
+        recipeName={recipeInfo.title ? recipeInfo.title : 'No title'}
+      />
       <Container className='mb-20'>
         <section className='grid grid-cols-1 md:grid-cols-3 justify-items-center gap-3 md:gap-6 border-b-2 border-gray-400 pb-6 align-middle mt-8'>
           {/* recipe and description */}
@@ -36,7 +38,10 @@ export const RecipePage = ({
               <div>
                 <RecipeImg
                   recipe={recipeInfo}
-                  link={makeSlug(recipeInfo.id, recipeInfo.title)}
+                  link={makeSlug(
+                    recipeInfo.id,
+                    recipeInfo.title ? recipeInfo.title : 'No title',
+                  )}
                 />
                 <a
                   className='text-xs text-gray-400'
@@ -58,16 +63,17 @@ export const RecipePage = ({
                 How to cook:
               </h1>
               <ol className='space-y-2'>
-                {recipeInfo.analyzedInstructions[0].steps.map(
-                  (recipe, index: number) => (
-                    <li key={index} className='px-4'>
-                      <span className='mr-3 inline'>{index + 1}.</span>
-                      <p className='text-gray-700 leading-[2.5] px-2 text-justify text-md inline'>
-                        {recipe.step}
-                      </p>
-                    </li>
-                  ),
-                )}
+                {recipeInfo.analyzedInstructions.length > 0 &&
+                  recipeInfo.analyzedInstructions[0].steps.map(
+                    (recipe, index: number) => (
+                      <li key={index} className='px-4'>
+                        <span className='mr-3 inline'>{index + 1}.</span>
+                        <p className='text-gray-700 leading-[2.5] px-2 text-justify text-md inline'>
+                          {recipe.step}
+                        </p>
+                      </li>
+                    ),
+                  )}
               </ol>
             </div>
           </div>
@@ -79,7 +85,6 @@ export const RecipePage = ({
               servings={recipeInfo.servings}
             />
             <Similar title='Similar recipes:' recipes={similar} />
-            {/* <Similar title='Similar recipes:' recipes={recipes} /> */}
           </div>
         </section>
         <section className='mt-6'>

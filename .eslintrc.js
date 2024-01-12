@@ -23,6 +23,7 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
+        singleQuote: true,
         endOfLine: 'auto',
       },
     ],
@@ -31,6 +32,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/no-unused-prop-types': 'off',
+    '@next/next/no-page-custom-font': 'off',
     'react/require-default-props': 'off',
     'import/extensions': [
       'error',
@@ -121,7 +123,11 @@ module.exports = {
       files: '**/*.+(ts|tsx)',
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
-      extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+        'next/core-web-vitals',
+      ],
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/ban-ts-comment': [
@@ -137,7 +143,7 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/quotes': [
           2,
-          'backtick',
+          // 'backtick',
           {
             avoidEscape: true,
           },

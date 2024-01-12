@@ -29,7 +29,7 @@ export const fetchRecipes = async ({ recipe }: Props) => {
           headers: {
             'Content-Type': `application/json`,
           },
-          next: isDynamic ? { revalidate: 0 } : { revalidate: 60 },
+          next: isDynamic ? { revalidate: 0 } : { revalidate: 3600 },
         },
       );
       const response = await request.json();
@@ -47,7 +47,7 @@ export const fetchRecipes = async ({ recipe }: Props) => {
           headers: {
             'Content-Type': `application/json`,
           },
-          next: isDynamic ? { revalidate: 0 } : { revalidate: 60 },
+          next: isDynamic ? { revalidate: 0 } : { revalidate: 3600 },
         },
       );
       const response = await request.json();

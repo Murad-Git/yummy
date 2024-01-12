@@ -1,7 +1,7 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import ProfilePage from '~/pages/ProfilePage';
+import { ProfilePage } from '~/page/ProfilePage';
 import { Database } from '~/types/database';
 
 export default async function Profile() {

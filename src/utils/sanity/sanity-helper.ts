@@ -14,7 +14,6 @@ export const getBlogs = async () => {
     const posts: Blog[] | [] = await sanityFetch({
       query,
       tags: [`post`, `author`],
-      cache: `no-cache`,
     });
     return posts;
   } catch (error) {

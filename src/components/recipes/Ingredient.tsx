@@ -30,7 +30,7 @@ export default function Ingredient({ ingredient }: Props) {
         className='mr-2 text-mainColor'
         size='1x'
       />
-      <p className={`inline-block font-light ${!!checked && `line-through`}`}>
+      <p className={`font-light contents ${!!checked && `line-through`}`}>
         <span>{ingredient.original}</span>
       </p>
       {!!isHovering.value && (

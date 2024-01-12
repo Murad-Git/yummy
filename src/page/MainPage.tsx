@@ -14,6 +14,8 @@ interface Props {
 }
 
 export const MainPage = ({ heroData, scrollData }: Props) => {
+  const heroRecipes = heroData?.slice(0, 5);
+  const featuredRecipes = heroData?.slice(6, 13);
   return (
     <>
       <HeroImg title='simple and tasty recipes' />
@@ -21,18 +23,11 @@ export const MainPage = ({ heroData, scrollData }: Props) => {
         <section className='py-12'>
           <Suspense fallback={<Loading />}>
             <HeroRecipes
-              heroRecipes={heroData.slice(0, 5)}
+              heroRecipes={heroRecipes}
               // eslint-disable-next-line prettier/prettier
               title='What&#39;s new on our table'
             />
-          </Suspense>
-          <Suspense fallback={<Loading />}>
-            <Recipes
-              sectionTitle='Featured Today'
-              recipes={heroData.slice(6, 13)}
-            />
-          </Suspense>
-          <Suspense fallback={<Loading />}>
+            <Recipes sectionTitle='Featured Today' recipes={featuredRecipes} />
             <RecipeScroll recipes={scrollData} title='Ideas for Dinner' />
           </Suspense>
           <RecipesCuisine />

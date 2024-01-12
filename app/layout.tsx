@@ -14,7 +14,6 @@ export default async function RootLayout({
   return (
     <html>
       <Head />
-      {/* <head/> */}
       <body>
         <div id='overlays' />
         <Providers>
