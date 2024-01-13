@@ -7,6 +7,7 @@ import Recipes from '~/components/recipes/Recipes';
 import RecipeScroll from '~/components/recipes/RecipeScroll';
 import RecipesCuisine from '~/components/recipes/RecipesCuisine';
 import { Filler } from '~/components/ui/Filler';
+import { fetchRecipes } from '~/utils/fetch-helpers';
 
 interface Props {
   heroData: Recipe[];
@@ -16,6 +17,15 @@ interface Props {
 export const MainPage = ({ heroData, scrollData }: Props) => {
   const heroRecipes = heroData?.slice(0, 5);
   const featuredRecipes = heroData?.slice(6, 13);
+
+  const searchCuisin = async (cuisin: string) => {
+    'use server';
+    const data = await fetchRecipes({
+      recipe: { items: '5', type: 'cuisine', value: cuisin },
+    });
+    if (!data) return null;
+    return data.results;
+  };
   return (
     <>
       <HeroImg title='simple and tasty recipes' />
@@ -30,7 +40,7 @@ export const MainPage = ({ heroData, scrollData }: Props) => {
             <Recipes sectionTitle='Featured Today' recipes={featuredRecipes} />
             <RecipeScroll recipes={scrollData} title='Ideas for Dinner' />
           </Suspense>
-          <RecipesCuisine />
+          <RecipesCuisine searchCuisin={searchCuisin} />
         </section>
       </Container>
       <Filler />

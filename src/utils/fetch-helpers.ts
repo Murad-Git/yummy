@@ -1,17 +1,17 @@
 import { searchResults, similarRecipes } from '~/constant/mainConst';
 
-const keys = process.env.API_KEY;
+const keys = process.env.API_KEY2;
 
 type RecipesTypes = {
   random?: boolean;
   type?: string;
   value?: string;
   items: string;
-  isDynamic: boolean;
+  isDynamic?: boolean;
 };
 type specificRecipe = {
   id: string;
-  isDynamic: boolean;
+  isDynamic?: boolean;
 };
 interface Props {
   recipe: specificRecipe | RecipesTypes;
@@ -21,7 +21,7 @@ export const fetchRecipes = async ({ recipe }: Props) => {
   try {
     // search recipe by id
     if (`id` in recipe && recipe.id) {
-      const { id, isDynamic } = recipe;
+      const { id, isDynamic = false } = recipe;
       const request = await fetch(
         `https://api.spoonacular.com/recipes/${id}/information?apiKey=${keys}`,
         {
@@ -37,7 +37,7 @@ export const fetchRecipes = async ({ recipe }: Props) => {
     }
     // search random or specific recipes
     if (`items` in recipe) {
-      const { items, random, type, value, isDynamic } = recipe;
+      const { items, random, type, value, isDynamic = false } = recipe;
       const request = await fetch(
         `https://api.spoonacular.com/recipes/${
           random ? `random?` : `complexSearch?${type}=${value}&`
@@ -72,26 +72,11 @@ export const searchRec = async (query?: string, type?: string) => {
       const request = await fetch(
         `
             https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchItems}&number=${searchResults}&apiKey=${keys}`,
-        {
-          method: `GET`,
-          headers: {
-            'Content-Type': `application/json`,
-          },
-        },
       );
 
       const response = await request.json();
       return response;
     }
-    // search by cuisine
-    const request = await fetch(
-      `
-            https://api.spoonacular.com/recipes/complexSearch?${
-              query ? `query=${query}` : `cuisine=${type}`
-            }&number=${searchResults}&apiKey=${keys}`,
-    );
-    const response = await request.json();
-    return response;
   } catch (error) {
     if (error instanceof Error) console.error(error.message);
   }
@@ -103,32 +88,10 @@ export const fetchSimilar = async (id: string) => {
     if (id) {
       const request = await fetch(
         `https://api.spoonacular.com/recipes/${id.trim()}/similar?number=${similarRecipes}&apiKey=${keys}`,
-        {
-          method: `GET`,
-          headers: {
-            'Content-Type': `application/json`,
-          },
-        },
       );
       const response = await request.json();
       return response;
     } else console.error(`no recipe id was provided`);
-  } catch (error) {
-    if (error instanceof Error) console.error(error.message);
-  }
-};
-
-export const helloFetcher = async (cuisine: string) => {
-  try {
-    const request = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisine}&number=${similarRecipes}&apiKey=${keys}`,
-      {
-        method: `GET`,
-        next: { revalidate: 60 },
-      },
-    );
-    const response = await request.json();
-    return response;
   } catch (error) {
     if (error instanceof Error) console.error(error.message);
   }

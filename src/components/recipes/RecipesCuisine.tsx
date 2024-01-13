@@ -6,9 +6,13 @@ import { CuisineDrop } from '~/components/ui/dropdowns/CuisineDrop';
 import { CuisineMenu } from '~/components/ui/dropdowns/CuisineMenu';
 import { cuisineConst } from '~/constant/mainConst';
 
-export default function RecipesCuisine() {
+interface Props {
+  searchCuisin: (cuisin: string) => Promise<Recipe[] | null>;
+}
+
+export default function RecipesCuisine({ searchCuisin }: Props) {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<Recipe[] | null>(null);
   const [currentCuisine, setCurrentCuisine] = useState(
     cuisineConst[0].cuisineType,
   );
@@ -18,40 +22,20 @@ export default function RecipesCuisine() {
   };
 
   useEffect(() => {
-    const abortController = new AbortController();
-    try {
-      setLoading(true);
-      fetch(`/api/hello`, {
-        signal: abortController.signal,
-        method: `POST`,
-        headers: {
-          'Content-Type': `application/json`,
-        },
-        body: JSON.stringify({ currentCuisine }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data.results);
-          setLoading(false);
-        });
-      return () => abortController.abort();
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error(`error in fetching data ${error.message}`);
-      }
-    }
+    setLoading(true);
+    searchCuisin(currentCuisine).then((data) => {
+      setData(data);
+      setLoading(false);
+    });
   }, [currentCuisine]);
-
-  if (!data) return <p>No Cuisine data</p>;
+  if (data === null) return <p>No Cuisine data</p>;
   return (
     <div className='menu'>
       <h1 className='section-title'>cuisine</h1>
       <CuisineMenu onCuisine={cuisineHandle} />
       <CuisineDrop onCuisine={cuisineHandle} />
-      <Suspense fallback={<Loading />}>
-        {!!loading && <Loading />}
-        {!!data && <Recipes recipes={data} />}
-      </Suspense>
+      {!!loading && <Loading />}
+      {!!data && <Recipes recipes={data} />}
     </div>
   );
 }
