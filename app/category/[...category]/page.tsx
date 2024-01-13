@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { CategoryPage } from '~/page/CategoryPage';
-import { searchRec } from '~/utils/fetch-helpers';
+import { fetchRecipes, searchRec } from '~/utils/fetch-helpers';
 
 interface Props {
   params: {
@@ -15,7 +15,14 @@ export default async function Category({ params: { category } }: Props) {
     (category && !category)
   )
     return notFound();
-  const data = await searchRec(undefined, category);
+  // const data = await searchRec(undefined, category);
+  const data = await fetchRecipes({
+    recipe: {
+      type: 'cuisine',
+      value: category,
+      items: '5',
+    },
+  });
   if (!data) notFound();
   const formCategory = category[0].replace(/[^a-zA-Z ]/g, ``);
 

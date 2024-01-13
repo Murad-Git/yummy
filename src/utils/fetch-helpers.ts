@@ -1,6 +1,6 @@
 import { searchResults, similarRecipes } from '~/constant/mainConst';
 
-const keys = process.env.API_KEY2;
+const keys = process.env.API_KEY3;
 
 type RecipesTypes = {
   random?: boolean;
@@ -73,7 +73,6 @@ export const searchRec = async (query?: string, type?: string) => {
         `
             https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchItems}&number=${searchResults}&apiKey=${keys}`,
       );
-
       const response = await request.json();
       return response;
     }

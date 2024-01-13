@@ -19,13 +19,6 @@ export const BlogContent = ({ post }: Props) => {
           p: (props: any) => (
             <p className='text-2xl font-bold my-5' {...props} />
           ),
-          span: ({ children }: any) => (
-            <span className='text-2xl font-bold my-5'>{children}</span>
-          ),
-
-          h2: (props: any) => (
-            <h2 className='text-xl font-bold my-5' {...props} />
-          ),
           li: ({ children }: any) => (
             <li className='ml-4 list-disc'>{children}</li>
           ),

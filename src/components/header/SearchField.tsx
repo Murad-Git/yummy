@@ -31,17 +31,14 @@ export const SearchField = ({ className }: { className?: string }) => {
     <form className={`${className} `} onSubmit={handleSubmit}>
       <div className='mx-auto flex flex-col pt-2 text-gray-600'>
         <div className='relative mb-3 md:mb-auto'>
-          <div className='relative'>
+          <div className='relative inline-block'>
             <input
               className='h-10 rounded-lg border-2 border-gray-300 bg-gray-100 px-3 md:px-5 md:pr-10 text-sm focus-within:outline-none focus:border-green-400 focus:outline-none focus-visible:outline-none'
               type='search'
               name='search'
               placeholder={placeholder}
             />
-            <button
-              type='submit'
-              className='absolute left-[56%] mt-[0.8rem] mr-4'
-            >
+            <button type='submit' className='absolute right-0 mt-[0.8rem] mr-4'>
               {/* <button
               type='submit'
               className='absolute left-[60%] md:right-0 top-0 mt-[0.8rem] mr-4'

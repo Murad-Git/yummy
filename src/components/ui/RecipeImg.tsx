@@ -24,8 +24,6 @@ export default function RecipeImg({ recipe, link }: Props) {
       .from(`liked_recipes`)
       .select()
       .eq(`recipe_id`, recipe.id);
-    console.log(`data from checking exist`);
-    console.log(data);
     if (data === null || data.length === 0) {
       const { data, error } = await supabase
         .from(`liked_recipes`)
@@ -45,7 +43,6 @@ export default function RecipeImg({ recipe, link }: Props) {
   return (
     <div className='relative overflow-hidden rounded-t-sm'>
       <Link href={link}>
-        {/* <Link href={recipeLink}> */}
         <Image
           className='w-full cursor-pointer rounded-sm transition-all duration-200 hover:scale-110'
           src={

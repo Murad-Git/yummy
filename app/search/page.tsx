@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { SearchPage } from '~/page/SearchPage';
-import { searchRec } from '~/utils/fetch-helpers';
+import { fetchRecipes, searchRec } from '~/utils/fetch-helpers';
 
 interface Props {
   searchParams?: { term: string; type: string };
@@ -12,7 +12,10 @@ export default async function Search({ searchParams }: Props) {
     (searchParams && !searchParams.term)
   )
     return notFound();
-  const data = await searchRec(searchParams?.term, searchParams.type);
+  // const recipeType = searchParams.type === 'recipe' ? 'query' : 'cuisine';
+  const data = await fetchRecipes({
+    recipe: { type: 'query', value: searchParams?.term, items: '5' },
+  });
   if (!data) notFound();
 
   return (
