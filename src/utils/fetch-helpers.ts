@@ -87,7 +87,7 @@ export const fetchSimilar = async (id: string) => {
     // fetch similar based on ID
     if (id) {
       const request = await fetch(
-        `https://api.spoonacular.com/recipes/${id.trim()}/similar?number=${similarRecipes}&apiKey=${keys}`,
+        `https://api.spoonacular.com/recipes/${id}/similar?number=${similarRecipes}&apiKey=${keys}`,
       );
       const response = await request.json();
       return response;
