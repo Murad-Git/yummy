@@ -15,7 +15,7 @@ export const profileLinks: ProfileLinks[] = [
   `Personal Info`,
   `Your Favourite Recipes`,
 ];
-
+export const ingredientsResults = 4;
 export const searchResults = 4;
 export const similarRecipes = 4;
 
@@ -25,4 +25,24 @@ export const footerItems = [
   `Pellentesque`,
   `Aliquam`,
   `Lorem ipsum`,
+];
+
+export const heroImgList = [
+  'blog',
+  'breakfast',
+  'dessert',
+  'drink',
+  'hamburgers',
+  'hero-bg',
+  'main course',
+  'moussaka',
+  'paella',
+  'pasta',
+  'pizza',
+  'pasta',
+  'ramen',
+  'salad',
+  'side dish',
+  'soup',
+  'sushi',
 ];

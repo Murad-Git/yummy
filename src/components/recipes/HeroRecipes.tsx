@@ -4,12 +4,11 @@ import Link from 'next/link';
 import { makeSlug } from '~/utils/helpers';
 
 interface Props {
-  heroRecipes: Recipe[];
+  heroRecipes: searchResult[];
   title: string;
 }
 
 export default function HeroRecipes({ heroRecipes, title }: Props) {
-  // const data = await fetchRecipes({ items: '1', isDynamic: false });
   return (
     <section className='section relative py-16'>
       <h1 className='section-title'>{title}</h1>
@@ -32,7 +31,7 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
             />
             <div className='absolute bottom-0 bg-white opacity-90  group-hover/main:h-24 h-0 transition-all w-full'>
               <p className='text-center pt-6 text-xl font-semibold'>
-                Apple-Cheesecake Tart with Salted Caramel Glaze
+                {heroRecipes[0].title}
               </p>
             </div>
           </Link>
@@ -56,7 +55,7 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
               />
               <div className='absolute bottom-0 bg-white opacity-90 h-16 md:group-hover/other:h-20 md:h-0 transition-all w-full'>
                 <p className='text-center pt-4 text-base px-2 md:px-0 md:text-lg font-semibold'>
-                  Apple-Cheesecake Tart with Salted Caramel Glaze
+                  {recipe.title}
                 </p>
               </div>
             </Link>

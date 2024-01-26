@@ -1,21 +1,19 @@
 'use client';
+// import { redirect } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 export const SearchField = ({ className }: { className?: string }) => {
-  const router = useRouter();
+  const { push } = useRouter();
   const [placeholder, setPlaceholder] = useState(`Search...`);
 
   const handleOptionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     switch (e.target.value) {
-      case `recipe`:
+      case `query`:
         setPlaceholder(`Search...`);
         break;
       case `ingredients`:
         setPlaceholder(`apples, flour, sugar`);
-        break;
-      case `all`:
-        setPlaceholder(`Recipes, articles, videos, ingredients, etc...`);
         break;
       default:
         setPlaceholder(`Search...`);
@@ -25,7 +23,11 @@ export const SearchField = ({ className }: { className?: string }) => {
     e.preventDefault();
     const { search: searchTerm } = e.currentTarget;
     const { searchSelect: type } = e.currentTarget;
-    router.push(`/search?term=${searchTerm.value}&type=${type.value}`);
+
+    if (type.value === 'query')
+      push(`/search?term=${searchTerm.value}&type=${type.value}`);
+    if (type.value === 'ingredients')
+      push(`/search/ingredients?term=${searchTerm.value}&type=${type.value}`);
   };
   return (
     <form className={`${className} `} onSubmit={handleSubmit}>
@@ -39,10 +41,6 @@ export const SearchField = ({ className }: { className?: string }) => {
               placeholder={placeholder}
             />
             <button type='submit' className='absolute right-0 mt-[0.8rem] mr-4'>
-              {/* <button
-              type='submit'
-              className='absolute left-[60%] md:right-0 top-0 mt-[0.8rem] mr-4'
-            > */}
               <svg
                 className='h-4 w-4 fill-current text-gray-600'
                 xmlns='http://www.w3.org/2000/svg'
@@ -69,9 +67,8 @@ export const SearchField = ({ className }: { className?: string }) => {
             name='searchSelect'
             onChange={handleOptionChange}
           >
-            <option value='recipe'>recipe</option>
-            <option value='ingredients'>ingredients</option>
-            <option value='all'>all</option>
+            <option value='query'>Recipe</option>
+            <option value='ingredients'>Ingredients</option>
           </select>
         </div>
       </div>

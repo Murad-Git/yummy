@@ -122,5 +122,43 @@ interface searchResult {
   id: number;
   title: string;
   image: string;
+  imageType?: string;
+  name?: string;
+}
+
+interface ingredientProps {
+  id: number;
+  image: string;
   imageType: string;
+  likes: number;
+  missedIngredientCount: number;
+  missedIngredients: {
+    aisle: string;
+    amount: number;
+    id: number;
+    image: string;
+    meta: string[];
+    name: string;
+    original: string;
+    originalName: string;
+    unit: string;
+    unitLong: string;
+    unitShort: string;
+  }[];
+  title: string;
+  unusedIngredients: string[];
+  usedIngredientCount: numebr;
+  usedIngredients: {
+    aisle: string;
+    amount: number;
+    id: number;
+    image: string;
+    meta: string[];
+    name: string;
+    original: string;
+    originalName: string;
+    unit: string;
+    unitLong: string;
+    unitShort: string;
+  }[];
 }

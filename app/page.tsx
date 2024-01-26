@@ -1,3 +1,4 @@
+export const revalidate = 3600;
 import { notFound } from 'next/navigation';
 import { MainPage } from '~/page/MainPage';
 import { fetchRecipes } from '~/utils/fetch-helpers';

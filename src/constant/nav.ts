@@ -1,47 +1,15 @@
-export const navRecipes = [
-  { id: 1, text: `pizza`, src: `/` },
-  { id: 2, text: `hamburgers`, src: `/` },
-  { id: 3, text: `pasta`, src: `/` },
-  { id: 4, text: `ramen`, src: `/` },
-  { id: 5, text: `paella`, src: `/` },
-  { id: 6, text: `moussaka`, src: `/` },
-  { id: 7, text: `sushi`, src: `/` },
-];
-export const navCategory = [
-  { id: 1, text: `american`, src: `/` },
-  { id: 2, text: `british`, src: `/` },
-  { id: 3, text: `chinese`, src: `/` },
-  { id: 4, text: `mexican`, src: `/` },
-  { id: 5, text: `european`, src: `/` },
-  { id: 6, text: `french`, src: `/` },
-  { id: 7, text: `italian`, src: `/` },
-  { id: 8, text: `indian`, src: `/` },
-  { id: 9, text: `japanese`, src: `/` },
-  { id: 10, text: `mediterranean`, src: `/` },
-];
-
-export const navDishes = [
-  { id: 1, text: `main course`, src: `/` },
-  { id: 2, text: `side dish`, src: `/` },
-  { id: 3, text: `breakfast`, src: `/` },
-  { id: 4, text: `soup`, src: `/` },
-  { id: 5, text: `dessert`, src: `/` },
-  { id: 6, text: `salad`, src: `/` },
-  { id: 7, text: `drink`, src: `/` },
-];
-
 export const navList = [
   {
     id: 1,
     name: `Recipes`,
     subRecipes: [
-      { id: 1, text: `pizza`, src: `/search?term=pizza&type=recipe` },
-      { id: 2, text: `hamburgers`, src: `/search?term=hamburgers&type=recipe` },
-      { id: 3, text: `pasta`, src: `/search?term=pasta&type=recipe` },
-      { id: 4, text: `ramen`, src: `/search?term=ramen&type=recipe` },
-      { id: 5, text: `paella`, src: `/search?term=paella&type=recipe` },
-      { id: 6, text: `moussaka`, src: `/search?term=moussaka&type=recipe` },
-      { id: 7, text: `sushi`, src: `/search?term=sushi&type=recipe` },
+      { id: 1, text: `pizza`, src: `/search?term=pizza&type=query` },
+      { id: 2, text: `hamburgers`, src: `/search?term=hamburgers&type=query` },
+      { id: 3, text: `pasta`, src: `/search?term=pasta&type=query` },
+      { id: 4, text: `ramen`, src: `/search?term=ramen&type=query` },
+      { id: 5, text: `paella`, src: `/search?term=paella&type=query` },
+      { id: 6, text: `moussaka`, src: `/search?term=moussaka&type=query` },
+      { id: 7, text: `sushi`, src: `/search?term=sushi&type=query` },
     ],
   },
   {
@@ -67,14 +35,14 @@ export const navList = [
       {
         id: 1,
         text: `main course`,
-        src: `/search?term=main course&type=recipe`,
+        src: `/search?term=main course&type=query`,
       },
-      { id: 2, text: `side dish`, src: `/search?term=side dish&type=recipe` },
-      { id: 3, text: `breakfast`, src: `/search?term=breakfast&type=recipe` },
-      { id: 4, text: `soup`, src: `/search?term=soup&type=recipe` },
-      { id: 5, text: `dessert`, src: `/search?term=dessert&type=recipe` },
-      { id: 6, text: `salad`, src: `/search?term=salad&type=recipe` },
-      { id: 7, text: `drink`, src: `/search?term=drink&type=recipe` },
+      { id: 2, text: `side dish`, src: `/search?term=side dish&type=query` },
+      { id: 3, text: `breakfast`, src: `/search?term=breakfast&type=query` },
+      { id: 4, text: `soup`, src: `/search?term=soup&type=query` },
+      { id: 5, text: `dessert`, src: `/search?term=dessert&type=query` },
+      { id: 6, text: `salad`, src: `/search?term=salad&type=query` },
+      { id: 7, text: `drink`, src: `/search?term=drink&type=query` },
     ],
   },
 ];

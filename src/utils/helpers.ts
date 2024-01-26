@@ -14,10 +14,13 @@ export const sortComments = (comments: RecipeComment[]) => {
 };
 
 export const makeSlug = (id: number, title: string) => {
-  const formatTitle = title
-    .split(` `)
-    .map((letter) => letter.toLocaleLowerCase())
-    .join(`-`);
+  const formatTitle =
+    title.length > 1
+      ? title
+          .split(` `)
+          .map((letter) => letter.toLocaleLowerCase())
+          .join(`-`)
+      : title;
 
   return `/recipes/${id}/${formatTitle}`;
 };

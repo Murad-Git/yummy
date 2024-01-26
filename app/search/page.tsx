@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { SearchPage } from '~/page/SearchPage';
-import { fetchRecipes, searchRec } from '~/utils/fetch-helpers';
+import { fetchRecipes } from '~/utils/fetch-helpers';
 
 interface Props {
   searchParams?: { term: string; type: string };
@@ -12,15 +12,15 @@ export default async function Search({ searchParams }: Props) {
     (searchParams && !searchParams.term)
   )
     return notFound();
-  // const recipeType = searchParams.type === 'recipe' ? 'query' : 'cuisine';
+  const { type, term } = searchParams;
   const data = await fetchRecipes({
-    recipe: { type: 'query', value: searchParams?.term, items: '5' },
+    recipe: { type: type, value: term, items: '5', isDynamic: true },
   });
   if (!data) notFound();
 
   return (
     <main>
-      <SearchPage params={searchParams.term} recipes={data.results} />
+      <SearchPage params={term} recipes={data.results} type={type} />
     </main>
   );
 }

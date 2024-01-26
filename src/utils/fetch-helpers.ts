@@ -1,6 +1,10 @@
-import { searchResults, similarRecipes } from '~/constant/mainConst';
+import {
+  ingredientsResults,
+  searchResults,
+  similarRecipes,
+} from '~/constant/mainConst';
 
-const keys = process.env.API_KEY3;
+const keys = process.env.API_KEY;
 
 type RecipesTypes = {
   random?: boolean;
@@ -58,29 +62,6 @@ export const fetchRecipes = async ({ recipe }: Props) => {
   }
 };
 
-export const searchRec = async (query?: string, type?: string) => {
-  try {
-    // search by ingredients
-    if (type === `ingredients`) {
-      const searchItems =
-        query && query?.split(`,`).length > 1
-          ? query
-              ?.split(`,`)
-              .map((item) => item.trim())
-              .join(`,+`)
-          : query;
-      const request = await fetch(
-        `
-            https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchItems}&number=${searchResults}&apiKey=${keys}`,
-      );
-      const response = await request.json();
-      return response;
-    }
-  } catch (error) {
-    if (error instanceof Error) console.error(error.message);
-  }
-};
-
 export const fetchSimilar = async (id: string) => {
   try {
     // fetch similar based on ID
@@ -95,3 +76,24 @@ export const fetchSimilar = async (id: string) => {
     if (error instanceof Error) console.error(error.message);
   }
 };
+
+export const fetchByIngredients = async (ingred: string) => {
+  try {
+    const searchItems =
+      ingred && ingred.length > 1
+        ? ingred
+            ?.split(`,`)
+            .map((item) => item.trim())
+            .join(`,+`)
+        : ingred;
+    const request = await fetch(
+      `
+            https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchItems}&number=${ingredientsResults}&apiKey=${keys}`,
+    );
+    const response = await request.json();
+    return response;
+  } catch (error) {
+    if (error instanceof Error) console.error(error.message);
+  }
+};
+// https://api.spoonacular.com/recipes/findByIngredients?ingredients=${searchItems}&number=${items}&apiKey=${keys}`, ---ingredient search URL

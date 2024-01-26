@@ -8,7 +8,7 @@ interface Props {
   ingredient: Ingredient;
 }
 
-export default function Ingredient({ ingredient }: Props) {
+export default function IngredientList({ ingredient }: Props) {
   const [checked, setChecked] = useState(false);
   const [isHovering, setIsHovering] = useState({ value: false, id: `` });
   const handleHover = (id: string) => {
