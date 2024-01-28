@@ -46,8 +46,8 @@ export default function RecipeImg({ recipe, link }: Props) {
         <Image
           className='w-full cursor-pointer rounded-sm transition-all duration-200 hover:scale-110'
           src={
-            `https://spoonacular.com/recipeImages/${recipe.id}-636x393.jpg
-          ` || `/images/no-food.png`
+            `https://spoonacular.com/recipeImages/${recipe.id}-636x393.${recipe.imageType}` ||
+            `/images/no-food.png`
           }
           height={500}
           width={500}
