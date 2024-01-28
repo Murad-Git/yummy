@@ -18,8 +18,8 @@ export const NavMobile = () => {
         <FontAwesomeIcon className='text-green-500 text-3xl' icon={faBurger} />
       </button>
       <div
-        className={`absolute z-50 h-screen w-3/5 top-0 bg-gray-900 transition-all duration-300 px-10 py-4 block md:hidden ${
-          openNav ? `right-0 opacity-100` : `-right-full opacity-0`
+        className={`absolute z-50 h-screen w-3/5 top-0 right-0 bg-gray-900 transition-all duration-300 px-10 py-4 block md:hidden ${
+          openNav ? `translate-x-0` : `translate-x-full`
         }`}
       >
         <button className='mr-2' onClick={() => setOpenNav((prev) => !prev)}>

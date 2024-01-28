@@ -1,20 +1,3 @@
-// import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
-// import { cookies } from 'next/headers';
-// import { NextResponse } from 'next/server';
-// import { Database } from '~/types/database';
-
-// export async function GET(request: Request) {
-//   const requestUrl = new URL(request.url);
-//   const code = requestUrl.searchParams.get(`code`);
-
-//   if (code) {
-//     const supabase = createRouteHandlerClient<Database>({ cookies });
-//     await supabase.auth.exchangeCodeForSession(code);
-//   }
-
-//   return NextResponse.redirect(requestUrl.origin);
-// }
-
 import { CookieOptions, createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
@@ -22,7 +5,6 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   const cookieStore = cookies();
   const requestUrl = new URL(request.url);
-  const code = requestUrl.searchParams.get(`code`);
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -41,10 +23,6 @@ export async function POST(request: Request) {
       },
     },
   );
-  // if (code) {
-  //   const supabase = createRouteHandlerClient<Database>({ cookies });
-  //   await supabase.auth.exchangeCodeForSession(code);
-  // }
 
   return NextResponse.redirect(requestUrl.origin);
 }

@@ -18,7 +18,7 @@ export default function Head() {
       <meta property='og:image:alt' content='Landing page' />
       <meta
         property='og:url'
-        content='https://shoppee-e-wnsg.vercel.app/'
+        content='https://yummy-recipes-steel.vercel.app'
         data-react-helmet='true'
       />
       <meta property='og:type' content='website' data-react-helmet='true' />
