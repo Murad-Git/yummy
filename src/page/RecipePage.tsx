@@ -6,8 +6,6 @@ import { RecipesGenInfo } from '~/components/recipes/RecipesGenInfo';
 import { Similar } from '~/components/recipes/Similar';
 import { CommentsHandler } from '~/components/ui/comments/CommentsHandler';
 import { Filler } from '~/components/ui/Filler';
-import RecipeImg from '~/components/ui/RecipeImg';
-import { makeSlug } from '~/utils/helpers';
 
 interface Props {
   recipeInfo: Recipe;
@@ -30,28 +28,11 @@ export const RecipePage = ({
         recipeName={recipeInfo.title ? recipeInfo.title : 'No title'}
       />
       <Container className='mb-20'>
-        <section className='grid grid-cols-1 md:grid-cols-3 justify-items-center gap-3 md:gap-6 border-b-2 border-gray-400 pb-6 align-middle mt-8'>
+        <section className='grid grid-cols-1 md:grid-cols-3 justify-items-center gap-3 md:gap-6 border-b-2 border-gray-400 pb-6 align-middle mt-8 relative'>
           {/* recipe and description */}
           <div className='col-span-2'>
             {/* img and title */}
-            <div className='grid grid-cols-2 gap-4 align-middle'>
-              <div>
-                <RecipeImg
-                  recipe={recipeInfo}
-                  link={makeSlug(
-                    recipeInfo.id,
-                    recipeInfo.title ? recipeInfo.title : 'No title',
-                  )}
-                />
-                <a
-                  className='text-xs text-gray-400'
-                  href={recipeInfo.creditsText}
-                >
-                  {recipeInfo.creditsText}
-                </a>
-              </div>
-              <RecipesGenInfo recipeInfo={recipeInfo} calories={calories} />
-            </div>
+            <RecipesGenInfo recipeInfo={recipeInfo} calories={calories} />
             <div className='mt-8'>
               <p
                 className='inline-block text-gray-700 leading-[2] px-2 text-justify text-md'

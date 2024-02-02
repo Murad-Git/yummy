@@ -61,7 +61,7 @@
   }
 
   .auth-card {
-    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-white p-4 shadow-md sm:min-w-[24rem] sm:px-10 absolute top-[10rem] left-[40%] m-0 z-40 max-w-[24rem];
+    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-gray-50 p-4 shadow-md sm:min-w-[24rem] sm:px-10 absolute top-[10rem] md:left-[40%] m-0 z-40 max-w-[24rem] py-8;
   }
 
   .auth-card-rel {
@@ -91,24 +91,15 @@
   }
 
   .nav-links {
-    @apply space-x-2 flex items-center text-gray-200;
+    @apply space-x-4 text-gray-200 flex items-center;
 
     li {
-      @apply font-bold uppercase xl:text-lg cursor-pointer hover:text-white transition-all xl:p-3;
+      @apply font-bold uppercase xl:text-lg cursor-pointer hover:text-white transition-all xl:px-3;
     }
   }
 
   .dropdown-menu {
     @apply absolute bg-gray-900 rounded-lg py-3 px-4 z-40 -translate-y-5 transition-all hidden top-20;
-    // @apply absolute top-20 bg-gray-900 rounded-lg py-3 px-4 opacity-0 invisible z-30 -translate-y-5 transition-all hover:opacity-100 hover:visible;
-
-    // @apply absolute top-24 bg-white rounded-lg py-3 px-5;
-    // ul li {
-    //   @apply py-2 px-0 border-t border-slate-50 my-3 mx-auto;  
-    //     a {
-    //       @apply max-w-[200px] ml-3 transition-all text-gray-200 hover:text-white ;
-    //     }
-    // }
 
     &:before {
       @apply content-none absolute -top-1 right-5 h-5 w-5 bg-white rotate-45
@@ -128,10 +119,10 @@
   }
 
   .dropdown-mobile {
-    @apply py-3 px-4 hidden origin-top opacity-0 transition-all duration-500 space-y-2;
+    @apply space-y-8 hidden h-0 transition-all duration-500;
 
     ul li {
-      @apply flex my-3;
+      @apply flex my-5;
 
       a {
         @apply text-gray-300 capitalize;
@@ -139,13 +130,9 @@
     }
 
     &--active {
-      @apply origin-center block opacity-100;
+      @apply origin-center block h-full
     }
   }
-
-  // .dropdownItem {
-
-  // }
 
   .active {
     @apply opacity-100 visible translate-y-0 transition-all z-30;

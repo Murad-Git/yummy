@@ -3,7 +3,12 @@
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-export const SearchField = ({ className }: { className?: string }) => {
+interface Props {
+  className: React.ComponentProps<'form'>['className'];
+  subClassName: React.ComponentProps<'div'>['className'];
+}
+
+export const SearchField = ({ className, subClassName }: Props) => {
   const { push } = useRouter();
   const [placeholder, setPlaceholder] = useState(`Search...`);
 
@@ -31,7 +36,7 @@ export const SearchField = ({ className }: { className?: string }) => {
   };
   return (
     <form className={`${className} `} onSubmit={handleSubmit}>
-      <div className='mx-auto flex flex-col pt-2 text-gray-600'>
+      <div className={`mx-auto ${subClassName} text-gray-600`}>
         <div className='relative mb-3 md:mb-auto'>
           <div className='relative inline-block'>
             <input

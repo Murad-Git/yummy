@@ -27,6 +27,7 @@
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.9.3",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^6.4.12",

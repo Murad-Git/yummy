@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { Field, Form, Formik } from 'formik';
 import { Dispatch, SetStateAction, useState } from 'react';
 import * as Yup from 'yup';
+import { Button } from '~/components/ui/Button';
 import { Database } from '~/types/database';
 
 const SignUpSchema = Yup.object().shape({
@@ -81,12 +82,9 @@ export const SignUp = ({ setView }: Props) => {
               <div className='text-red-600'>{errors.password}</div>
             ) : null}
 
-            <button
-              className='button-inverse btn btn-blue w-full'
-              type='submit'
-            >
+            <Button className='w-full' bType='btn-filled' type='submit'>
               Submit
-            </button>
+            </Button>
           </Form>
         )}
       </Formik>
@@ -96,13 +94,14 @@ export const SignUp = ({ setView }: Props) => {
           {successMsg}
         </p>
       )}
-      <button
-        className='link w-full'
+      <Button
+        className='w-full text-base'
+        bType='btn-outline'
         type='button'
         onClick={() => setView(`signIn`)}
       >
         Already have an account? Sign In.
-      </button>
+      </Button>
     </div>
   );
 };

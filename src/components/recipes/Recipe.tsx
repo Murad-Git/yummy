@@ -1,8 +1,8 @@
 'use client';
 
 import DOMPurify from 'dompurify';
+import Image from 'next/image';
 import Link from 'next/link';
-
 import RecipeImg from '~/components/ui/RecipeImg';
 import { makeSlug } from '~/utils/helpers';
 
@@ -28,7 +28,7 @@ export default function Recipe({ recipe }: Props) {
         } flex-col items-start justify-between px-3 pb-1 pt-6 hover:bg-gray-100`}
       >
         <div className='mb-3 text-left'>
-          <Link href={recipeLink}>
+          <Link href={recipeLink} scroll>
             <h2 className='my-3 cursor-pointer text-xl font-bold hover:text-gray-600'>
               {recipe.title}
             </h2>

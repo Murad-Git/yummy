@@ -21,6 +21,7 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
             className='relative'
             href={makeSlug(heroRecipes[0].id, heroRecipes[0].title)}
             aria-label='top product'
+            scroll
           >
             <Image
               className='w-full object-contain transition-all duration-200'
@@ -32,7 +33,7 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
               width={600}
               alt='product'
             />
-            <div className='absolute bottom-0 bg-white opacity-90 group-hover/main:h-24 h-0 transition-all w-full'>
+            <div className='absolute bottom-0 h-16 bg-white opacity-90 md:group-hover/main:h-24 md:h-0 transition-all w-full'>
               <p className='text-center pt-6 text-xl font-semibold'>
                 {heroRecipes[0].title}
               </p>
@@ -48,6 +49,7 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
               className='relative'
               href={makeSlug(recipe.id, recipe.title)}
               aria-label='top product'
+              scroll
             >
               <Image
                 className='w-full object-contain transition-all duration-200'

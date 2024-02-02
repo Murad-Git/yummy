@@ -2,7 +2,6 @@ import { Session, User } from '@supabase/auth-helpers-nextjs';
 import Image from 'next/image';
 import ProfileLinks from '~/components/profile/ProfileLinks';
 import ProfileNav from '~/components/profile/ProfileNav';
-// import { authOptions } from '~/pages/api/auth/[...nextauth]';
 
 interface Props {
   user: User | null;
@@ -13,7 +12,7 @@ export const ProfilePage = ({ user, session }: Props) => {
   const loginDate = new Date(user?.last_sign_in_at || ``).toUTCString();
   if (!user) return <p>No user</p>;
   return (
-    <div className='grid grid-cols-1 md:grid-cols-6'>
+    <div className='grid grid-cols-1 md:grid-cols-6 min-h-[100vh] md:min-h-[80vh]'>
       {/* left side */}
       <section className='col-span-1 bg-white p-4'>
         <div className='flex md:flex-col items-center justify-start p-2'>

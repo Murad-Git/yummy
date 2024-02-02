@@ -1,18 +1,11 @@
 import { DropItem } from '~/components/ui/dropdowns/DropItem';
 import { navList } from '~/constant/nav';
 
-interface Props {
-  items: typeof navList;
-}
-
-export const DropList = ({ items }: Props) => {
+export const DropList = () => {
   return (
-    <div>
-      {items.map((item) => (
-        <div
-          key={item.id}
-          className='group inline-block relative text-gray-200'
-        >
+    <ul>
+      {navList.map((item) => (
+        <li key={item.id} className='group inline-block relative text-gray-200'>
           <button className='font-semibold py-2 px-4 rounded inline-flex items-center xl:text-lg cursor-pointer hover:text-white transition-all hover:bg-gray-800 mr-2'>
             <span className='mr-1'>{item.name}</span>
             <svg
@@ -24,8 +17,8 @@ export const DropList = ({ items }: Props) => {
             </svg>
           </button>
           <DropItem subItems={item.subRecipes} />
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };

@@ -4,7 +4,7 @@ import {
   similarRecipes,
 } from '~/constant/mainConst';
 
-const keys = process.env.API_KEY;
+const keys = process.env.API_KEY2;
 
 type RecipesTypes = {
   random?: boolean;

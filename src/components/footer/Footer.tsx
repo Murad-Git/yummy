@@ -8,7 +8,7 @@ export const Footer = () => {
     <div>
       <div className='py-20 bg-gray-900 text-gray-200'>
         <Container>
-          <div className='grid grid-cols-1 md:grid-cols-4 md:text-base text-sm'>
+          <div className='grid grid-cols-1 sm:grid-cols-4 md:text-base text-sm'>
             <ul className='space-y-3'>
               {footerItems.map((item, index) => (
                 <li key={index}>
@@ -48,7 +48,7 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
-            <div className='flex flex-col mt-4 md:mt-0'>
+            <div className='flex flex-col'>
               <h4 className='text-lg md:text-2xl font-bold mb-6'>Yummy</h4>
               <div className='space-y-2 md:space-y-4'>
                 <p>

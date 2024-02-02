@@ -4,7 +4,7 @@ import Loading from '@/loading';
 import axios from 'axios';
 import { Suspense, useEffect, useState } from 'react';
 import Recipes from '~/components/recipes/Recipes';
-import { NavButton } from '~/components/ui/NavButton';
+import { NavButton } from '~/components/nav/NavButton';
 import { cuisineConst } from '~/constant/mainConst';
 
 interface Props {

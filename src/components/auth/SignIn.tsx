@@ -2,7 +2,7 @@
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import cn from 'classnames';
 import { Field, Form, Formik } from 'formik';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import * as Yup from 'yup';
 import { useAuth } from '~/components/auth/AuthProvider';
 import { Oauth } from '~/components/auth/Oauth';
@@ -13,10 +13,6 @@ const SignInSchema = Yup.object().shape({
   email: Yup.string().email(`Invalid email`).required(`Required`),
   password: Yup.string().required(`Required`),
 });
-
-interface Props {
-  setView: Dispatch<SetStateAction<string>>;
-}
 
 export const SignIn = () => {
   const supabase = createClientComponentClient<Database>();
@@ -46,8 +42,8 @@ export const SignIn = () => {
       <Oauth setErrorMsg={setErrorMsg} />
       <Formik
         initialValues={{
-          email: ``,
-          password: ``,
+          email: `test@test.com`,
+          password: `123456789`,
         }}
         validationSchema={SignInSchema}
         onSubmit={handleSignIn}
@@ -64,7 +60,7 @@ export const SignIn = () => {
               )}
               id='email'
               name='email'
-              placeholder='jane@acme.com'
+              placeholder='test@test.com'
               type='email'
             />
             {errors.email && touched.email ? (
@@ -86,22 +82,9 @@ export const SignIn = () => {
             {errors.password && touched.password ? (
               <div className='text-red-600'>{errors.password}</div>
             ) : null}
-            {/* <button
-              className='link btn w-full'
-              type='button'
-              onClick={() => setView(`resetPassword`)}
-            >
-              Forgot your password?
-            </button> */}
             <Button className='w-full' bType='btn-filled' type='submit'>
               Submit
             </Button>
-            {/* <button
-              className='button-inverse btn btn-blue w-full '
-              type='submit'
-            >
-              Submit
-            </button> */}
           </Form>
         )}
       </Formik>
@@ -125,13 +108,6 @@ export const SignIn = () => {
       >
         Sign Up
       </Button>
-      {/* <button
-        className='link w-full'
-        type='button'
-        onClick={() => setView(`signUp`)}
-      >
-        Don&apos;t have an account? Sign Up.
-      </button> */}
     </div>
   );
 };

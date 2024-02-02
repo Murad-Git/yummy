@@ -1,5 +1,5 @@
 'use client';
-import { NavLink } from '~/components/ui/NavLink';
+import { NavLink } from '~/components/nav/NavLink';
 import { profileLinks } from '~/constant/mainConst';
 import { useAppSelector } from '~/types/main';
 

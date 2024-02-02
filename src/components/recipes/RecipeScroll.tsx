@@ -42,13 +42,13 @@ export default function RecipeScroll({ recipes, title }: Props) {
           ))}
       </ul>
       <button
-        className='absolute top-1/2 left-4 flex h-12 w-12 flex-col items-center justify-center rounded-full bg-green-500 bg-opacity-80'
+        className='absolute top-1/2 -left-4 flex h-12 w-12 flex-col items-center justify-center rounded-full bg-green-500 bg-opacity-80'
         onClick={() => (scrollerRef.current!.scrollLeft -= 600)}
       >
         <FontAwesomeIcon className='h-6 text-white' icon={faArrowLeft} />
       </button>
       <button
-        className='absolute top-1/2 right-4 flex h-12 w-12 flex-col items-center justify-center rounded-full bg-green-500 bg-opacity-80'
+        className='absolute top-1/2 -right-4 flex h-12 w-12 flex-col items-center justify-center rounded-full bg-green-500 bg-opacity-80'
         onClick={() => (scrollerRef.current!.scrollLeft += 600)}
       >
         <FontAwesomeIcon className='h-6 text-white' icon={faArrowRight} />

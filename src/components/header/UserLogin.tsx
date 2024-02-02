@@ -8,20 +8,27 @@ import { useAuth } from '~/components/auth/AuthProvider';
 import { SignOut } from '~/components/auth/SignOut';
 import { Overlay } from '~/components/ui/Overlay';
 
-export const UserLogin = () => {
+interface Props {
+  className?: string;
+}
+
+export const UserLogin = ({ className }: Props) => {
   const [showAuth, setShowAuth] = useState(false);
   const { session } = useAuth();
 
   return (
-    <li className='flex items-end md:items-center md:justify-around md:space-x-4 flex-col md:flex-row'>
+    <li
+      className={`flex items-center md:justify-around md:space-x-4 flex-col md:flex-row ${className}`}
+    >
       {session ? (
         <SignOut />
       ) : (
         <button
-          className='text-white xl:text-lg transition-all xl:p-3'
+          className='text-gray-300 xl:text-lg transition-all xl:p-3'
           onClick={() => setShowAuth((prev) => !prev)}
         >
-          <FontAwesomeIcon icon={faRightToBracket} />
+          <p className='inline-block mr-3'>Sign In</p>
+          <FontAwesomeIcon className='text-green-500' icon={faRightToBracket} />
         </button>
       )}
       {showAuth && <Auth />}
@@ -29,9 +36,9 @@ export const UserLogin = () => {
       {session && (
         <Link
           href='/profile'
-          className='hover:text-white xl:text-lg transition-all xl:p-3'
+          className='hover:text-white xl:text-lg transition-all xl:p-3 mt-4 md:mt-0'
         >
-          <FontAwesomeIcon icon={faUser} />
+          <FontAwesomeIcon className='text-green-500' icon={faUser} />
         </Link>
       )}
     </li>

@@ -15,10 +15,14 @@ export const SignOut = () => {
   return (
     <button
       type='button'
-      className='button-inverse flex h-10 w-10 flex-col items-center justify-center rounded-full transition-all  hover:text-white'
+      className='flex items-center rounded-full transition-all  hover:text-white'
       onClick={handleSignOut}
     >
-      <FontAwesomeIcon icon={faArrowRightFromBracket} className='rotate-180' />
+      <p className='inline-block mr-3'>Sign Out</p>
+      <FontAwesomeIcon
+        className='text-green-500 rotate-180'
+        icon={faArrowRightFromBracket}
+      />
     </button>
   );
 };

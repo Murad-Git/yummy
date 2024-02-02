@@ -5,8 +5,6 @@ import { SignIn } from '~/components/auth/SignIn';
 import { SignUp } from '~/components/auth/SignUp';
 
 export const Auth = () => {
-  // const [view, setView] = useState<AuthTypes>
-  //   ('signIn');
   const { view, setView } = useAuth();
   switch (view) {
     case `resetPassword`:

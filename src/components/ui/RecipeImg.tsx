@@ -42,7 +42,7 @@ export default function RecipeImg({ recipe, link }: Props) {
 
   return (
     <div className='relative overflow-hidden rounded-t-sm'>
-      <Link href={link}>
+      <Link href={link} scroll>
         <Image
           className='w-full cursor-pointer rounded-sm transition-all duration-200 hover:scale-110'
           src={

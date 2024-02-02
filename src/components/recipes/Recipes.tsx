@@ -1,3 +1,4 @@
+'use client';
 import Recipe from '~/components/recipes/Recipe';
 import { More } from '~/components/ui/More';
 
@@ -21,11 +22,8 @@ export default function Recipes({
           items === `five` ? `grid-cols-fluid-five` : `grid-cols-fluid-four`
         }  gap-6`}
       >
-        <>
-          {!!recipes &&
-            recipes.map((recipe) => <Recipe key={recipe.id} recipe={recipe} />)}
-          {more && <More />}
-        </>
+        {!!recipes &&
+          recipes.map((recipe) => <Recipe key={recipe.id} recipe={recipe} />)}
       </div>
     </section>
   );
