@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import { useState } from 'react';
 import { ScaledImg } from '~/components/ui/ScaledImg';
+import { setImgScaled } from '~/store/navigationSlice';
+import { useAppDispatch, useAppSelector } from '~/types/main';
 
 interface Props {
   recipeInfo: Recipe;
@@ -11,13 +13,18 @@ interface Props {
 }
 
 export const RecipesGenInfo = ({ recipeInfo, calories }: Props) => {
-  const [scaleImg, setScaleImg] = useState(false);
+  // const [scaleImg, setScaleImg] = useState(false);
+
+  const dispatch = useAppDispatch();
 
   const src = `https://spoonacular.com/recipeImages/${recipeInfo.id}-636x393.${recipeInfo.imageType}`;
   return (
-    <div className='grid grid-cols-2 gap-4 align-middle'>
+    <div className='grid md:grid-cols-2 md:gap-4 align-middle'>
       <div>
-        <button className='block' onClick={() => setScaleImg((prev) => !prev)}>
+        <button
+          className='block mx-auto'
+          onClick={() => dispatch(setImgScaled())}
+        >
           <Image
             className='w-full cursor-pointer rounded-sm transition-all duration-200 hover:scale-110'
             src={src || `/images/no-food.png`}
@@ -68,7 +75,7 @@ export const RecipesGenInfo = ({ recipeInfo, calories }: Props) => {
           </ul>
         </div>
       </div>
-      <ScaledImg src={src} scaleImg={scaleImg} onClick={setScaleImg} />
+      <ScaledImg src={src} onClick={() => dispatch(setImgScaled)} />
     </div>
   );
 };

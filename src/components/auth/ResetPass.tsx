@@ -49,7 +49,7 @@ export const ResetPass = ({ setView }: Props) => {
               className={cn(`input`, errors.email && `border-red-50`)}
               id='email'
               name='email'
-              placeholder='jane@acme.com'
+              placeholder='test@test.com'
               type='email'
             />
             {errors.email && touched.email ? (

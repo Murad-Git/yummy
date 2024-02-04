@@ -34,6 +34,18 @@ export const ProfilePage = ({ user, session }: Props) => {
             </h1>
           </div>
         </div>
+        <div className='md:hidden'>
+          <h1 className='text-2xl font-bold'>Personal Information</h1>
+          <p>
+            Your email:{` `}
+            <span className='font-semibold'>
+              {session?.user?.email || 'no email'}
+            </span>
+          </p>
+          <p>
+            Last signed in: <span className='font-semibold'>{loginDate}</span>
+          </p>
+        </div>
         <nav className='px-2 py-3'>
           <ProfileLinks />
         </nav>
@@ -41,7 +53,7 @@ export const ProfilePage = ({ user, session }: Props) => {
       {/* right side */}
       <section className='md:col-span-5 bg-white p-4'>
         <div>
-          <div>
+          <div className='hidden md:block'>
             <h1 className='text-2xl font-bold'>Personal Information</h1>
             <p>
               Your email:{` `}

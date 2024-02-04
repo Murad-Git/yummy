@@ -2,6 +2,8 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { setHamburMenu } from '~/store/navigationSlice';
+import { useAppDispatch } from '~/types/main';
 
 interface Props {
   hamItem: {
@@ -16,6 +18,7 @@ interface Props {
 }
 
 export const DropdownMobItems = ({ hamItem }: Props) => {
+  const dispatch = useAppDispatch();
   const [openNavigation, setOpenNavigation] = useState(false);
   return (
     <li key={hamItem.id}>
@@ -38,9 +41,11 @@ export const DropdownMobItems = ({ hamItem }: Props) => {
       >
         {hamItem.subRecipes.map((subHam) => (
           <li key={subHam.id}>
-            <Link href={subHam.src} className='capitalize'>
-              {subHam.text}
-            </Link>
+            <button onClick={() => dispatch(setHamburMenu())}>
+              <Link href={subHam.src} className='capitalize'>
+                {subHam.text}
+              </Link>
+            </button>
           </li>
         ))}
       </ul>

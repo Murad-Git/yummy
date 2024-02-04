@@ -68,7 +68,7 @@ export const SearchField = ({ className, subClassName }: Props) => {
           <label htmlFor='searchSelect' />
           <select
             className='h-10 rounded-lg border-2 border-gray-300 bg-gray-100 px-3 md:px-5 pt-2 text-sm focus-within:outline-none focus:border-mainColor focus:outline-none focus-visible:outline-none'
-            id='searchSelect'
+            // id='searchSelect'
             name='searchSelect'
             onChange={handleOptionChange}
           >

@@ -6,10 +6,11 @@ export default function Loading() {
     <Player
       autoplay
       loop
-      style={{
-        height: `600px`,
-        width: `600px`,
-      }}
+      className='h-[400px] w-[400px] md:h-[600px] md:w-[600px]'
+      // style={{
+      //   height: `600px`,
+      //   width: `600px`,
+      // }}
       src='https://assets3.lottiefiles.com/packages/lf20_dlihd9az.json'
     >
       <Controls />

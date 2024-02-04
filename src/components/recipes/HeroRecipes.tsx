@@ -26,7 +26,9 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
             <Image
               className='w-full object-contain transition-all duration-200'
               src={
-                `https://spoonacular.com/recipeImages/${heroRecipes[0].id}-636x393.${heroRecipes[0].imageType}` ||
+                `https://spoonacular.com/recipeImages/${
+                  heroRecipes[0].id
+                }-636x393.${heroRecipes[0].imageType || 'jpg'}` ||
                 `/images/no-food.png`
               }
               height={500}
@@ -54,8 +56,9 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
               <Image
                 className='w-full object-contain transition-all duration-200'
                 src={
-                  `https://spoonacular.com/recipeImages/${recipe.id}-636x393.${heroRecipes[0].imageType}` ||
-                  `/images/no-food.png`
+                  `https://spoonacular.com/recipeImages/${recipe.id}-636x393.${
+                    heroRecipes[0].imageType || 'jpg'
+                  }` || `/images/no-food.png`
                 }
                 height={500}
                 width={600}

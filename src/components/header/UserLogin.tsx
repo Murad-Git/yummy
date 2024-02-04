@@ -7,14 +7,17 @@ import { Auth } from '~/components/auth/Auth';
 import { useAuth } from '~/components/auth/AuthProvider';
 import { SignOut } from '~/components/auth/SignOut';
 import { Overlay } from '~/components/ui/Overlay';
+import { setHamburMenu, setShowAuth } from '~/store/navigationSlice';
+import { useAppDispatch, useAppSelector } from '~/types/main';
 
 interface Props {
   className?: string;
 }
 
 export const UserLogin = ({ className }: Props) => {
-  const [showAuth, setShowAuth] = useState(false);
+  const showAuth = useAppSelector((state) => state.isAuthMenuOpen);
   const { session } = useAuth();
+  const dispatch = useAppDispatch();
 
   return (
     <li
@@ -25,14 +28,21 @@ export const UserLogin = ({ className }: Props) => {
       ) : (
         <button
           className='text-gray-300 xl:text-lg transition-all xl:p-3'
-          onClick={() => setShowAuth((prev) => !prev)}
+          onClick={() => {
+            dispatch(setShowAuth());
+            dispatch(setHamburMenu());
+          }}
         >
           <p className='inline-block mr-3'>Sign In</p>
           <FontAwesomeIcon className='text-green-500' icon={faRightToBracket} />
         </button>
       )}
-      {showAuth && <Auth />}
-      {showAuth && <Overlay onConfirm={setShowAuth} />}
+      {/* {!!showAuth && <Auth />} */}
+      {!!showAuth && (
+        <Overlay onConfirm={() => dispatch(setShowAuth())}>
+          <Auth />
+        </Overlay>
+      )}
       {session && (
         <Link
           href='/profile'

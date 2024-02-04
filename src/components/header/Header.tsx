@@ -4,7 +4,7 @@ import { ScrollTop } from '~/components/ui/ScrollTop';
 
 export const Header = () => {
   return (
-    <div className='bg-gray-900 w-full' id='nav'>
+    <div className={'bg-gray-900 min-h-[3.5rem] w-full'} id='nav'>
       <Nav />
       <NavMobile />
       <ScrollTop />

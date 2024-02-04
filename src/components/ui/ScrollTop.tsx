@@ -23,7 +23,7 @@ export const ScrollTop = () => {
     <>
       <a
         href='#nav'
-        className={`bg-green-600 rounded-full px-3 py-2  fixed bottom-8 right-8 hover:animate-bounce transition-all duration-500 scroll-smooth ${
+        className={`bg-green-600 rounded-full px-3 py-2 z-30 fixed bottom-8 right-8 hover:animate-bounce transition-all duration-500 scroll-smooth ${
           visible ? 'opacity-50 md:hover:opacity-100' : 'opacity-0'
         }`}
       >
