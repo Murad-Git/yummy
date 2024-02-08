@@ -20,6 +20,7 @@ const getRecipes = async () => {
       isDynamic: false,
       type: `type`,
       value: `main course`,
+      random: false,
     },
   });
 
@@ -31,7 +32,6 @@ const getRecipes = async () => {
 
 export default async function Home() {
   const { heroData, scrollData } = await getRecipes();
-
   if (heroData.recipes.length === 0 || scrollData.results.length === 0)
     notFound();
   return (

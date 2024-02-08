@@ -17,8 +17,8 @@ export const Similar = ({ title, recipes }: Props) => {
           >
             <Image
               src={
-                `https://spoonacular.com/recipeImages/${recipe.id}-636x393.jpg
-          ` || `/images/no-food.png`
+                `https://spoonacular.com/recipeImages/${recipe.id}-636x393.${recipe.imageType}` ||
+                `/images/no-food.png`
               }
               width={500}
               height={500}

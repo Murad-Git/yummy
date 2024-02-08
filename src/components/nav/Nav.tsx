@@ -20,17 +20,11 @@ export const Nav = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return (
-    // <div
-    //   className={`fixed bg-gray-900 top-0 w-full transition-all duration-500 z-40 hidden md:block`}
-    // >
     <div
       className={`fixed bg-gray-900  top-0 w-full ${
         offset > 300 ? 'h-28 px-14' : 'h-auto'
       } transition-all duration-500 z-40 hidden md:block`}
     >
-      {/* <div
-         className={`items-center flex justify-between px-10 relative text-2xl`}
-       > */}
       <div
         className={`items-center flex justify-between px-5 lg:px-10 relative text-2xl ${
           offset > 300 ? 'py-0' : 'py-2'

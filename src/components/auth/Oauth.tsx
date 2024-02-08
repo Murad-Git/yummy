@@ -24,7 +24,7 @@ export const Oauth = ({ setErrorMsg }: Props) => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: `google`,
       options: {
-        redirectTo: getURL(),
+        // redirectTo: getURL(),
         queryParams: {
           access_type: `offline`,
           prompt: `consent`,
@@ -38,7 +38,7 @@ export const Oauth = ({ setErrorMsg }: Props) => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: `facebook`,
       options: {
-        redirectTo: getURL(),
+        // redirectTo: getURL(),
         queryParams: {
           access_type: `offline`,
           prompt: `consent`,
@@ -52,7 +52,7 @@ export const Oauth = ({ setErrorMsg }: Props) => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: `github`,
       options: {
-        redirectTo: getURL(),
+        // redirectTo: getURL(),
         queryParams: {
           access_type: `offline`,
           prompt: `consent`,

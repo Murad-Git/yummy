@@ -7,7 +7,9 @@ import * as Yup from 'yup';
 import { useAuth } from '~/components/auth/AuthProvider';
 import { Oauth } from '~/components/auth/Oauth';
 import { Button } from '~/components/ui/Button';
+import { setShowAuth } from '~/store/navigationSlice';
 import { Database } from '~/types/database';
+import { useAppDispatch } from '~/types/main';
 
 const SignInSchema = Yup.object().shape({
   email: Yup.string().email(`Invalid email`).required(`Required`),
@@ -19,6 +21,7 @@ export const SignIn = () => {
   const [errorMsg, setErrorMsg] = useState(``);
   const [successMsg, setSuccessMsg] = useState(``);
   const { setView } = useAuth();
+  const dispatch = useAppDispatch();
 
   const handleSignIn = async (formData: formDataType) => {
     if (formData.password && formData.email) {
@@ -29,10 +32,13 @@ export const SignIn = () => {
       error
         ? setErrorMsg(error.message)
         : setSuccessMsg(`Successfully logged in`);
-      setTimeout(() => {
-        setView(``);
-        setSuccessMsg(``);
-      }, 3000);
+      setView(``);
+      dispatch(setShowAuth());
+      // setTimeout(() => {
+      //   setView(``);
+      //   setSuccessMsg(``);
+      //   dispatch(setShowAuth());
+      // }, 1000);
     } else setErrorMsg(`Failed to signIn`);
   };
 

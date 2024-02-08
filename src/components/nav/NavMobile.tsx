@@ -1,13 +1,10 @@
 'use client';
 import { faBurger, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useTransition, config, useSpring } from '@react-spring/web';
 import { useEffect, useState } from 'react';
 import { SearchField } from '~/components/header/SearchField';
-import { UserLogin } from '~/components/header/UserLogin';
 import { DropdownMob } from '~/components/ui/dropdowns/DropdownMob';
 import { Overlay } from '~/components/ui/Overlay';
-import { navList } from '~/constant/nav';
 import { setHamburMenu } from '~/store/navigationSlice';
 import { useAppDispatch, useAppSelector } from '~/types/main';
 
@@ -19,7 +16,6 @@ export const NavMobile = () => {
     const onScroll = () => {
       const { scrollY } = window;
       setOffset(() => {
-        // setScrollDown(scrollY - prevValue > 0 ? true : false);
         return scrollY;
       });
     };
@@ -27,14 +23,6 @@ export const NavMobile = () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  // const transitions = useTransition(openNav, {
-  //   from: {
-  //     transform:translate
-  //   },
-  //   enter: { opacity: 1, transform: `scale(${1})` },
-  //   leave: { opacity: 0, transform: `scale(${0.9})` },
-  //   config: config.wobbly,
-  // });
   return (
     <div
       className={`fixed bg-gray-900 top-0 w-full transition-all duration-500 md:hidden z-30 ${
@@ -58,11 +46,6 @@ export const NavMobile = () => {
             icon={faBurger}
           />
         </button>
-        {/* <aside
-          className={`fixed min-w-[17rem] min-h-screen z-40 pl-16 pr-8 rounded top-0 right-0 bg-gray-900 transition-all duration-300 px-10 py-4 block md:hidden ${
-            openNav ? `translate-x-0` : `translate-x-full invisible`
-          }`}
-        > */}
         <aside
           className={`absolute min-w-[17rem] min-h-screen z-50 pl-16 pr-8 rounded top-0 right-0 bg-gray-900 transition-all duration-300 px-10 py-4 block md:hidden ${
             isHamMenuOpen ? `translate-x-0` : `translate-x-full hidden`
@@ -74,16 +57,7 @@ export const NavMobile = () => {
               className='text-green-500 text-3xl'
             />
           </button>
-          {/* <div className='text-gray-200 pr-4 pt-12'> */}
           <DropdownMob />
-          {/* <ul className='space-y-5 text-xl'>
-            {navList.map((menuItem) => (
-              <DropdownMob key={menuItem.id} menuItem={menuItem} />
-              ))}
-              <li>Blog</li>
-            <UserLogin />
-          </ul> */}
-          {/* </div> */}
           {isHamMenuOpen && (
             <Overlay
               className='md:hidden'

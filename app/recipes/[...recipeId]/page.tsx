@@ -2,7 +2,7 @@ import xss from 'xss';
 
 import { notFound } from 'next/navigation';
 import { RecipePage } from '~/page/RecipePage';
-import { fetchRecipes, fetchSimilar } from '~/utils/fetch-helpers';
+import { fetchRecipes, fetchSimilar, fetchSingle } from '~/utils/fetch-helpers';
 
 interface Props {
   params: {
@@ -11,9 +11,7 @@ interface Props {
 }
 
 export default async function Recipe({ params: { recipeId } }: Props) {
-  const recipeInfo = await fetchRecipes({
-    recipe: { id: recipeId[0], isDynamic: true },
-  });
+  const recipeInfo = await fetchSingle(recipeId[0], true);
   const similar = await fetchSimilar(recipeId[0]);
   if (recipeInfo?.code === 404) {
     return notFound();

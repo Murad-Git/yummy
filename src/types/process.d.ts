@@ -79,6 +79,7 @@ interface Recipe {
   healthScore: number;
   creditsText: string;
   // license: string;
+  code: number;
   sourceName: string;
   pricePerServing: number;
   extendedIngredients: Ingredient[];
@@ -120,11 +121,19 @@ interface Recipe {
 
 interface searchResult {
   id: number;
-  title: string;
-  image: string;
   imageType?: string;
+  title: string;
+  // readyInMinutes: number;
+  // servings: number;
+  // sourceUrl: string;
+  image: string;
   name?: string;
 }
+
+type specificRecipe = {
+  id: string;
+  isDynamic?: boolean;
+};
 
 interface ingredientProps {
   id: number;

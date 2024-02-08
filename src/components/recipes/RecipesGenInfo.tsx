@@ -13,11 +13,10 @@ interface Props {
 }
 
 export const RecipesGenInfo = ({ recipeInfo, calories }: Props) => {
-  // const [scaleImg, setScaleImg] = useState(false);
-
   const dispatch = useAppDispatch();
-
-  const src = `https://spoonacular.com/recipeImages/${recipeInfo.id}-636x393.${recipeInfo.imageType}`;
+  const src =
+    `https://spoonacular.com/recipeImages/${recipeInfo.id}-636x393.${recipeInfo.imageType}` ||
+    `/images/no-food.png`;
   return (
     <div className='grid md:grid-cols-2 md:gap-4 align-middle'>
       <div>
@@ -27,7 +26,7 @@ export const RecipesGenInfo = ({ recipeInfo, calories }: Props) => {
         >
           <Image
             className='w-full cursor-pointer rounded-sm transition-all duration-200 hover:scale-110'
-            src={src || `/images/no-food.png`}
+            src={src}
             height={500}
             width={500}
             alt='product'

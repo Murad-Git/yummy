@@ -18,7 +18,7 @@ export default function RecipeImg({ recipe, link }: Props) {
   const { user, usersRecipes } = useAuth();
 
   const addToLiked = async () => {
-    if (user === null) return alert(`no need to login first`);
+    if (user === null) return alert(`you should be logged in`);
     const { id: userId } = user;
     const { data, error } = await supabase
       .from(`liked_recipes`)

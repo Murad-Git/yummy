@@ -17,6 +17,7 @@ export default async function Category({ params: { category } }: Props) {
     return notFound();
   const data = await fetchRecipes({
     recipe: {
+      random: false,
       type: 'cuisine',
       value: category,
       items: '5',

@@ -21,7 +21,7 @@ export const MainPage = ({ heroData, scrollData }: Props) => {
   const searchCuisin = async (cuisin: string) => {
     'use server';
     const data = await fetchRecipes({
-      recipe: { items: '5', type: 'cuisine', value: cuisin },
+      recipe: { items: '5', type: 'cuisine', value: cuisin, random: false },
     });
     if (!data) return null;
     return data.results;

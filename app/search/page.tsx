@@ -14,7 +14,13 @@ export default async function Search({ searchParams }: Props) {
     return notFound();
   const { type, term } = searchParams;
   const data = await fetchRecipes({
-    recipe: { type: type, value: term, items: '5', isDynamic: true },
+    recipe: {
+      type: type,
+      value: term,
+      items: '5',
+      isDynamic: true,
+      random: false,
+    },
   });
   if (!data) notFound();
 
