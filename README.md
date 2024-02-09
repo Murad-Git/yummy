@@ -1,6 +1,6 @@
 # Yummy
 
-https://user-images.githubusercontent.com/45511700/203849872-6b739620-da3a-43ab-9edf-c85098bc8dd4.mp4
+https://github.com/Murad-Git/yummy/assets/45511700/eac78bc3-cc51-4d30-a72b-8703b8e80b96
 
 > Discover culinary delights with our collection of easy-to-follow recipes for every occasion. From mouthwatering mains to delectable desserts, elevate your cooking game with our diverse selection.
 >
@@ -26,7 +26,6 @@ https://user-images.githubusercontent.com/45511700/203849872-6b739620-da3a-43ab-
 [![TypeScript][TypeScript]][TypeScript-url]
 [![Next][Next.js]][Next-url]
 [![Supabase][Supabase]][Supabase-url]
-[![Sanity-CMS][Sanity-CMS]][Sanity-CMS-url]
 [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
 
 ## Features
@@ -41,7 +40,7 @@ https://user-images.githubusercontent.com/45511700/203849872-6b739620-da3a-43ab-
 
 - Sanity content management page preview
 
-https://user-images.githubusercontent.com/45511700/203850225-2afee71c-7944-47f8-8cbd-84d5665932cd.mp4
+https://github.com/Murad-Git/yummy/assets/45511700/879846df-ee0c-477f-acb0-acdcadfa32f9
 
 ## Quick Setup
 
@@ -118,5 +117,3 @@ Created by [Murad Kos](https://github.com/Murad-Git) - feel free to contact me!
 [Postman-url]: https://www.postman.com/
 [Supabase]: https://shields.io/badge/supabase-black?logo=supabase&style=for-the-badge
 [Supabase-url]: https://supabase.com/
-[Sanity-CMS]: https://upload.wikimedia.org/wikipedia/commons/7/7e/Sanity-logo-svg.svg
-[Sanity-CMS-url]: https://supabase.com/
