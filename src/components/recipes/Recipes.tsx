@@ -16,7 +16,11 @@ export default function Recipes({
 }: Props) {
   return (
     <section className='my-10'>
-      {!!sectionTitle && <h1 className='section-title'>{sectionTitle}</h1>}
+      {!!sectionTitle && (
+        <h1 className='section-title text-xl md:text-inherit'>
+          {sectionTitle}
+        </h1>
+      )}
       <div
         className={`px-2 grid ${
           items === `five` ? `grid-cols-fluid-five` : `grid-cols-fluid-four`

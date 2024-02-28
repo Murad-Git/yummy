@@ -12,7 +12,7 @@ export const ProfilePage = ({ user, session }: Props) => {
   const loginDate = new Date(user?.last_sign_in_at || ``).toUTCString();
   if (!user) return <p>No user</p>;
   return (
-    <div className='grid grid-cols-1 md:grid-cols-6 min-h-[100vh] md:min-h-[80vh]'>
+    <div className='grid md:grid-cols-6 min-h-[100vh] md:min-h-[80vh]'>
       {/* left side */}
       <section className='col-span-1 bg-white p-4'>
         <div className='flex md:flex-col items-center justify-start p-2'>

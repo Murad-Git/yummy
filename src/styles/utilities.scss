@@ -61,7 +61,7 @@
   }
 
   .auth-card {
-    @apply column min-w-[24rem] items-center gap-8 rounded-2xl bg-gray-50 p-4 shadow-md sm:min-w-[24rem] sm:px-10 fixed z-40 max-w-[24rem] py-8 left-0 right-0 mx-auto top-[15%];
+    @apply column items-center gap-8 rounded-2xl bg-gray-50 p-4 shadow-md min-w-[18rem] sm:px-10 fixed z-40 max-w-[24rem] py-8 left-0 right-0 mx-auto top-[15%];
   }
 
   .auth-card-rel {
@@ -88,11 +88,6 @@
     width: 100%;
     background-position: top center;
     background-repeat: no-repeat;
-
-    // @media screen and (max-width:768px) {
-    //   height: calc(100vh/3);
-    //   font-size: smaller;
-    // }
   }
 
   .nav-links {

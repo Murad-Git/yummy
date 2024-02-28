@@ -6,7 +6,7 @@ interface Props {
 }
 export const BlogItem = ({ post }: Props) => {
   return (
-    <div className='shadow-md rounded-b-sm max-w-lg'>
+    <div className='shadow-md relative rounded-b-sm'>
       <Link href={`/blog/${post.slug}`}>
         <Image
           src={post.image}

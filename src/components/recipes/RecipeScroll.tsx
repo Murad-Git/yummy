@@ -15,7 +15,7 @@ interface Props {
 
 export default function RecipeScroll({ recipes, title }: Props) {
   const scrollerRef: RefObject<HTMLUListElement> = useRef(null);
-
+  console.log(scrollerRef.current!.scrollLeft);
   return (
     <section className=' relative my-24'>
       <h1 className='section-title'>{title}</h1>
@@ -25,16 +25,19 @@ export default function RecipeScroll({ recipes, title }: Props) {
       >
         {!!recipes &&
           recipes.map((recipe) => (
-            <li key={recipe.id} className='inline-block w-[21rem] rounded-full'>
+            <li
+              key={recipe.id}
+              className='inline-block w-[16rem] md:w-[21rem] rounded-full'
+            >
               <Link href={makeSlug(recipe.id, recipe.title)}>
                 <Image
-                  className='mb-3 h-[20rem] w-[21rem] rounded-full object-cover'
+                  className='mb-3 h-[15rem] md:h-[20rem] w-[15rem] md:w-[21rem] rounded-full object-cover'
                   src={`https://spoonacular.com/recipeImages/${recipe.id}-636x393.jpg`}
                   width={500}
                   height={500}
                   alt='recipe'
                 />
-                <h2 className='mt-1 mb-2 w-[21rem] cursor-pointer truncate text-center text-lg font-bold hover:text-gray-600 '>
+                <h2 className='mt-1 mb-2 cursor-pointer truncate text-center text-lg font-bold hover:text-gray-600 break-words'>
                   {recipe.title}
                 </h2>
               </Link>
@@ -43,13 +46,13 @@ export default function RecipeScroll({ recipes, title }: Props) {
       </ul>
       <button
         className='absolute top-1/2 -left-4 flex h-12 w-12 flex-col items-center justify-center rounded-full bg-green-500 bg-opacity-80'
-        onClick={() => (scrollerRef.current!.scrollLeft -= 600)}
+        onClick={() => (scrollerRef.current!.scrollLeft -= 400)}
       >
         <FontAwesomeIcon className='h-6 text-white' icon={faArrowLeft} />
       </button>
       <button
         className='absolute top-1/2 -right-4 flex h-12 w-12 flex-col items-center justify-center rounded-full bg-green-500 bg-opacity-80'
-        onClick={() => (scrollerRef.current!.scrollLeft += 600)}
+        onClick={() => (scrollerRef.current!.scrollLeft += 400)}
       >
         <FontAwesomeIcon className='h-6 text-white' icon={faArrowRight} />
       </button>

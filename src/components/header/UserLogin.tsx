@@ -48,7 +48,7 @@ export const UserLogin = ({ className }: Props) => {
           href='/profile'
           className='hover:text-white xl:text-lg transition-all xl:p-3 mt-4 md:mt-0'
         >
-          <FontAwesomeIcon className='text-green-500' icon={faUser} />
+          Profile <FontAwesomeIcon className='text-green-500' icon={faUser} />
         </Link>
       )}
     </li>

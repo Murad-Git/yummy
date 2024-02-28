@@ -47,7 +47,7 @@ export const NavMobile = () => {
           />
         </button>
         <aside
-          className={`absolute min-w-[17rem] min-h-screen z-50 pl-16 pr-8 rounded top-0 right-0 bg-gray-900 transition-all duration-300 px-10 py-4 block md:hidden ${
+          className={`absolute min-w-[17rem] min-h-screen z-50 pl-16 pr-8 rounded top-0 right-0 bg-gray-900 transition-all duration-300 px-10 py-4 block md:hidden h-40 overflow-y-auto ${
             isHamMenuOpen ? `translate-x-0` : `translate-x-full hidden`
           }`}
         >

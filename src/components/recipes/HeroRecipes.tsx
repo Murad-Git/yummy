@@ -11,7 +11,7 @@ interface Props {
 export default function HeroRecipes({ heroRecipes, title }: Props) {
   return (
     <section className='section relative py-16'>
-      <h1 className='section-title'>{title}</h1>
+      <h1 className='section-title text-xl md:text-inherit'>{title}</h1>
       <ul className='mx-auto grid grid-flow-row-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-2'>
         <li
           key={heroRecipes[0].id}
@@ -35,8 +35,8 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
               width={600}
               alt='product'
             />
-            <div className='absolute bottom-0 h-16 bg-white opacity-90 md:group-hover/main:h-24 md:h-0 transition-all w-full'>
-              <p className='text-center pt-6 text-xl font-semibold'>
+            <div className='absolute flex items-center justify-center bottom-0 h-16 bg-white opacity-90 md:group-hover/main:h-24 md:h-0 transition-all w-full'>
+              <p className='text-center text-base px-2 md:px-0 md:text-lg font-semibold'>
                 {heroRecipes[0].title}
               </p>
             </div>
@@ -64,8 +64,8 @@ export default function HeroRecipes({ heroRecipes, title }: Props) {
                 width={600}
                 alt='product'
               />
-              <div className='absolute bottom-0 bg-white opacity-90 h-16 md:group-hover/other:h-20 md:h-0 transition-all w-full'>
-                <p className='text-center pt-4 text-base px-2 md:px-0 md:text-lg font-semibold'>
+              <div className='absolute flex items-center justify-center bottom-0 bg-white opacity-90 h-16 md:group-hover/other:h-20 md:h-0 transition-all w-full'>
+                <p className='text-center text-base px-2 md:px-0 md:text-lg font-semibold'>
                   {recipe.title}
                 </p>
               </div>

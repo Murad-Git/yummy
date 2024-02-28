@@ -17,7 +17,7 @@ export const BlogPage = ({ post }: Props) => {
         <div className='my-8'>
           <BlogAuthor post={post} />
         </div>
-        <div className='px-6 mb-6 max-w-[60%]'>
+        <div className='px-6 mb-6 md:max-w-[60%]'>
           <div>
             <h1 className='text-3xl font-semibold mb-3'>
               {post.title ? post.title : `blog post`}
