@@ -39,7 +39,7 @@ export const HeroImg = ({ img, title }: Props) => {
       </div>
       <HeroTitle title={title} />
       <SearchField
-        className={`absolute bottom-[30%] mx-auto left-0 right-0 text-center z-20 flex ${
+        className={`absolute bottom-[20%] md:bottom-[30%] mx-auto left-0 right-0 text-center z-20 flex ${
           offset > 300 ? 'opacity-0 invisible' : 'opacity-100'
         }`}
         subClassName='flex flex-col pt-2'
